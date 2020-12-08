@@ -60,6 +60,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 // Đưa dữ liệu lên DataGridView
                 dgvKhachHang.DataSource = DTKH;
                 Default_txt();
+                Default_Button();
                 dgvKhachHang_CellClick(null, null);
                 LoadGioiTinh();
                 LoadTinhTrang();
@@ -252,7 +253,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             Them = true;
             // Xóa trống các đối tượng trong Panel
-
             Default_txt();
             // Cho thao tác trên các nút Lưu / Hủy / Panel
 

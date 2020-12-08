@@ -55,6 +55,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 DTNV = ds.Tables[0];
                 // Đưa dữ liệu lên DataGridView
                 dgvNhanVien.DataSource = DTNV;
+                Default_Button();
                 Default_txt();
                 dgvNhanVien_CellClick(null, null);
             }

@@ -50,6 +50,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 // Đưa dữ liệu lên DataGridView
                 dgvDichVu.DataSource = DTDV;
                 Default_txt();
+                Default_Button();
                 dgvDichVu_CellClick(null, null);
             }
             catch (SqlException)

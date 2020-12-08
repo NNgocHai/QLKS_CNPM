@@ -55,6 +55,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 // Đưa dữ liệu lên DataGridView
                 dgvPhong.DataSource = DTP;
                 Default_txt();
+                Default_Button();
                 dgvPhong_CellClick(null, null);
                 LoadTen();
                 LoadTinhTrang();
