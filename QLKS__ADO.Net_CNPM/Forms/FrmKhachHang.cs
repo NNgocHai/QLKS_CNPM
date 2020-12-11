@@ -67,7 +67,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             catch (SqlException)
             {
-                MessageBox.Show("Không lấy được nội dung trong bảng PHONG. Lỗi rồi!!!");
+                MessageBox.Show("Không lấy được nội dung trong bảng KHACHHANG. Lỗi rồi!!!");
             }
         }
         private void LoadTinhTrang()

@@ -34,7 +34,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtKhuyenMai = new System.Windows.Forms.TextBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.txtSoNguoiToiDa = new System.Windows.Forms.TextBox();
-            this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -56,13 +55,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvPhong = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
-            this.cbbTen = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtMota = new System.Windows.Forms.TextBox();
             this.MA_PHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +62,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.SONGUOITOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PHONG_KM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
+            this.cbbTen = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtMota = new System.Windows.Forms.TextBox();
+            this.cbboxTrinhTrang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -118,13 +118,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtSoNguoiToiDa.Name = "txtSoNguoiToiDa";
             this.txtSoNguoiToiDa.Size = new System.Drawing.Size(168, 22);
             this.txtSoNguoiToiDa.TabIndex = 91;
-            // 
-            // txtTinhTrang
-            // 
-            this.txtTinhTrang.Location = new System.Drawing.Point(700, 24);
-            this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(168, 22);
-            this.txtTinhTrang.TabIndex = 90;
             // 
             // txtTen
             // 
@@ -205,7 +198,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label10.Location = new System.Drawing.Point(456, 158);
+            this.label10.Location = new System.Drawing.Point(442, 158);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(47, 25);
@@ -229,7 +222,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(601, 160);
+            this.label4.Location = new System.Drawing.Point(587, 160);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 25);
@@ -241,7 +234,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.label3.Location = new System.Drawing.Point(176, 158);
+            this.label3.Location = new System.Drawing.Point(162, 158);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 25);
@@ -253,7 +246,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Purple;
-            this.label8.Location = new System.Drawing.Point(310, 158);
+            this.label8.Location = new System.Drawing.Point(296, 158);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(48, 25);
@@ -278,7 +271,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnHuyBo.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.ExitIcon1;
             this.btnHuyBo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnHuyBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyBo.Location = new System.Drawing.Point(432, 188);
+            this.btnHuyBo.Location = new System.Drawing.Point(418, 188);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(96, 63);
             this.btnHuyBo.TabIndex = 74;
@@ -318,7 +311,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnSua.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.repairIcon;
             this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(295, 188);
+            this.btnSua.Location = new System.Drawing.Point(281, 188);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(96, 63);
             this.btnSua.TabIndex = 69;
@@ -331,7 +324,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnXoa.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.EraseIcon;
             this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(568, 188);
+            this.btnXoa.Location = new System.Drawing.Point(554, 188);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(96, 63);
             this.btnXoa.TabIndex = 70;
@@ -344,7 +337,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThem.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.addIcon1;
             this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(168, 188);
+            this.btnThem.Location = new System.Drawing.Point(154, 188);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(96, 63);
             this.btnThem.TabIndex = 71;
@@ -366,13 +359,62 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.SONGUOITOIDA,
             this.PHONG_KM,
             this.MOTA});
-            this.dgvPhong.Location = new System.Drawing.Point(7, 278);
+            this.dgvPhong.Location = new System.Drawing.Point(34, 278);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.RowTemplate.Height = 24;
-            this.dgvPhong.Size = new System.Drawing.Size(1396, 347);
+            this.dgvPhong.Size = new System.Drawing.Size(1315, 363);
             this.dgvPhong.TabIndex = 68;
             this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
+            // 
+            // MA_PHONG
+            // 
+            this.MA_PHONG.DataPropertyName = "MA_PHONG";
+            this.MA_PHONG.HeaderText = "Mã phòng";
+            this.MA_PHONG.MinimumWidth = 6;
+            this.MA_PHONG.Name = "MA_PHONG";
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên";
+            this.TEN.MinimumWidth = 6;
+            this.TEN.Name = "TEN";
+            // 
+            // GIA
+            // 
+            this.GIA.DataPropertyName = "GIA";
+            this.GIA.HeaderText = "Giá";
+            this.GIA.MinimumWidth = 6;
+            this.GIA.Name = "GIA";
+            // 
+            // TINHTRANG
+            // 
+            this.TINHTRANG.DataPropertyName = "TINHTRANG";
+            this.TINHTRANG.HeaderText = "Tình trạng";
+            this.TINHTRANG.MinimumWidth = 6;
+            this.TINHTRANG.Name = "TINHTRANG";
+            // 
+            // SONGUOITOIDA
+            // 
+            this.SONGUOITOIDA.DataPropertyName = "SONGUOITOIDA";
+            this.SONGUOITOIDA.HeaderText = "Số người tối đa";
+            this.SONGUOITOIDA.MinimumWidth = 6;
+            this.SONGUOITOIDA.Name = "SONGUOITOIDA";
+            // 
+            // PHONG_KM
+            // 
+            this.PHONG_KM.DataPropertyName = "PHONG_KM";
+            this.PHONG_KM.HeaderText = "Khuyến Mãi";
+            this.PHONG_KM.MinimumWidth = 6;
+            this.PHONG_KM.Name = "PHONG_KM";
+            // 
+            // MOTA
+            // 
+            this.MOTA.DataPropertyName = "MOTA";
+            this.MOTA.HeaderText = "Mô tả";
+            this.MOTA.MinimumWidth = 6;
+            this.MOTA.Name = "MOTA";
             // 
             // panel1
             // 
@@ -440,60 +482,24 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtMota.Size = new System.Drawing.Size(236, 22);
             this.txtMota.TabIndex = 90;
             // 
-            // MA_PHONG
+            // cbboxTrinhTrang
             // 
-            this.MA_PHONG.DataPropertyName = "MA_PHONG";
-            this.MA_PHONG.HeaderText = "Mã phòng";
-            this.MA_PHONG.MinimumWidth = 6;
-            this.MA_PHONG.Name = "MA_PHONG";
-            // 
-            // TEN
-            // 
-            this.TEN.DataPropertyName = "TEN";
-            this.TEN.HeaderText = "Tên";
-            this.TEN.MinimumWidth = 6;
-            this.TEN.Name = "TEN";
-            // 
-            // GIA
-            // 
-            this.GIA.DataPropertyName = "GIA";
-            this.GIA.HeaderText = "Giá";
-            this.GIA.MinimumWidth = 6;
-            this.GIA.Name = "GIA";
-            // 
-            // TINHTRANG
-            // 
-            this.TINHTRANG.DataPropertyName = "TINHTRANG";
-            this.TINHTRANG.HeaderText = "Tình trạng";
-            this.TINHTRANG.MinimumWidth = 6;
-            this.TINHTRANG.Name = "TINHTRANG";
-            // 
-            // SONGUOITOIDA
-            // 
-            this.SONGUOITOIDA.DataPropertyName = "SONGUOITOIDA";
-            this.SONGUOITOIDA.HeaderText = "Số người tối đa";
-            this.SONGUOITOIDA.MinimumWidth = 6;
-            this.SONGUOITOIDA.Name = "SONGUOITOIDA";
-            // 
-            // PHONG_KM
-            // 
-            this.PHONG_KM.DataPropertyName = "PHONG_KM";
-            this.PHONG_KM.HeaderText = "Khuyến Mãi";
-            this.PHONG_KM.MinimumWidth = 6;
-            this.PHONG_KM.Name = "PHONG_KM";
-            // 
-            // MOTA
-            // 
-            this.MOTA.DataPropertyName = "MOTA";
-            this.MOTA.HeaderText = "Mô tả";
-            this.MOTA.MinimumWidth = 6;
-            this.MOTA.Name = "MOTA";
+            this.cbboxTrinhTrang.FormattingEnabled = true;
+            this.cbboxTrinhTrang.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.cbboxTrinhTrang.Location = new System.Drawing.Point(700, 27);
+            this.cbboxTrinhTrang.Name = "cbboxTrinhTrang";
+            this.cbboxTrinhTrang.Size = new System.Drawing.Size(168, 24);
+            this.cbboxTrinhTrang.TabIndex = 99;
+            this.cbboxTrinhTrang.Text = "No";
             // 
             // FrmPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1409, 649);
+            this.ClientSize = new System.Drawing.Size(1409, 665);
+            this.Controls.Add(this.cbboxTrinhTrang);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.label6);
@@ -501,7 +507,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtSoNguoiToiDa);
             this.Controls.Add(this.txtMota);
-            this.Controls.Add(this.txtTinhTrang);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.label12);
@@ -542,7 +547,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.TextBox txtKhuyenMai;
         private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.TextBox txtSoNguoiToiDa;
-        private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.Label label12;
@@ -578,5 +582,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn SONGUOITOIDA;
         private System.Windows.Forms.DataGridViewTextBoxColumn PHONG_KM;
         private System.Windows.Forms.DataGridViewTextBoxColumn MOTA;
+        private System.Windows.Forms.ComboBox cbboxTrinhTrang;
     }
 }

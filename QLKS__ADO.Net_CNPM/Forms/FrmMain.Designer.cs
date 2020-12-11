@@ -62,13 +62,8 @@
             this.btnThanhToan = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItemThietBi = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItemLoaiPhong = new DevComponents.DotNetBar.ButtonItem();
-            this.ToolStripItemCapNhat = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLoaiDichVu = new DevComponents.DotNetBar.RibbonBar();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.ToolStripItemThongTinPhong = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripItemTraPhong = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripItemNhanPhong = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripItemDangKy = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ribbonTabItem12 = new DevComponents.DotNetBar.RibbonTabItem();
             this.qatCustomizeItem2 = new DevComponents.DotNetBar.QatCustomizeItem();
@@ -122,7 +117,6 @@
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem1 = new DevComponents.DotNetBar.RibbonTabItem();
             this.labelItem8 = new DevComponents.DotNetBar.LabelItem();
-            this.lvPhong = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.ribbonTabItem3 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonControl2 = new DevComponents.DotNetBar.RibbonControl();
             this.labelItem3 = new DevComponents.DotNetBar.LabelItem();
@@ -149,9 +143,10 @@
             this.itemContainer6 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer5 = new DevComponents.DotNetBar.ItemContainer();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
+            this.fplPhong = new System.Windows.Forms.FlowLayoutPanel();
+            this.ToolStripItemDangKy = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.ribbonPanel7.SuspendLayout();
@@ -702,13 +697,6 @@
             this.buttonItemLoaiPhong.SubItemsExpandWidth = 14;
             this.buttonItemLoaiPhong.Text = "buttonItem16";
             // 
-            // ToolStripItemCapNhat
-            // 
-            this.ToolStripItemCapNhat.Name = "ToolStripItemCapNhat";
-            this.ToolStripItemCapNhat.Size = new System.Drawing.Size(188, 24);
-            this.ToolStripItemCapNhat.Text = "Cập nhật";
-            this.ToolStripItemCapNhat.Click += new System.EventHandler(this.ToolStripItemCapNhat_Click);
-            // 
             // btnLoaiDichVu
             // 
             this.btnLoaiDichVu.AutoOverflowEnabled = true;
@@ -747,45 +735,11 @@
             this.imageList1.Images.SetKeyName(1, "LaST (Cobalt) RTF File.png");
             this.imageList1.Images.SetKeyName(2, "Login Manager.png");
             // 
-            // ToolStripItemThongTinPhong
-            // 
-            this.ToolStripItemThongTinPhong.Name = "ToolStripItemThongTinPhong";
-            this.ToolStripItemThongTinPhong.Size = new System.Drawing.Size(188, 24);
-            this.ToolStripItemThongTinPhong.Text = "Thông tin phòng";
-            this.ToolStripItemThongTinPhong.Click += new System.EventHandler(this.ToolStripItemThongTinPhong_Click);
-            // 
-            // ToolStripItemTraPhong
-            // 
-            this.ToolStripItemTraPhong.Name = "ToolStripItemTraPhong";
-            this.ToolStripItemTraPhong.Size = new System.Drawing.Size(188, 24);
-            this.ToolStripItemTraPhong.Text = "Trả phòng";
-            this.ToolStripItemTraPhong.Click += new System.EventHandler(this.ToolStripItemTraPhong_Click);
-            // 
-            // ToolStripItemNhanPhong
-            // 
-            this.ToolStripItemNhanPhong.Name = "ToolStripItemNhanPhong";
-            this.ToolStripItemNhanPhong.Size = new System.Drawing.Size(188, 24);
-            this.ToolStripItemNhanPhong.Text = "Nhận phòng";
-            this.ToolStripItemNhanPhong.Click += new System.EventHandler(this.ToolStripItemNhanPhong_Click);
-            // 
-            // ToolStripItemDangKy
-            // 
-            this.ToolStripItemDangKy.Name = "ToolStripItemDangKy";
-            this.ToolStripItemDangKy.Size = new System.Drawing.Size(188, 24);
-            this.ToolStripItemDangKy.Text = "Đăng ký";
-            this.ToolStripItemDangKy.Click += new System.EventHandler(this.ToolStripItemDangKy_Click);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripItemDangKy,
-            this.ToolStripItemNhanPhong,
-            this.ToolStripItemTraPhong,
-            this.ToolStripItemThongTinPhong,
-            this.ToolStripItemCapNhat});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 124);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ribbonTabItem12
             // 
@@ -1418,26 +1372,6 @@
             // 
             this.labelItem8.Name = "labelItem8";
             // 
-            // lvPhong
-            // 
-            this.lvPhong.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.lvPhong.Border.Class = "ListViewBorder";
-            this.lvPhong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lvPhong.ContextMenuStrip = this.contextMenuStrip1;
-            this.lvPhong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvPhong.HideSelection = false;
-            this.lvPhong.LargeImageList = this.imageList1;
-            this.lvPhong.Location = new System.Drawing.Point(5, 155);
-            this.lvPhong.Name = "lvPhong";
-            this.lvPhong.Size = new System.Drawing.Size(1016, 551);
-            this.lvPhong.SmallImageList = this.imageList1;
-            this.lvPhong.TabIndex = 8;
-            this.lvPhong.UseCompatibleStateImageBehavior = false;
-            this.lvPhong.SelectedIndexChanged += new System.EventHandler(this.lvPhong_SelectedIndexChanged);
-            // 
             // ribbonTabItem3
             // 
             this.ribbonTabItem3.Name = "ribbonTabItem3";
@@ -1743,19 +1677,37 @@
             // 
             this.qatCustomizeItem1.Name = "qatCustomizeItem1";
             // 
+            // fplPhong
+            // 
+            this.fplPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fplPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.fplPhong.Location = new System.Drawing.Point(5, 157);
+            this.fplPhong.Margin = new System.Windows.Forms.Padding(4);
+            this.fplPhong.Name = "fplPhong";
+            this.fplPhong.Size = new System.Drawing.Size(1013, 515);
+            this.fplPhong.TabIndex = 8;
+            this.fplPhong.Click += new System.EventHandler(this.fplPhong_Click);
+            // 
+            // ToolStripItemDangKy
+            // 
+            this.ToolStripItemDangKy.Name = "ToolStripItemDangKy";
+            this.ToolStripItemDangKy.Size = new System.Drawing.Size(132, 24);
+            this.ToolStripItemDangKy.Text = "Đăng ký";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 708);
-            this.Controls.Add(this.lvPhong);
+            this.ClientSize = new System.Drawing.Size(1026, 677);
+            this.Controls.Add(this.fplPhong);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";
             this.Text = "Quản lí khách sạn";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel1.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
             this.ribbonPanel7.ResumeLayout(false);
@@ -1795,13 +1747,8 @@
         private DevComponents.DotNetBar.ButtonItem btnThanhToan;
         private DevComponents.DotNetBar.ButtonItem buttonItemThietBi;
         private DevComponents.DotNetBar.ButtonItem buttonItemLoaiPhong;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripItemCapNhat;
         private DevComponents.DotNetBar.RibbonBar btnLoaiDichVu;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripItemThongTinPhong;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripItemTraPhong;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripItemNhanPhong;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripItemDangKy;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem12;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem2;
@@ -1855,7 +1802,6 @@
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem2;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem1;
         private DevComponents.DotNetBar.LabelItem labelItem8;
-        private DevComponents.DotNetBar.Controls.ListViewEx lvPhong;
         private DevComponents.DotNetBar.RibbonTabItem ribbonTabItem3;
         private DevComponents.DotNetBar.RibbonControl ribbonControl2;
         private DevComponents.DotNetBar.LabelItem labelItem3;
@@ -1886,5 +1832,7 @@
         private DevComponents.DotNetBar.ButtonItem btnRestore;
         private DevComponents.DotNetBar.RibbonBar rbbBackup;
         private DevComponents.DotNetBar.ButtonItem btnBackup;
+        public System.Windows.Forms.FlowLayoutPanel fplPhong;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripItemDangKy;
     }
 }

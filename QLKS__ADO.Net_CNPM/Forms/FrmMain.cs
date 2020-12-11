@@ -19,7 +19,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         string err;
         public static bool bIsLogin = false;
         DataTable DTP = null;
-        BLPhong BLP = null;
+        BLMain BLM = null;
+
+        public string MaPhong;
+        public string TinhTrangPhong;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -29,31 +33,50 @@ namespace QLKS__ADO.Net_CNPM.Forms
             try
             {
                 DTP = new DataTable();
-                BLP = new BLPhong();
-                this.lvPhong.Items.Clear();
+                BLM = new BLMain();
+                this.fplPhong.Controls.Clear();
                 DTP.Clear();
-                DataSet ds = BLP.LayPhong();
+                DataSet ds = BLM.LayPhong();
                 DTP = ds.Tables[0];
+                Button oldbtn = new Button() { Width = 0, Location = new Point(0, 0) };
                 foreach (DataRow dr in DTP.Rows)
                 {
+                    Button btn = new Button()
+                    {
+                        Width = 100,
+                        Height = 100,
+                        Location = new Point(oldbtn.Location.X + 100, oldbtn.Location.Y)
+
+                    };
+                    oldbtn = btn;
                     Phong Phong = new Phong();
                     Phong.Ma_Phong = (string)dr.ItemArray[0];
                     Phong.TinhTrang = (string)dr.ItemArray[3];
-                    ListViewItem item = new ListViewItem(Phong.Ma_Phong);
-                    if(Phong.TinhTrang == "1")//Phòng đã có người roi
-                    {
-                        item.ImageIndex = 1;
-                    }
-                    else if (Phong.TinhTrang == "2")//Phòng đã được book
-                    {
-                        item.ImageIndex = 2;
-                    }
-                    else //Phòng chưa có người đặt
-                    {
-                        item.ImageIndex = 0;
-                    }
 
-                    lvPhong.Items.Add(item);
+
+                    btn.Text = "Phòng: " + Phong.Ma_Phong + Environment.NewLine + Environment.NewLine + Environment.NewLine + Environment.NewLine + Phong.TinhTrang;
+                    btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    btn.BackgroundImage = Properties.Resources.phongicon3;
+                    btn.BackgroundImageLayout = ImageLayout.Zoom;
+
+                    btn.Click += btn_Click;
+                    btn.Tag = Phong;
+                    btn.BackColor = Color.White;
+
+                    switch (Phong.TinhTrang.Length)
+                    {
+
+                        case 2:
+
+                            btn.ForeColor = Color.Green;
+                            break;
+                        default:
+                            {
+                                btn.ForeColor = Color.Red;
+                                break;
+                            }
+                    }
+                    fplPhong.Controls.Add(btn);
                 }
 
 
@@ -63,6 +86,26 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 MessageBox.Show("Không lấy được nội dung trong bảng PHONG. Lỗi rồi!!!");
             }
         }
+        private void btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MaPhong = ((sender as Button).Tag as Phong).Ma_Phong;
+                TinhTrangPhong = ((sender as Button).Tag as Phong).TinhTrang;
+                if (TinhTrangPhong.Length == 2)
+                {
+                    
+                    FrmPhongTrong frmPhongDaDat = new FrmPhongTrong(this);
+                    frmPhongDaDat.ShowDialog();
+                }
+                else
+                {
+                    FrmPhongDaThue frmPhongTrong = new FrmPhongDaThue();
+                    frmPhongTrong.ShowDialog();
+                }
+            }
+            catch { }
+        }
 
         private void pnlMenu_Paint(object sender, PaintEventArgs e)
         {
@@ -71,8 +114,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            LoadData();
-            
+            LoadData();           
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -96,7 +138,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void btnBackup_Click(object sender, EventArgs e)
         {
             
-            BLBackup filebackup = new BLBackup();
+            BLMain filebackup = new BLMain();
             SaveFileDialog save = new SaveFileDialog();
             if(save.ShowDialog()==DialogResult.OK)
             {
@@ -106,7 +148,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            BLRestore restore = new BLRestore();
+            BLMain restore = new BLMain();
             SaveFileDialog save = new SaveFileDialog();
             if (save.ShowDialog() == DialogResult.OK)
             {
@@ -117,35 +159,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
         }
 
-        private void lvPhong_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadData();
-        }
 
-        private void ToolStripItemDangKy_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToolStripItemNhanPhong_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToolStripItemTraPhong_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToolStripItemThongTinPhong_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ToolStripItemCapNhat_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonDichVu_Click(object sender, EventArgs e)
         {
@@ -157,6 +172,19 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             FrmKhachHang frmKhachHang = new FrmKhachHang();
             frmKhachHang.ShowDialog();
+        }
+
+        private void fplPhong_Paint(object sender, PaintEventArgs e)
+        {
+            LoadData();
+        }
+
+
+
+
+        private void fplPhong_Click(object sender, EventArgs e)
+        {
+            LoadData();
         }
     } 
 }

@@ -93,6 +93,16 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap booking1 {
+            get {
+                object obj = ResourceManager.GetObject("booking1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap closedoor {
             get {
                 object obj = ResourceManager.GetObject("closedoor", resourceCulture);
@@ -223,6 +233,46 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap information1 {
+            get {
+                object obj = ResourceManager.GetObject("information1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap information4 {
+            get {
+                object obj = ResourceManager.GetObject("information4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap InformationPhong {
+            get {
+                object obj = ResourceManager.GetObject("InformationPhong", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap keys1 {
+            get {
+                object obj = ResourceManager.GetObject("keys1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap KHicon2 {
             get {
                 object obj = ResourceManager.GetObject("KHicon2", resourceCulture);
@@ -266,6 +316,26 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         internal static System.Drawing.Bitmap opendoor {
             get {
                 object obj = ResourceManager.GetObject("opendoor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment4 {
+            get {
+                object obj = ResourceManager.GetObject("payment4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phongdon {
+            get {
+                object obj = ResourceManager.GetObject("phongdon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +456,16 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         internal static System.Drawing.Bitmap roomIcon {
             get {
                 object obj = ResourceManager.GetObject("roomIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rsz_phonggiuongdonjpg {
+            get {
+                object obj = ResourceManager.GetObject("rsz_phonggiuongdonjpg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -40,7 +40,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtEmail.ResetText();
             this.txtPhanQuyen.ResetText();
             this.txtTimKiem.ResetText();
-
         }
        
 

@@ -37,7 +37,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtMaPhong.ResetText();
             this.txtSoNguoiToiDa.ResetText();
             this.txtTen.ResetText();
-            this.txtTinhTrang.ResetText();
+            this.cbboxTrinhTrang.Text = "No";
             this.txtMota.ResetText();
             this.cbbTen.Text ="ALL";
             this.cbbTinhTrang.Text = "ALL";
@@ -128,7 +128,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 {
                     try
                     {//(string MaPhong, string Ten, string TinhTrang, string SoNguoiToiDa, string Gia, string KhuyenMai, ref string err)
-                        if (BLP.ThemPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.txtTinhTrang.Text, this.txtSoNguoiToiDa.Text, this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
+                        if (BLP.ThemPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.cbboxTrinhTrang.Text, this.txtSoNguoiToiDa.Text, this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã thêm xong!");
@@ -150,7 +150,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
                 try
                 {
-                    if (BLP.CapNhatPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.txtTinhTrang.Text, this.txtSoNguoiToiDa.Text,  this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
+                    if (BLP.CapNhatPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.cbboxTrinhTrang.Text, this.txtSoNguoiToiDa.Text,  this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
                     {
                         LoadData();
                         MessageBox.Show("Đã sửa xong!");
@@ -265,7 +265,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.txtMaPhong.Text = dgvPhong.Rows[r].Cells[0].Value.ToString().Trim();
                 this.txtTen.Text = dgvPhong.Rows[r].Cells[1].Value.ToString().Trim();
                 this.txtGia.Text = dgvPhong.Rows[r].Cells[2].Value.ToString().Trim();
-                this.txtTinhTrang.Text = dgvPhong.Rows[r].Cells[3].Value.ToString().Trim();
+                this.cbboxTrinhTrang.Text = dgvPhong.Rows[r].Cells[3].Value.ToString().Trim();
                 this.txtSoNguoiToiDa.Text = dgvPhong.Rows[r].Cells[4].Value.ToString().Trim();
                 this.txtKhuyenMai.Text = dgvPhong.Rows[r].Cells[5].Value.ToString().Trim();
                 this.txtMota.Text = dgvPhong.Rows[r].Cells[6].Value.ToString().Trim();
@@ -275,7 +275,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             {
                 this.txtMaPhong.Text = "";
                 this.txtTen.Text = "";
-                this.txtTinhTrang.Text = "";
+                this.cbboxTrinhTrang.Text = "";
                 this.txtSoNguoiToiDa.Text = "";
                 this.txtGia.Text = "";
                 this.txtKhuyenMai.Text = "";

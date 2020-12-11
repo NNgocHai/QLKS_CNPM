@@ -48,13 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BS_Layer\BLBackup.cs" />
     <Compile Include="BS_Layer\BLDangNhap.cs" />
     <Compile Include="BS_Layer\BLDichVu.cs" />
     <Compile Include="BS_Layer\BLKhachHang.cs" />
+    <Compile Include="BS_Layer\BLMain.cs" />
     <Compile Include="BS_Layer\BLNhanVien.cs" />
+    <Compile Include="BS_Layer\BLPhieuDatPhong.cs" />
+    <Compile Include="BS_Layer\BLPhieuNhanPhong.cs" />
     <Compile Include="BS_Layer\BLPhong.cs" />
-    <Compile Include="BS_Layer\BLRestore.cs" />
     <Compile Include="BusinessObject\Phong.cs" />
     <Compile Include="CSDL_KHACHSANDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -98,8 +99,44 @@
     <Compile Include="Forms\FrmPhong.Designer.cs">
       <DependentUpon>FrmPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmPhongTrong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPhongTrong.Designer.cs">
+      <DependentUpon>FrmPhongTrong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPhongDaThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPhongDaThue.Designer.cs">
+      <DependentUpon>FrmPhongDaThue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usercontrol\UserDatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\UserDatPhong.Designer.cs">
+      <DependentUpon>UserDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\UserNhanPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\UserNhanPhong.Designer.cs">
+      <DependentUpon>UserNhanPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\UserThongTinKH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\UserThongTinKH.Designer.cs">
+      <DependentUpon>UserThongTinKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\UserThongTinPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\UserThongTinPhong.Designer.cs">
+      <DependentUpon>UserThongTinPhong.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,16 +155,29 @@
     <EmbeddedResource Include="Forms\FrmPhong.resx">
       <DependentUpon>FrmPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPhongTrong.resx">
+      <DependentUpon>FrmPhongTrong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPhongDaThue.resx">
+      <DependentUpon>FrmPhongDaThue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Usercontrol\UserDatPhong.resx">
+      <DependentUpon>UserDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\UserNhanPhong.resx">
+      <DependentUpon>UserNhanPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\UserThongTinKH.resx">
+      <DependentUpon>UserThongTinKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\UserThongTinPhong.resx">
+      <DependentUpon>UserThongTinPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="CSDL_KHACHSANDataSet.xsc">
       <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>
     </None>
@@ -143,6 +193,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -252,10 +307,43 @@
     <None Include="Resources\Home.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Login Manager.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\LaST %28Cobalt%29 RTF File.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Login Manager.png" />
+    <None Include="Resources\information.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InformationPhong.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\booking1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keys1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phonggiuongdonjpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phongdon.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_phonggiuongdonjpg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

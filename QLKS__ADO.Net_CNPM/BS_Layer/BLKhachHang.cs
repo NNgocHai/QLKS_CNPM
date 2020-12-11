@@ -22,6 +22,11 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         {
             return db.ExecuteQueryDataSet(cmd, "KHACHHANG_LayKhachHang");
         }
+        public DataSet ThongTinKhachHang(string MaPhong)
+        {
+            cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
+            return db.ExecuteQueryDataSet(cmd, "KHACHHANG_ThongTinKhachHang");
+        }
 
         public bool ThemKhachHang(string MaKH, string Ten, string DiaChi, string SDT, string CMND, string GioiTinh, string TinhTrang, ref string err)
         {
