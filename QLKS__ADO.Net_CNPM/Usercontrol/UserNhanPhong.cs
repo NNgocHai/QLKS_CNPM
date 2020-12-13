@@ -34,13 +34,10 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.btnSua.Enabled = true;
             this.btnXoa.Enabled = true;
             this.btnLuu.Enabled = false;
-
-
             this.btnHuyBo.Enabled = false;
             this.txtPTP.Enabled = false;
             this.txtMaPhong.Enabled = false;
             this.txtTenKH.Enabled = false;
-
         }
         public void Default_txt()
         {

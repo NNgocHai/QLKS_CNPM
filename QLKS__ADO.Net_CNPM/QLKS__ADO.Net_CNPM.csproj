@@ -56,6 +56,7 @@
     <Compile Include="BS_Layer\BLPhieuDatPhong.cs" />
     <Compile Include="BS_Layer\BLPhieuNhanPhong.cs" />
     <Compile Include="BS_Layer\BLPhong.cs" />
+    <Compile Include="BS_Layer\BLSuDungDV.cs" />
     <Compile Include="BusinessObject\Phong.cs" />
     <Compile Include="CSDL_KHACHSANDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -125,6 +126,12 @@
     <Compile Include="Usercontrol\UserNhanPhong.Designer.cs">
       <DependentUpon>UserNhanPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usercontrol\UserSuDungDV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\UserSuDungDV.Designer.cs">
+      <DependentUpon>UserSuDungDV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usercontrol\UserThongTinKH.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usercontrol\UserNhanPhong.resx">
       <DependentUpon>UserNhanPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\UserSuDungDV.resx">
+      <DependentUpon>UserSuDungDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usercontrol\UserThongTinKH.resx">
       <DependentUpon>UserThongTinKH.cs</DependentUpon>

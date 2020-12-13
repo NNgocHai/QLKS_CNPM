@@ -42,7 +42,17 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnDVSuDung_Click(object sender, EventArgs e)
         {
+            UserSuDungDV userControl = new UserSuDungDV(MaPhong);
 
+
+            if (!pnlForm.Controls.Contains(userControl))
+            {
+                pnlForm.Controls.Add(userControl);
+                userControl.Dock = DockStyle.Fill;
+                userControl.BringToFront();
+            }
+            else
+                userControl.BringToFront();
         }
 
         private void btnTTKH_Click(object sender, EventArgs e)

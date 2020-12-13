@@ -222,6 +222,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.Button btnThongTinPhong;
         private System.Windows.Forms.Panel pnlForm;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private Usercontrol.UserThongTinPhong userThongTinPhong1;
+        //private Usercontrol.UserThongTinPhong userThongTinPhong1;
     }
 }

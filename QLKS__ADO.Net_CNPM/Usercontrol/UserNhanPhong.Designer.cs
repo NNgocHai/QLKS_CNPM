@@ -62,7 +62,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.label15 = new System.Windows.Forms.Label();
             this.tctMatKhau = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.dtNgayTraTT = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.dtNgayTraDK = new System.Windows.Forms.DateTimePicker();
@@ -407,16 +406,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.label1.Text = "Mã KH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(157, 493);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(749, 17);
-            this.label11.TabIndex = 185;
-            this.label11.Text = "PTP.MA_PTP,PTP.MA_PDP,PTP.MA_KH,HOTEN_KH,ctPTP.MA_PHONG,NGAYNHAN,NGAYTRA_DK,NGAYT" +
-    "RA_TT";
-            // 
             // dtNgayTraTT
             // 
             this.dtNgayTraTT.Location = new System.Drawing.Point(805, 111);
@@ -462,7 +451,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dtNgayTraTT);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtPTP);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPDP);
@@ -524,7 +512,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label tctMatKhau;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtNgayTraTT;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtNgayTraDK;

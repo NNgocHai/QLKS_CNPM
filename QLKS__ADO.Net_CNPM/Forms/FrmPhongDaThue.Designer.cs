@@ -30,6 +30,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnThongTinPhong = new System.Windows.Forms.Button();
             this.pnlForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,17 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.pnlMenu.Size = new System.Drawing.Size(297, 731);
             this.pnlMenu.TabIndex = 10;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(129, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 26);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Thông tin";
+            // 
             // btnDatPhong
             // 
             this.btnDatPhong.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -72,6 +83,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnDatPhong.Size = new System.Drawing.Size(110, 69);
             this.btnDatPhong.TabIndex = 27;
             this.btnDatPhong.UseVisualStyleBackColor = false;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // label3
             // 
@@ -126,6 +138,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnDVSuDung.Size = new System.Drawing.Size(110, 69);
             this.btnDVSuDung.TabIndex = 19;
             this.btnDVSuDung.UseVisualStyleBackColor = false;
+            this.btnDVSuDung.Click += new System.EventHandler(this.btnDVSuDung_Click);
             // 
             // btnTTKH
             // 
@@ -136,6 +149,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnTTKH.Size = new System.Drawing.Size(110, 69);
             this.btnTTKH.TabIndex = 20;
             this.btnTTKH.UseVisualStyleBackColor = false;
+            this.btnTTKH.Click += new System.EventHandler(this.btnTTKH_Click);
             // 
             // btnThanhToan
             // 
@@ -146,6 +160,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThanhToan.Size = new System.Drawing.Size(110, 69);
             this.btnThanhToan.TabIndex = 21;
             this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // btnThongTinPhong
             // 
@@ -156,6 +171,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThongTinPhong.Size = new System.Drawing.Size(110, 69);
             this.btnThongTinPhong.TabIndex = 18;
             this.btnThongTinPhong.UseVisualStyleBackColor = false;
+            this.btnThongTinPhong.Click += new System.EventHandler(this.btnThongTinPhong_Click);
             // 
             // pnlForm
             // 
@@ -166,17 +182,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.pnlForm.Name = "pnlForm";
             this.pnlForm.Size = new System.Drawing.Size(1174, 731);
             this.pnlForm.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(129, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 26);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Thông tin";
             // 
             // FrmPhongDaThue
             // 

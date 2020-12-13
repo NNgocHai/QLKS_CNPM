@@ -100,7 +100,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 }
                 else
                 {
-                    FrmPhongDaThue frmPhongTrong = new FrmPhongDaThue();
+                    FrmPhongDaThue frmPhongTrong = new FrmPhongDaThue(this);
                     frmPhongTrong.ShowDialog();
                 }
             }
