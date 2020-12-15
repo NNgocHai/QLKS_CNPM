@@ -23,6 +23,11 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
             return db.ExecuteQueryDataSet(cmd, "HOADONDV_LayThongTin");
         }
+        public DataSet ThongTinHDDV_TuPTP(string MaPTP)
+        {
+            cmd.Parameters.Add("@MaPTP", SqlDbType.VarChar).Value = MaPTP;
+            return db.ExecuteQueryDataSet(cmd, "HOADONDV_LayThongTinTuPTP");
+        }
         public DataSet OrderForThem(string MaPhong,string MaDV)//0
         {
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;

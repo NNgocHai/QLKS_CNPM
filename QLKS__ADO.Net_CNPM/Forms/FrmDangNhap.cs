@@ -16,9 +16,11 @@ namespace QLKS__ADO.Net_CNPM
     public partial class FrmDangNhap : Form
     {
         DataTable dtUser = null;
-        
         BLDangNhap BLDN = null;
         int time = 0;
+        public string dataUser;
+        string dataPassword;
+        FrmMain frmMain = null;
 
         public FrmDangNhap()
         {
@@ -31,7 +33,14 @@ namespace QLKS__ADO.Net_CNPM
             traloi = MessageBox.Show("Chắc không?", "Trả lời",
             MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (traloi == DialogResult.OK)
-                Close();
+            {
+                this.Hide();
+                frmMain = new FrmMain("User","0");
+                frmMain.ShowDialog();
+
+                this.Close();
+            }
+            
         }
 
         private void grbTTDN_Enter(object sender, EventArgs e)
@@ -44,34 +53,24 @@ namespace QLKS__ADO.Net_CNPM
             string user = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
             BLDN = new BLDangNhap();
-            var phanquyen = BLDN.LayPhanQuyen(txtUser.Text.Trim());
+            string phanquyen = BLDN.LayPhanQuyen(txtUser.Text.Trim()).ToString();
             for (int i = 0; i < dtUser.Rows.Count; i++)
             {
-                string dataUser = dtUser.Rows[i][0].ToString().Trim();
-                string dataPassword = dtUser.Rows[i][1].ToString().Trim();
+                dataUser = dtUser.Rows[i][0].ToString().Trim();
+                dataPassword = dtUser.Rows[i][1].ToString().Trim();
                 if (user == dataUser && password == dataPassword)
                 {
-                    if (phanquyen.Equals(1))
-                        Admin();
-                    else
-                        User();
-                    FrmMain.bIsLogin = true;
+                    frmMain = new FrmMain(dataUser, phanquyen);
+                    this.Hide();
+                    frmMain.ShowDialog();
                     this.Close();
                     return;
                 }
             }
             txtUser.Focus();
             MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            
+
         }
-        public void Admin()
-        { }
-        public void User()
-        { }
-        
-
-        
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             time++;

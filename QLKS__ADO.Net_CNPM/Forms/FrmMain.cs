@@ -17,16 +17,37 @@ namespace QLKS__ADO.Net_CNPM.Forms
     public partial class FrmMain : DevComponents.DotNetBar.Office2007RibbonForm
     {
         string err;
-        public static bool bIsLogin = false;
+        //public static bool bIsLogin = false;
         DataTable DTP = null;
         BLMain BLM = null;
+        public string User;
 
         public string MaPhong;
         public string TinhTrangPhong;
 
-        public FrmMain()
+        public FrmMain(string User,string Quyen)
         {
             InitializeComponent();
+            this.User = User;
+            if (Quyen == "1")
+                NhanVien();
+            else if (Quyen == "2")
+                Admin();
+            else
+                Default(); 
+        }
+        private void Admin()
+        {
+          
+        }
+        private void NhanVien()
+        {
+            btnKhachHang.Enabled = false;
+            btnLoaiPhong.Enabled = false;
+        }
+        private void Default()
+        {
+            btnDangXuat.Enabled = false;
         }
         public void LoadData()
         {
@@ -119,8 +140,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            
             FrmDangNhap frmDangNhap = new FrmDangNhap();
+            this.Hide();
             frmDangNhap.ShowDialog();
+            this.Close();
+ 
         }
 
         private void btnNguoiDung_Click(object sender, EventArgs e)
@@ -131,7 +156,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void buttonPhong_Click(object sender, EventArgs e)
         {
-            FrmPhong frmPhong = new FrmPhong();
+            FrmPhong frmPhong = new FrmPhong(this);
             frmPhong.ShowDialog();
         }
 

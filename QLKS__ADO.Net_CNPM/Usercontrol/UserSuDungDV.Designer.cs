@@ -30,15 +30,8 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSuDungDV));
-            this.btnTimKiemDV = new System.Windows.Forms.Button();
             this.txtTenDV = new System.Windows.Forms.TextBox();
             this.dgvDVSD = new System.Windows.Forms.DataGridView();
-            this.MAHDDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MADV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TONGTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.MA_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,21 +39,15 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.GIADV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Them = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Giam = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnTimKiemDV = new System.Windows.Forms.Button();
+            this.MAHDDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA__dv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVSD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnTimKiemDV
-            // 
-            this.btnTimKiemDV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDV.BackgroundImage")));
-            this.btnTimKiemDV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTimKiemDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemDV.Location = new System.Drawing.Point(692, 36);
-            this.btnTimKiemDV.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiemDV.Name = "btnTimKiemDV";
-            this.btnTimKiemDV.Size = new System.Drawing.Size(41, 31);
-            this.btnTimKiemDV.TabIndex = 100;
-            this.btnTimKiemDV.UseVisualStyleBackColor = true;
             // 
             // txtTenDV
             // 
@@ -81,10 +68,9 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvDVSD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MAHDDV,
             this.MAPTP,
-            this.MADV,
+            this.MA__dv,
             this.SOLUONG,
-            this.THANHTEN,
-            this.TONGTIEN});
+            this.THANHTEN});
             this.dgvDVSD.Location = new System.Drawing.Point(67, 420);
             this.dgvDVSD.Name = "dgvDVSD";
             this.dgvDVSD.RowHeadersWidth = 51;
@@ -92,48 +78,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvDVSD.Size = new System.Drawing.Size(1031, 270);
             this.dgvDVSD.TabIndex = 101;
             this.dgvDVSD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDVSD_CellClick);
-            // 
-            // MAHDDV
-            // 
-            this.MAHDDV.DataPropertyName = "MA_HOADONDV";
-            this.MAHDDV.HeaderText = "Mã HDDV";
-            this.MAHDDV.MinimumWidth = 6;
-            this.MAHDDV.Name = "MAHDDV";
-            // 
-            // MAPTP
-            // 
-            this.MAPTP.DataPropertyName = "MA_PTP";
-            this.MAPTP.HeaderText = "Mã PTP";
-            this.MAPTP.MinimumWidth = 6;
-            this.MAPTP.Name = "MAPTP";
-            // 
-            // MADV
-            // 
-            this.MADV.DataPropertyName = "MA_DV";
-            this.MADV.HeaderText = "Mã DV";
-            this.MADV.MinimumWidth = 6;
-            this.MADV.Name = "MADV";
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            // 
-            // THANHTEN
-            // 
-            this.THANHTEN.DataPropertyName = "THANHTIEN";
-            this.THANHTEN.HeaderText = "Tiền DV";
-            this.THANHTEN.MinimumWidth = 6;
-            this.THANHTEN.Name = "THANHTEN";
-            // 
-            // TONGTIEN
-            // 
-            this.TONGTIEN.DataPropertyName = "TONGTIEN";
-            this.TONGTIEN.HeaderText = "Tổng tiền";
-            this.TONGTIEN.MinimumWidth = 6;
-            this.TONGTIEN.Name = "TONGTIEN";
             // 
             // label2
             // 
@@ -199,6 +143,53 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.Giam.MinimumWidth = 6;
             this.Giam.Name = "Giam";
             // 
+            // btnTimKiemDV
+            // 
+            this.btnTimKiemDV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTimKiemDV.BackgroundImage")));
+            this.btnTimKiemDV.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTimKiemDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemDV.Location = new System.Drawing.Point(692, 36);
+            this.btnTimKiemDV.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTimKiemDV.Name = "btnTimKiemDV";
+            this.btnTimKiemDV.Size = new System.Drawing.Size(41, 31);
+            this.btnTimKiemDV.TabIndex = 100;
+            this.btnTimKiemDV.UseVisualStyleBackColor = true;
+            // 
+            // MAHDDV
+            // 
+            this.MAHDDV.DataPropertyName = "MA_HOADONDV";
+            this.MAHDDV.HeaderText = "Mã HDDV";
+            this.MAHDDV.MinimumWidth = 6;
+            this.MAHDDV.Name = "MAHDDV";
+            // 
+            // MAPTP
+            // 
+            this.MAPTP.DataPropertyName = "MA_PTP";
+            this.MAPTP.HeaderText = "Mã PTP";
+            this.MAPTP.MinimumWidth = 6;
+            this.MAPTP.Name = "MAPTP";
+            // 
+            // MA__dv
+            // 
+            this.MA__dv.DataPropertyName = "MA_DV";
+            this.MA__dv.HeaderText = "Mã dịch vụ";
+            this.MA__dv.MinimumWidth = 6;
+            this.MA__dv.Name = "MA__dv";
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            // 
+            // THANHTEN
+            // 
+            this.THANHTEN.DataPropertyName = "THANHTIEN";
+            this.THANHTEN.HeaderText = "Tiền DV";
+            this.THANHTEN.MinimumWidth = 6;
+            this.THANHTEN.Name = "THANHTEN";
+            // 
             // UserSuDungDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -224,17 +215,16 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.TextBox txtTenDV;
         private System.Windows.Forms.DataGridView dgvDVSD;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAHDDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAPTP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MADV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn THANHTEN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TONGTIEN;
         private System.Windows.Forms.DataGridView dgvDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_DV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIADV;
         private System.Windows.Forms.DataGridViewButtonColumn Them;
         private System.Windows.Forms.DataGridViewButtonColumn Giam;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAHDDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAPTP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MA__dv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THANHTEN;
     }
 }

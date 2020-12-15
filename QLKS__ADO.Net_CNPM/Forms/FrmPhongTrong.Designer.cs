@@ -119,6 +119,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.textNhanPhong.Size = new System.Drawing.Size(131, 25);
             this.textNhanPhong.TabIndex = 14;
             this.textNhanPhong.Text = "Nhận Phòng";
+            this.textNhanPhong.Click += new System.EventHandler(this.textNhanPhong_Click);
             // 
             // label1
             // 
@@ -191,7 +192,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.pnlForm.Size = new System.Drawing.Size(1180, 734);
             this.pnlForm.TabIndex = 13;
             // 
-            // FrmPhongDaDat
+            // FrmPhongTrong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,8 +200,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.ClientSize = new System.Drawing.Size(1538, 792);
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlForm);
-            this.Name = "FrmPhongDaDat";
-            this.Text = "FrmPhongDaDat";
+            this.Name = "FrmPhongTrong";
+            this.Text = "FrmPhongTrong";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);

@@ -48,7 +48,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.txtMaPhong.ResetText();
             this.dtNgayNhanPhong.Value = DateTime.Now;
             this.dtNgayTraDK.Value = DateTime.Now;
-            this.dtNgayTraTT.Value = DateTime.Now;
+
         }
         private void LoadData()
         {
@@ -91,11 +91,12 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                     try
                     {
                         BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.ThemPhieuDatPhong(this.txtPDP.Text, this.txtMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, this.dtNgayTraTT.Value, ref err))
+                        if (BLPTP.ThemPTP(this.txtPDP.Text, this.txtMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã thêm xong!");
                             Default_Button();
+                            
                         }
                         else
                         {
@@ -121,7 +122,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                     try
                     {
                         BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.txtPDP.Text, this.txtMaKH.Text, dtNgayTraDK.Value, this.dtNgayTraTT.Value, ref err))
+                        if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.txtPDP.Text, this.txtMaKH.Text, dtNgayTraDK.Value, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã sửa xong!");
@@ -221,15 +222,13 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             try
             {
                 int r = dgvPTP.CurrentCell.RowIndex;
-                this.txtPTP.Text = dgvPTP.Rows[r].Cells[0].Value.ToString().Trim();
                 this.txtPDP.Text = dgvPTP.Rows[r].Cells[1].Value.ToString().Trim();
+                this.txtPTP.Text = dgvPTP.Rows[r].Cells[0].Value.ToString().Trim();
                 this.txtMaKH.Text = dgvPTP.Rows[r].Cells[2].Value.ToString().Trim();
                 this.txtTenKH.Text = dgvPTP.Rows[r].Cells[3].Value.ToString().Trim();
                 this.txtMaPhong.Text = dgvPTP.Rows[r].Cells[4].Value.ToString().Trim();
                 this.dtNgayNhanPhong.Value = (DateTime)dgvPTP.Rows[r].Cells[5].Value;
-                this.dtNgayTraDK.Value = (DateTime)dgvPTP.Rows[r].Cells[6].Value;
-                this.dtNgayTraTT.Value = (DateTime)dgvPTP.Rows[r].Cells[7].Value;
-            }
+                this.dtNgayTraDK.Value = (DateTime)dgvPTP.Rows[r].Cells[6].Value;            }
             catch
             {
                 this.txtPTP.Text = "";

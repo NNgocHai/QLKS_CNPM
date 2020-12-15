@@ -18,9 +18,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         bool Them;
         string err;
         BLPhong BLP = null;
-        public FrmPhong()
+        FrmMain frmMain;
+        public FrmPhong(FrmMain frmMain)
         {
             InitializeComponent();
+            this.frmMain = frmMain;
         }
         public void Default_Button()
         {
@@ -59,6 +61,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 dgvPhong_CellClick(null, null);
                 LoadTen();
                 LoadTinhTrang();
+                frmMain.LoadData();
             }
             catch (SqlException)
             {

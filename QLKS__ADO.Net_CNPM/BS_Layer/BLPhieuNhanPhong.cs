@@ -24,13 +24,12 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             return db.ExecuteQueryDataSet(cmd, "PHIEUTHUEPHONG_LayThongTin");
         }
         //@MaPDP varchar,@MaKH varchar(10),@MaPhong varchar(10),@NgayTraDK Datetime,@NgayTraTT Datetime
-        public bool ThemPhieuDatPhong(string MaPDP, string MAKH, string MaPhong, DateTime NgayTraDK, DateTime NgayTraTT, ref string err)
+        public bool ThemPTP(string MaPDP, string MAKH, string MaPhong, DateTime NgayTraDK, ref string err)
         {
             cmd.Parameters.Add("@MaPDP", SqlDbType.VarChar).Value = MaPDP;
-            cmd.Parameters.Add("@MAKH", SqlDbType.VarChar).Value = MAKH;
+            cmd.Parameters.Add("@MAKH", SqlDbType.NVarChar).Value = MAKH;
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
             cmd.Parameters.Add("@NgayTraDK", SqlDbType.DateTime).Value = NgayTraDK;
-            cmd.Parameters.Add("@NgayTraTT", SqlDbType.DateTime).Value = NgayTraTT;
             return db.ExecuteProcNonQuery(cmd, "PHIEUTHUEPHONG_ThemPTP", ref err);
         }
         public bool XoaPhieuThuePhong(ref string err, string MaPTP)
@@ -38,14 +37,13 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@MaPTP", SqlDbType.VarChar).Value = MaPTP;
             return db.ExecuteProcNonQuery(cmd, "PHIEUTHUEPHONG_XoaPTP", ref err);
         }// @MaPTP varchar(10),@MaPDP varchar(10),@MaKH varchar(10),@NgayTraDK Datetime,@NgayTraTT Datetime
-        public bool CapNhatPhieuThuePhong(string MaPTP, string MaPDP, string MaKH, DateTime NgayTraDK, DateTime NgayTraTT, ref string err)
+        public bool CapNhatPhieuThuePhong(string MaPTP, string MaPDP, string MaKH, DateTime NgayTraDK, ref string err)
 
         {
             cmd.Parameters.Add("@MaPTP", SqlDbType.VarChar).Value = MaPTP;
             cmd.Parameters.Add("@MaPDP", SqlDbType.VarChar).Value = MaPDP;
             cmd.Parameters.Add("@MaKH", SqlDbType.VarChar).Value = MaKH;
             cmd.Parameters.Add("@NgayTraDK", SqlDbType.DateTime).Value = NgayTraDK;
-            cmd.Parameters.Add("@NgayTraTT", SqlDbType.DateTime).Value = NgayTraTT;
             return db.ExecuteProcNonQuery(cmd, "PHIEUTHUEPHONG_CapNhapPTP", ref err);
         }
 

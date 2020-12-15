@@ -34,14 +34,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.txtPDP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvPTP = new System.Windows.Forms.DataGridView();
-            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAPDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MOPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYTRARDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYTRATT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,10 +54,15 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.label15 = new System.Windows.Forms.Label();
             this.tctMatKhau = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtNgayTraTT = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
             this.dtNgayTraDK = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
+            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAPDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MOPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYTRARDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,8 +113,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.HOTEN,
             this.MOPHONG,
             this.NGAYNHAN,
-            this.NGAYTRARDK,
-            this.NGAYTRATT});
+            this.NGAYTRARDK});
             this.dgvPTP.Location = new System.Drawing.Point(61, 307);
             this.dgvPTP.Name = "dgvPTP";
             this.dgvPTP.RowHeadersWidth = 51;
@@ -125,62 +121,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvPTP.Size = new System.Drawing.Size(1052, 399);
             this.dgvPTP.TabIndex = 180;
             this.dgvPTP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPTP_CellClick);
-            // 
-            // MAPTP
-            // 
-            this.MAPTP.DataPropertyName = "MA_PTP";
-            this.MAPTP.HeaderText = "Mã PTP";
-            this.MAPTP.MinimumWidth = 6;
-            this.MAPTP.Name = "MAPTP";
-            // 
-            // MAPDP
-            // 
-            this.MAPDP.DataPropertyName = "MA_PDP";
-            this.MAPDP.HeaderText = "Mã PDP";
-            this.MAPDP.MinimumWidth = 6;
-            this.MAPDP.Name = "MAPDP";
-            // 
-            // MAKH
-            // 
-            this.MAKH.DataPropertyName = "MA_KH";
-            this.MAKH.HeaderText = "MÃ KH";
-            this.MAKH.MinimumWidth = 6;
-            this.MAKH.Name = "MAKH";
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN_KH";
-            this.HOTEN.HeaderText = "Tên KH";
-            this.HOTEN.MinimumWidth = 6;
-            this.HOTEN.Name = "HOTEN";
-            // 
-            // MOPHONG
-            // 
-            this.MOPHONG.DataPropertyName = "MA_PHONG";
-            this.MOPHONG.HeaderText = "Mã phòng";
-            this.MOPHONG.MinimumWidth = 6;
-            this.MOPHONG.Name = "MOPHONG";
-            // 
-            // NGAYNHAN
-            // 
-            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
-            this.NGAYNHAN.HeaderText = "Ngày nhận phòng";
-            this.NGAYNHAN.MinimumWidth = 6;
-            this.NGAYNHAN.Name = "NGAYNHAN";
-            // 
-            // NGAYTRARDK
-            // 
-            this.NGAYTRARDK.DataPropertyName = "NGAYTRA_DK";
-            this.NGAYTRARDK.HeaderText = "NGÀY TRẢ DỰ KIẾN";
-            this.NGAYTRARDK.MinimumWidth = 6;
-            this.NGAYTRARDK.Name = "NGAYTRARDK";
-            // 
-            // NGAYTRATT
-            // 
-            this.NGAYTRATT.DataPropertyName = "NGAYTRA_TT";
-            this.NGAYTRATT.HeaderText = "Ngày trả thực tế";
-            this.NGAYTRATT.MinimumWidth = 6;
-            this.NGAYTRATT.Name = "NGAYTRATT";
             // 
             // label10
             // 
@@ -406,24 +346,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.label1.Text = "Mã KH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // dtNgayTraTT
-            // 
-            this.dtNgayTraTT.Location = new System.Drawing.Point(805, 111);
-            this.dtNgayTraTT.Name = "dtNgayTraTT";
-            this.dtNgayTraTT.Size = new System.Drawing.Size(200, 22);
-            this.dtNgayTraTT.TabIndex = 187;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(624, 111);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(144, 20);
-            this.label12.TabIndex = 186;
-            this.label12.Text = "Ngày trả thực tế";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // dtNgayTraDK
             // 
             this.dtNgayTraDK.Location = new System.Drawing.Point(805, 72);
@@ -442,6 +364,55 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.label13.Text = "Ngày trả dự kiến";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // MAPTP
+            // 
+            this.MAPTP.DataPropertyName = "MA_PTP";
+            this.MAPTP.HeaderText = "Mã PTP";
+            this.MAPTP.MinimumWidth = 6;
+            this.MAPTP.Name = "MAPTP";
+            // 
+            // MAPDP
+            // 
+            this.MAPDP.DataPropertyName = "MA_PDP";
+            this.MAPDP.HeaderText = "Mã PDP";
+            this.MAPDP.MinimumWidth = 6;
+            this.MAPDP.Name = "MAPDP";
+            // 
+            // MAKH
+            // 
+            this.MAKH.DataPropertyName = "MA_KH";
+            this.MAKH.HeaderText = "MÃ KH";
+            this.MAKH.MinimumWidth = 6;
+            this.MAKH.Name = "MAKH";
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN_KH";
+            this.HOTEN.HeaderText = "Tên KH";
+            this.HOTEN.MinimumWidth = 6;
+            this.HOTEN.Name = "HOTEN";
+            // 
+            // MOPHONG
+            // 
+            this.MOPHONG.DataPropertyName = "MA_PHONG";
+            this.MOPHONG.HeaderText = "Mã phòng";
+            this.MOPHONG.MinimumWidth = 6;
+            this.MOPHONG.Name = "MOPHONG";
+            // 
+            // NGAYNHAN
+            // 
+            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
+            this.NGAYNHAN.HeaderText = "Ngày nhận phòng";
+            this.NGAYNHAN.MinimumWidth = 6;
+            this.NGAYNHAN.Name = "NGAYNHAN";
+            // 
+            // NGAYTRARDK
+            // 
+            this.NGAYTRARDK.DataPropertyName = "NGAYTRA_DK";
+            this.NGAYTRARDK.HeaderText = "NGÀY TRẢ DỰ KIẾN";
+            this.NGAYTRARDK.MinimumWidth = 6;
+            this.NGAYTRARDK.Name = "NGAYTRARDK";
+            // 
             // UserNhanPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,8 +420,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.Controls.Add(this.dtNgayTraDK);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dtNgayTraTT);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.txtPTP);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPDP);
@@ -512,8 +481,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label tctMatKhau;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtNgayTraTT;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dtNgayTraDK;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAPTP;
@@ -523,6 +490,5 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.DataGridViewTextBoxColumn MOPHONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYNHAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTRARDK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NGAYTRATT;
     }
 }

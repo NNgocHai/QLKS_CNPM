@@ -1,4 +1,5 @@
 ﻿using QLKS__ADO.Net_CNPM.Usercontrol;
+using QLKS__ADO.Net_CNPM.BS_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,16 @@ namespace QLKS__ADO.Net_CNPM.Forms
     public partial class FrmPhongDaThue : Form
     {
         string MaPhong;
-
-        public FrmPhongDaThue(FrmMain ID)
+        string User;
+        FrmMain frmMain = null;
+        
+        public FrmPhongDaThue(FrmMain frm)
         {
             InitializeComponent();
-            this.MaPhong = ID.MaPhong;
-            UserThongTinPhong userThongTin = new UserThongTinPhong(ID.MaPhong);
+            this.frmMain = frm;
+            this.MaPhong = frm.MaPhong;
+            this.User = frm.User;
+            UserThongTinPhong userThongTin = new UserThongTinPhong(frm.MaPhong);
             pnlForm.Controls.Add(userThongTin);
             userThongTin.Dock = DockStyle.Fill;
             userThongTin.BringToFront();
@@ -77,7 +82,10 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            FrmMaKhuyenMai frm = new FrmMaKhuyenMai(MaPhong, User);
+            frm.ShowDialog();
+            frmMain.LoadData();
+            this.Close();        
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)
@@ -93,6 +101,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
                 userThongTin.BringToFront();
+        }
+
+        private void btnNhanPhong_Click(object sender, EventArgs e)
+        {
+            FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
+            frm.ShowDialog();
+            frmMain.LoadData();
+            this.Close();
         }
     }
 }

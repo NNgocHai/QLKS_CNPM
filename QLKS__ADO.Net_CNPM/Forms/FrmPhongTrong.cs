@@ -13,13 +13,16 @@ namespace QLKS__ADO.Net_CNPM.Forms
 {
     public partial class FrmPhongTrong : Form
     { 
-        string MaPhong;
-        public FrmPhongTrong(FrmMain ID)
+        public string MaPhong;
+        FrmMain frmMain;
+        public int IsNhanPhong = 0;
+        public FrmPhongTrong(FrmMain frm)
         {
 
             InitializeComponent();
-            this.MaPhong = ID.MaPhong;
-            UserThongTinPhong userThongTin = new UserThongTinPhong(ID.MaPhong);
+            this.frmMain = frm;
+            this.MaPhong = frm.MaPhong;
+            UserThongTinPhong userThongTin = new UserThongTinPhong(frm.MaPhong);
             pnlForm.Controls.Add(userThongTin);
             userThongTin.Dock = DockStyle.Fill;
             userThongTin.BringToFront();
@@ -72,7 +75,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-            UserNhanPhong userControl = new UserNhanPhong(MaPhong);
+            FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
+            frm.ShowDialog();
+            frmMain.LoadData();
+            this.Close();
+/*            UserNhanPhong userControl = new UserNhanPhong(MaPhong);
 
 
             if (!pnlForm.Controls.Contains(userControl))
@@ -82,14 +89,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 userControl.BringToFront();
             }
             else
-                userControl.BringToFront();
+                userControl.BringToFront();*/
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)
         {
-            UserThongTinPhong userThongTin = new UserThongTinPhong(MaPhong);
-            
-            
+            UserThongTinPhong userThongTin = new UserThongTinPhong(MaPhong);            
             if (!pnlForm.Controls.Contains(userThongTin))
             {
                 pnlForm.Controls.Add(userThongTin);
@@ -101,6 +106,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
 
         private void userThongTinPhong1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNhanPhong_Click(object sender, EventArgs e)
         {
 
         }
