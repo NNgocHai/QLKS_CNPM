@@ -17,7 +17,7 @@ namespace QLKS__ADO.Net_CNPM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain("User","0"));
+            Application.Run(new FrmMain("User", "0"));//new FrmMain("User","0")
         }
     }
 }

@@ -42,6 +42,12 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@PhanQuyen", SqlDbType.NVarChar).Value = PhanQuyen;
             return db.ExecuteProcNonQuery(cmd, "NHANVIEN_ThemNhanVien", ref err);
         }
+        public bool DoiMatKhau(ref string err, string TenDangNhap,string MKmoi)
+        {
+            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
+            cmd.Parameters.Add("@MKmoi", SqlDbType.VarChar).Value = MKmoi;
+            return db.ExecuteProcNonQuery(cmd, "NHANVIEN_DoiMatKhau", ref err);
+        }
         public bool XoaNhanVien(ref string err, string TenDangNhap)
         {
             cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
@@ -57,6 +63,11 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@EMail", SqlDbType.NVarChar).Value = EMail;
             cmd.Parameters.Add("@PhanQuyen", SqlDbType.NVarChar).Value = PhanQuyen;
             return db.ExecuteProcNonQuery(cmd, "NHANVIEN_CapNhatNhanVien", ref err);
+        }
+        public object Laypassword(string TenDangNhap)
+        {
+            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
+            return db.MyExecuteScalar(cmd, "Select dbo.NHANVIEN_Laypassword(@Tendn)");
         }
     }
 }

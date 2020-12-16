@@ -78,17 +78,40 @@
     <Compile Include="BS_Layer\BLThanhToan.cs" />
     <Compile Include="BusinessObject\Phong.cs" />
     <Compile Include="DB_Layer\DBMain.cs" />
+    <Compile Include="DoanhThu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DoanhThu.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDoiMatKhau.Designer.cs">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmDichVu.Designer.cs">
       <DependentUpon>FrmDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDoanhThu.Designer.cs">
+      <DependentUpon>FrmDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDoanhThuDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDoanhThuDV.Designer.cs">
+      <DependentUpon>FrmDoanhThuDV.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmKhachHang.cs">
       <SubType>Form</SubType>
@@ -153,23 +176,11 @@
     <Compile Include="Usercontrol\UserDatPhong.Designer.cs">
       <DependentUpon>UserDatPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usercontrol\UserNhanPhong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Usercontrol\UserNhanPhong.Designer.cs">
-      <DependentUpon>UserNhanPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="Usercontrol\UserSuDungDV.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Usercontrol\UserSuDungDV.Designer.cs">
       <DependentUpon>UserSuDungDV.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Usercontrol\UserThanhToan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Usercontrol\UserThanhToan.Designer.cs">
-      <DependentUpon>UserThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Usercontrol\UserThongTinKH.cs">
       <SubType>UserControl</SubType>
@@ -186,8 +197,17 @@
     <EmbeddedResource Include="Forms\FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDoiMatKhau.resx">
+      <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDichVu.resx">
       <DependentUpon>FrmDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDoanhThu.resx">
+      <DependentUpon>FrmDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDoanhThuDV.resx">
+      <DependentUpon>FrmDoanhThuDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKhachHang.resx">
       <DependentUpon>FrmKhachHang.cs</DependentUpon>
@@ -221,17 +241,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportDoanhThurdlc.rdlc" />
+    <EmbeddedResource Include="ReportDV.rdlc" />
     <EmbeddedResource Include="Usercontrol\UserDatPhong.resx">
       <DependentUpon>UserDatPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usercontrol\UserNhanPhong.resx">
-      <DependentUpon>UserNhanPhong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Usercontrol\UserSuDungDV.resx">
       <DependentUpon>UserSuDungDV.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usercontrol\UserThanhToan.resx">
-      <DependentUpon>UserThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usercontrol\UserThongTinKH.resx">
       <DependentUpon>UserThongTinKH.cs</DependentUpon>
@@ -239,6 +255,17 @@
     <EmbeddedResource Include="Usercontrol\UserThongTinPhong.resx">
       <DependentUpon>UserThongTinPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DoanhThu.xsc">
+      <DependentUpon>DoanhThu.xsd</DependentUpon>
+    </None>
+    <None Include="DoanhThu.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DoanhThu.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DoanhThu.xss">
+      <DependentUpon>DoanhThu.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -27,12 +27,12 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         public DataSet UpDateNgayTra(string MaPhong)
         {
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
-            return db.ExecuteQueryDataSet(cmd, "PHIEUTHEPHONG_UpdateNgayTra");
+            return db.ExecuteQueryDataSet(cmd, "PHIEUTHUEPHONG_UpdateNgayTra");
         }
         public DataSet UpDateNgayTra_ChuaThanhToan(string MaPhong)
         {
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
-            return db.ExecuteQueryDataSet(cmd, "PHIEUTHEPHONG_UpdateNgayTra_ChuaThanhToan");
+            return db.ExecuteQueryDataSet(cmd, "PHIEUTHUEPHONG_UpdateNgayTra_ChuaThanhToan");
         }
         public object LayMaPTP(string MaPhong)
         {          
@@ -50,12 +50,12 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
             cmd.Parameters.Add("@TenDangNhap", SqlDbType.VarChar).Value = TenDangNhap;
             cmd.Parameters.Add("@Ma_KMKH", SqlDbType.VarChar).Value = Ma_KMKH;
-            return db.ExecuteQueryDataSet(cmd, "HOADON_THANHTOAN");
+            return db.ExecuteQueryDataSet(cmd, "HOADON_ThemHD");
         }
         public DataSet XoaThongTin(string MaPTP)
         {
             cmd.Parameters.Add("@MaPTP", SqlDbType.VarChar).Value = MaPTP;
-            return db.ExecuteQueryDataSet(cmd, "HOADON_XoaThongTinChuaThanhToan");
+            return db.ExecuteQueryDataSet(cmd, "HOADON_XoaHDChuaThanhToan");
         }
 
     }

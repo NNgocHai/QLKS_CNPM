@@ -61,10 +61,5 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@MaDV", SqlDbType.VarChar).Value = MaDV;
             return db.MyExecuteScalar(cmd, "Select dbo.HOADONDV_CheckForAddData(@MaPhong,@MaDV)");
         }
-        public object LayPhanQuyen(string TenDangNhap)
-        {
-            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
-            return db.MyExecuteScalar(cmd, "Select dbo.NHANVIEN_LayPhanQuyen(@tendn)");
-        }
     }
 }

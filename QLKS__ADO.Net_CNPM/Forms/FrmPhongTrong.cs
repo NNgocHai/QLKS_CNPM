@@ -79,17 +79,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             frm.ShowDialog();
             frmMain.LoadData();
             this.Close();
-/*            UserNhanPhong userControl = new UserNhanPhong(MaPhong);
-
-
-            if (!pnlForm.Controls.Contains(userControl))
-            {
-                pnlForm.Controls.Add(userControl);
-                userControl.Dock = DockStyle.Fill;
-                userControl.BringToFront();
-            }
-            else
-                userControl.BringToFront();*/
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)

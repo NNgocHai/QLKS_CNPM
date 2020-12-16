@@ -17,36 +17,75 @@ namespace QLKS__ADO.Net_CNPM.Forms
     public partial class FrmMain : DevComponents.DotNetBar.Office2007RibbonForm
     {
         string err;
-        //public static bool bIsLogin = false;
         DataTable DTP = null;
         BLMain BLM = null;
         public string User;
+        int IsDangNhap;
+        string PhanQuyen;
 
         public string MaPhong;
         public string TinhTrangPhong;
 
-        public FrmMain(string User,string Quyen)
+        public FrmMain(string User,string PhanQuyen)
         {
             InitializeComponent();
             this.User = User;
-            if (Quyen == "1")
-                NhanVien();
-            else if (Quyen == "2")
-                Admin();
-            else
-                Default(); 
+            this.PhanQuyen = PhanQuyen;
+            LoadDangNhap(User, PhanQuyen);
         }
         private void Admin()
         {
-          
+            btnDangNhap.Enabled = false;
+            btnDangXuat.Enabled = true;
+            btnDoiMatKhau.Enabled = true;
+            btnNguoiDung.Enabled = true;
+            btnRestore.Enabled = true;
+            btnBackup.Enabled = true;
+
+            btnKhachHang.Enabled = true;
+            btnDichVu.Enabled = true;
+            btnPhong.Enabled = true;
+
+            btnDoanhThu.Enabled = true;
+            btnDoanhThuDV.Enabled = true;
         }
         private void NhanVien()
         {
-            btnKhachHang.Enabled = false;
-            btnLoaiPhong.Enabled = false;
+            btnDangNhap.Enabled = false;
+            btnDangXuat.Enabled = true;
+            btnDoiMatKhau.Enabled = true;
+            btnNguoiDung.Enabled = false;
+            btnRestore.Enabled = false;
+            btnBackup.Enabled = false;
+
+            btnKhachHang.Enabled = true;
+            btnDichVu.Enabled = true;
+            btnPhong.Enabled = true;
+
+            btnDoanhThu.Enabled = false;
+            btnDoanhThuDV.Enabled = false;
         }
         private void Default()
         {
+            btnDangNhap.Enabled = true;
+            btnDangXuat.Enabled = false;
+            btnDoiMatKhau.Enabled = false;            
+            btnNguoiDung.Enabled = false;
+            btnRestore.Enabled = false;
+            btnBackup.Enabled = false;
+
+            btnKhachHang.Enabled = false;
+            btnDichVu.Enabled = false;
+            btnPhong.Enabled = false;
+
+            btnDoanhThu.Enabled = false;
+            btnDoanhThuDV.Enabled = false;
+
+
+
+            btnDangXuat.Enabled = false;
+            btnDangXuat.Enabled = false;
+            btnDangXuat.Enabled = false;
             btnDangXuat.Enabled = false;
         }
         public void LoadData()
@@ -109,23 +148,37 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void btn_Click(object sender, EventArgs e)
         {
-            try
+            if (PhanQuyen == "1" || PhanQuyen == "2")
             {
-                MaPhong = ((sender as Button).Tag as Phong).Ma_Phong;
-                TinhTrangPhong = ((sender as Button).Tag as Phong).TinhTrang;
-                if (TinhTrangPhong.Length == 2)
+                try
                 {
-                    
-                    FrmPhongTrong frmPhongDaDat = new FrmPhongTrong(this);
-                    frmPhongDaDat.ShowDialog();
+                    MaPhong = ((sender as Button).Tag as Phong).Ma_Phong;
+                    TinhTrangPhong = ((sender as Button).Tag as Phong).TinhTrang;
+                    if (TinhTrangPhong.Length == 2)
+                    {
+
+                        FrmPhongTrong frmPhongDaDat = new FrmPhongTrong(this);
+                        frmPhongDaDat.ShowDialog();
+                    }
+                    else
+                    {
+                        FrmPhongDaThue frmPhongTrong = new FrmPhongDaThue(this);
+                        frmPhongTrong.ShowDialog();
+                    }
                 }
-                else
-                {
-                    FrmPhongDaThue frmPhongTrong = new FrmPhongDaThue(this);
-                    frmPhongTrong.ShowDialog();
-                }
-            }
-            catch { }
+                catch { }
+            }   
+        }
+        private void LoadDangNhap(string User,string  PhanQuyen)
+        {
+            this.User = User;
+            this.PhanQuyen = PhanQuyen;
+            if (PhanQuyen == "1")
+                NhanVien();
+            else if (PhanQuyen == "2")
+                Admin();
+            else
+                Default();
         }
 
         private void pnlMenu_Paint(object sender, PaintEventArgs e)
@@ -135,16 +188,24 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            LoadData();           
+            LoadData();                       
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            
-            FrmDangNhap frmDangNhap = new FrmDangNhap();
-            this.Hide();
-            frmDangNhap.ShowDialog();
-            this.Close();
+
+            using (FrmDangNhap frmDangNhap = new FrmDangNhap())
+            {
+                //this.Hide();
+                frmDangNhap.ShowDialog();
+                this.IsDangNhap = frmDangNhap.IsDangNhap;
+                if(IsDangNhap == 1)
+                {
+                    this.User = frmDangNhap.dataUser;
+                    this.PhanQuyen = frmDangNhap.PhanQuyen;
+                    this.LoadDangNhap(User, PhanQuyen);
+                }    
+            }
  
         }
 
@@ -204,12 +265,43 @@ namespace QLKS__ADO.Net_CNPM.Forms
             LoadData();
         }
 
-
-
-
         private void fplPhong_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.LoadDangNhap("User", "0");
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            using (FrmDoiMatKhau frmDoiMatKhau = new FrmDoiMatKhau(User))
+            {
+                frmDoiMatKhau.ShowDialog();
+            }
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            using (FrmDoanhThu frmDoanhThu = new FrmDoanhThu())
+            {
+                frmDoanhThu.ShowDialog();
+            }
+        }
+
+        private void buttonItem14_Click(object sender, EventArgs e)
+        {
+            using (FrmDoanhThuDV frmDoanhThuDV = new FrmDoanhThuDV())
+            {
+                frmDoanhThuDV.ShowDialog();
+            }
+        }
+
+        private void buttonQuiDinh_Click(object sender, EventArgs e)
+        {
+
         }
     } 
 }

@@ -44,14 +44,14 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@MaPDP", SqlDbType.VarChar).Value = MaPDP;
             cmd.Parameters.Add("@MaKH", SqlDbType.VarChar).Value = MaKH;
             cmd.Parameters.Add("@NgayTraDK", SqlDbType.DateTime).Value = NgayTraDK;
-            return db.ExecuteProcNonQuery(cmd, "PHIEUTHUEPHONG_CapNhapPTP", ref err);
+            return db.ExecuteProcNonQuery(cmd, "PHIEUTHUEPHONG_CapNhatPTP", ref err);
         }
 
         public object KiemTraThemPTP(string MaPDP,string MaKH)
         {
             cmd.Parameters.Add("@MaPDP", SqlDbType.VarChar).Value = MaPDP;
             cmd.Parameters.Add("@MaKH", SqlDbType.VarChar).Value = MaKH;
-            return db.MyExecuteScalar(cmd, "Select dbo.PhieuThuePhong_KiemTraPDPvsKH(@MaPDP ,@MaKH)");
+            return db.MyExecuteScalar(cmd, "Select dbo.PHIEUTHUEPHONG_KiemTraPDPvsKH(@MaPDP ,@MaKH)");
         }
         public object KiemTraTonTaiPTP(string MaPhong)
         {

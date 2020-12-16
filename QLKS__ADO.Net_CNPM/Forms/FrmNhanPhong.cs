@@ -19,6 +19,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         string err;
         BLPhieuNhanPhong BLPTP = null;
         string MaPhong;
+        public int IsThuePhong=0;
         public FrmNhanPhong(string MaPhong)
         {
             InitializeComponent();
@@ -91,6 +92,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                             LoadData();
                             MessageBox.Show("Đã thêm xong!");
                             Default_Button();
+                            IsThuePhong = 1;
                             this.Close();
                         }
                         else

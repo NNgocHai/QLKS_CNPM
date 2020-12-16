@@ -15,7 +15,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
     {
         BLThanhToan BLTT = null;
 
-
         string User;
         string MaKM;
         string MaPhong;

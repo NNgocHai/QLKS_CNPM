@@ -17,11 +17,14 @@ namespace QLKS__ADO.Net_CNPM
     {
         DataTable dtUser = null;
         BLDangNhap BLDN = null;
-        int time = 0;
-        public string dataUser;
-        string dataPassword;
-        FrmMain frmMain = null;
 
+        public string dataUser;
+
+        public int IsDangNhap=0;
+        public string PhanQuyen;
+        FrmMain frmMain = null;
+        int time = 0;
+        string dataPassword;
         public FrmDangNhap()
         {
             InitializeComponent();
@@ -53,23 +56,22 @@ namespace QLKS__ADO.Net_CNPM
             string user = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
             BLDN = new BLDangNhap();
-            string phanquyen = BLDN.LayPhanQuyen(txtUser.Text.Trim()).ToString();
+            PhanQuyen = BLDN.LayPhanQuyen(txtUser.Text.Trim()).ToString();
             for (int i = 0; i < dtUser.Rows.Count; i++)
             {
                 dataUser = dtUser.Rows[i][0].ToString().Trim();
                 dataPassword = dtUser.Rows[i][1].ToString().Trim();
                 if (user == dataUser && password == dataPassword)
                 {
-                    frmMain = new FrmMain(dataUser, phanquyen);
-                    this.Hide();
-                    frmMain.ShowDialog();
+                    IsDangNhap = 1;
                     this.Close();
-                    return;
+                    break;
                 }
+                
             }
             txtUser.Focus();
-            MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+            if(IsDangNhap == 0)
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);            
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
