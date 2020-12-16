@@ -14,11 +14,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
 {
     public partial class FrmThanhToan : Form
     {
+        public int IsThanhToan =0;
+
         DataTable Data = null;
         BLThanhToan BLTT = null;
         BLSuDungDV BLSDDV = null;
         string MaPhong;
         string MaPTP;
+        
         public FrmThanhToan(string MaPhong, string MaPTP)
         {
             InitializeComponent();
@@ -92,7 +95,10 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             DialogResult DL = MessageBox.Show("Bạn có muốn xóa mẫu tin này?", "xác nhận", MessageBoxButtons.YesNoCancel);
             if (DL == DialogResult.Yes)
+            {
+                IsThanhToan = 1;
                 this.Close();
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -101,6 +107,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             BLTT.XoaThongTin(MaPTP);
             BLTT = new BLThanhToan();
             BLTT.UpDateNgayTra_ChuaThanhToan(MaPhong);
+            IsThanhToan = 0;
             this.Close();
         }
 

@@ -67,7 +67,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnBack.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(33, 600);
+            this.btnBack.Location = new System.Drawing.Point(33, 633);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(178, 72);
             this.btnBack.TabIndex = 236;
@@ -78,7 +78,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.btnThanhToan.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnThanhToan.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.pay;
-            this.btnThanhToan.Location = new System.Drawing.Point(945, 600);
+            this.btnThanhToan.Location = new System.Drawing.Point(945, 633);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(178, 72);
             this.btnThanhToan.TabIndex = 235;

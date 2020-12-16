@@ -13,6 +13,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
 {
     public partial class FrmMaKhuyenMai : Form
     {
+        public int IsThanhToan;
+
         BLThanhToan BLTT = null;
 
         string User;
@@ -58,8 +60,10 @@ namespace QLKS__ADO.Net_CNPM.Forms
             BLTT.UpDateNgayTra(MaPhong);
             BLTT = new BLThanhToan();
             BLTT.ThemHD(MaPhong, User, MaKM);
-            FrmThanhToan frmThanhToan = new FrmThanhToan(MaPhong,MaPTP);
+            FrmThanhToan frmThanhToan = new FrmThanhToan(MaPhong, MaPTP);
+            this.Hide();
             frmThanhToan.ShowDialog();
+            this.IsThanhToan = frmThanhToan.IsThanhToan;           
             this.Close();
         }
     }

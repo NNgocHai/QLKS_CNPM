@@ -84,8 +84,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             FrmMaKhuyenMai frm = new FrmMaKhuyenMai(MaPhong, User);
             frm.ShowDialog();
-            frmMain.LoadData();
-            this.Close();        
+            if (frm.IsThanhToan == 1)
+            {
+                frmMain.LoadData();
+                this.Close();
+            }
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)
@@ -107,8 +110,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
             frm.ShowDialog();
-            frmMain.LoadData();
-            this.Close();
+            if (frm.IsXoaPTP == 1)
+            {
+                frmMain.LoadData();
+                this.Close();
+            }
         }
     }
 }

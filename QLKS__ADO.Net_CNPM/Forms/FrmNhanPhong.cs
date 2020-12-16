@@ -14,12 +14,15 @@ namespace QLKS__ADO.Net_CNPM.Forms
 {
     public partial class FrmNhanPhong : Form
     {
+        public int IsThuePhong = 0; // sử dụng cho phòng trống
+        public int IsXoaPTP = 0; //Sử dụng cho phòng đã thuê
+
         DataTable DTPTP = null;
         bool Them;
         string err;
         BLPhieuNhanPhong BLPTP = null;
         string MaPhong;
-        public int IsThuePhong=0;
+       
         public FrmNhanPhong(string MaPhong)
         {
             InitializeComponent();
@@ -93,7 +96,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                             MessageBox.Show("Đã thêm xong!");
                             Default_Button();
                             IsThuePhong = 1;
-                            this.Close();
+                            IsXoaPTP = 0;
                         }
                         else
                         {
@@ -124,7 +127,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
                             LoadData();
                             MessageBox.Show("Đã sửa xong!");
                             Default_Button();
-
                         }
                         else
                         {
@@ -179,7 +181,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
                     {
                         LoadData();
                         MessageBox.Show("Đã xóa xong");
-                        this.Close();
+                        IsThuePhong = 0;
+                        IsXoaPTP = 1;
                     }
                     else
                     {

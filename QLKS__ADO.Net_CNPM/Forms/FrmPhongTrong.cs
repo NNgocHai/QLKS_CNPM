@@ -77,8 +77,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
             frm.ShowDialog();
-            frmMain.LoadData();
-            this.Close();
+            if (frm.IsThuePhong == 1)
+            {
+                frmMain.LoadData();
+                this.Close();
+            }
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)
