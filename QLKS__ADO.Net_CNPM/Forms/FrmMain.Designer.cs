@@ -193,7 +193,6 @@
             // 
             this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel2.TabIndex = 3;
-            this.ribbonPanel2.Visible = false;
             // 
             // rbbDichVu
             // 
@@ -294,7 +293,7 @@
             this.btnDangNhap});
             this.rbbDanhNhap.Location = new System.Drawing.Point(3, 0);
             this.rbbDanhNhap.Name = "rbbDanhNhap";
-            this.rbbDanhNhap.Size = new System.Drawing.Size(85, 93);
+            this.rbbDanhNhap.Size = new System.Drawing.Size(85, 149);
             this.rbbDanhNhap.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbDanhNhap.TabIndex = 0;
             this.rbbDanhNhap.Text = "Đăng nhập";
@@ -340,7 +339,7 @@
             this.btnDoiMatKhau});
             this.rbbDoiMatKhau.Location = new System.Drawing.Point(176, 0);
             this.rbbDoiMatKhau.Name = "rbbDoiMatKhau";
-            this.rbbDoiMatKhau.Size = new System.Drawing.Size(94, 93);
+            this.rbbDoiMatKhau.Size = new System.Drawing.Size(94, 149);
             this.rbbDoiMatKhau.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbDoiMatKhau.TabIndex = 2;
             this.rbbDoiMatKhau.Text = "Đổi mật khẩu";
@@ -377,7 +376,7 @@
             this.btnNguoiDung});
             this.rbbNguoiDung.Location = new System.Drawing.Point(270, 0);
             this.rbbNguoiDung.Name = "rbbNguoiDung";
-            this.rbbNguoiDung.Size = new System.Drawing.Size(77, 93);
+            this.rbbNguoiDung.Size = new System.Drawing.Size(77, 149);
             this.rbbNguoiDung.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbNguoiDung.TabIndex = 3;
             this.rbbNguoiDung.Text = "Người dùng";
@@ -400,10 +399,10 @@
             this.ribbonPanel1.Controls.Add(this.rbbDangXuat);
             this.ribbonPanel1.Controls.Add(this.rbbDanhNhap);
             this.ribbonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel1.Location = new System.Drawing.Point(0, 56);
+            this.ribbonPanel1.Location = new System.Drawing.Point(0, 0);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel1.Size = new System.Drawing.Size(1016, 96);
+            this.ribbonPanel1.Size = new System.Drawing.Size(1016, 152);
             // 
             // 
             // 
@@ -417,6 +416,7 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
             // Restore
             // 
@@ -435,7 +435,7 @@
             this.btnRestore});
             this.Restore.Location = new System.Drawing.Point(413, 0);
             this.Restore.Name = "Restore";
-            this.Restore.Size = new System.Drawing.Size(77, 93);
+            this.Restore.Size = new System.Drawing.Size(77, 149);
             this.Restore.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.Restore.TabIndex = 5;
             this.Restore.Text = "Restore ";
@@ -472,7 +472,7 @@
             this.btnBackup});
             this.rbbBackup.Location = new System.Drawing.Point(347, 0);
             this.rbbBackup.Name = "rbbBackup";
-            this.rbbBackup.Size = new System.Drawing.Size(66, 93);
+            this.rbbBackup.Size = new System.Drawing.Size(66, 149);
             this.rbbBackup.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbBackup.TabIndex = 4;
             this.rbbBackup.Text = "Back up";
@@ -509,7 +509,7 @@
             this.btnDangXuat});
             this.rbbDangXuat.Location = new System.Drawing.Point(88, 0);
             this.rbbDangXuat.Name = "rbbDangXuat";
-            this.rbbDangXuat.Size = new System.Drawing.Size(88, 93);
+            this.rbbDangXuat.Size = new System.Drawing.Size(88, 149);
             this.rbbDangXuat.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.rbbDangXuat.TabIndex = 1;
             this.rbbDangXuat.Text = "Đăng xuất";
@@ -701,10 +701,10 @@
             this.ribbonPanel3.Controls.Add(this.ribbonBar14);
             this.ribbonPanel3.Controls.Add(this.ribbonBar13);
             this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 56);
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(1016, 152);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1016, 96);
             // 
             // 
             // 
@@ -737,7 +737,7 @@
             this.btnDoanhThuDV});
             this.ribbonBar14.Location = new System.Drawing.Point(97, 0);
             this.ribbonBar14.Name = "ribbonBar14";
-            this.ribbonBar14.Size = new System.Drawing.Size(79, 149);
+            this.ribbonBar14.Size = new System.Drawing.Size(79, 93);
             this.ribbonBar14.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBar14.TabIndex = 1;
             this.ribbonBar14.Text = "Doanh Thu DV";
@@ -775,7 +775,7 @@
             this.btnDoanhThu});
             this.ribbonBar13.Location = new System.Drawing.Point(3, 0);
             this.ribbonBar13.Name = "ribbonBar13";
-            this.ribbonBar13.Size = new System.Drawing.Size(94, 149);
+            this.ribbonBar13.Size = new System.Drawing.Size(94, 93);
             this.ribbonBar13.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonBar13.TabIndex = 0;
             this.ribbonBar13.Text = "Doanh thu";
@@ -798,13 +798,13 @@
             // 
             // ribbonTabItem11
             // 
+            this.ribbonTabItem11.Checked = true;
             this.ribbonTabItem11.Name = "ribbonTabItem11";
             this.ribbonTabItem11.Panel = this.ribbonPanel2;
             this.ribbonTabItem11.Text = "Quản lý";
             // 
             // rbbtHeThong
             // 
-            this.rbbtHeThong.Checked = true;
             this.rbbtHeThong.Name = "rbbtHeThong";
             this.rbbtHeThong.Panel = this.ribbonPanel1;
             this.rbbtHeThong.Text = "Hệ thống";
@@ -998,9 +998,9 @@
             // 
             this.ribbonControl2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl2.CaptionVisible = true;
-            this.ribbonControl2.Controls.Add(this.ribbonPanel1);
-            this.ribbonControl2.Controls.Add(this.ribbonPanel3);
             this.ribbonControl2.Controls.Add(this.ribbonPanel2);
+            this.ribbonControl2.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl2.Controls.Add(this.ribbonPanel1);
             this.ribbonControl2.Controls.Add(this.ribbonPanel4);
             this.ribbonControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -1297,7 +1297,7 @@
             this.fplPhong.Location = new System.Drawing.Point(5, 157);
             this.fplPhong.Margin = new System.Windows.Forms.Padding(4);
             this.fplPhong.Name = "fplPhong";
-            this.fplPhong.Size = new System.Drawing.Size(1013, 493);
+            this.fplPhong.Size = new System.Drawing.Size(1013, 491);
             this.fplPhong.TabIndex = 8;
             this.fplPhong.Click += new System.EventHandler(this.fplPhong_Click);
             // 
@@ -1311,7 +1311,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 655);
+            this.ClientSize = new System.Drawing.Size(1026, 653);
             this.Controls.Add(this.fplPhong);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";

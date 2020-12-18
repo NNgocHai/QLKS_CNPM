@@ -355,6 +355,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1299, 744);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.txtTienThue);

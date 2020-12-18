@@ -30,6 +30,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void InitializeComponent()
         {
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnNhanPhong = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnThongTinPhong = new System.Windows.Forms.Button();
             this.pnlForm = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnNhanPhong = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,28 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(297, 731);
             this.pnlMenu.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Firebrick;
+            this.label2.Location = new System.Drawing.Point(129, 452);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 25);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Phiếu thuê";
+            // 
+            // btnNhanPhong
+            // 
+            this.btnNhanPhong.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnNhanPhong.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.keys1;
+            this.btnNhanPhong.Location = new System.Drawing.Point(13, 433);
+            this.btnNhanPhong.Name = "btnNhanPhong";
+            this.btnNhanPhong.Size = new System.Drawing.Size(110, 69);
+            this.btnNhanPhong.TabIndex = 29;
+            this.btnNhanPhong.UseVisualStyleBackColor = false;
+            this.btnNhanPhong.Click += new System.EventHandler(this.btnNhanPhong_Click);
             // 
             // label1
             // 
@@ -187,28 +209,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.pnlForm.Size = new System.Drawing.Size(1174, 731);
             this.pnlForm.TabIndex = 11;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Firebrick;
-            this.label2.Location = new System.Drawing.Point(129, 452);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 25);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Phiếu thuê";
-            // 
-            // btnNhanPhong
-            // 
-            this.btnNhanPhong.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnNhanPhong.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.keys1;
-            this.btnNhanPhong.Location = new System.Drawing.Point(13, 433);
-            this.btnNhanPhong.Name = "btnNhanPhong";
-            this.btnNhanPhong.Size = new System.Drawing.Size(110, 69);
-            this.btnNhanPhong.TabIndex = 29;
-            this.btnNhanPhong.UseVisualStyleBackColor = false;
-            this.btnNhanPhong.Click += new System.EventHandler(this.btnNhanPhong_Click);
-            // 
             // FrmPhongDaThue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,7 +217,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlForm);
             this.Name = "FrmPhongDaThue";
-            this.Text = "FrmPhongDaThue";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);
