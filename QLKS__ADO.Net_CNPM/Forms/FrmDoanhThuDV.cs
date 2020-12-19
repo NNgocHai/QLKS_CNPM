@@ -19,12 +19,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void FrmDoanhThuDV_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cSDL_KHACHSANDataSet.viewDOANHTHUDV' table. You can move, or remove it, as needed.
+            this.viewDOANHTHUDVTableAdapter.Fill(this.cSDL_KHACHSANDataSet.viewDOANHTHUDV);
             // TODO: This line of code loads data into the 'doanhThu.viewDOANHTHUDV' table. You can move, or remove it, as needed.
-            this.viewDOANHTHUDVTableAdapter.Fill(this.doanhThu.viewDOANHTHUDV);
+            //this.viewDOANHTHUDVTableAdapter.Fill(this.doanhThu.viewDOANHTHUDV);
             // TODO: This line of code loads data into the 'doanhThu.viewDOANHTHUDV' table. You can move, or remove it, as needed.
-            this.viewDOANHTHUDVTableAdapter.Fill(this.doanhThu.viewDOANHTHUDV);
+            //this.viewDOANHTHUDVTableAdapter.Fill(this.doanhThu.viewDOANHTHUDV);
             // TODO: This line of code loads data into the 'doanhThu.viewDOANHTHUDV' table. You can move, or remove it, as needed.
-            this.viewDOANHTHUDVTableAdapter.Fill(this.doanhThu.viewDOANHTHUDV);
+            //this.viewDOANHTHUDVTableAdapter.Fill(this.doanhThu.viewDOANHTHUDV);
             // TODO: This line of code loads data into the 'doanhThu.viewDOANHTHUDV' table. You can move, or remove it, as needed.
             //this.viewDOANHTHUDVTableAdapter.Fill(this.doanhThu.viewDOANHTHUDV);
             // TODO: This line of code loads data into the 'doanhThu.viewDOANHTHU1' table. You can move, or remove it, as needed.
@@ -33,11 +35,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
 
 
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
 

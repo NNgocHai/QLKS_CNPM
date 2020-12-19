@@ -32,38 +32,39 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.doanhThu = new QLKS__ADO.Net_CNPM.DoanhThu();
-            this.viewDOANHTHU1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.viewDOANHTHU1TableAdapter = new QLKS__ADO.Net_CNPM.DoanhThuTableAdapters.viewDOANHTHU1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.doanhThu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewDOANHTHU1BindingSource)).BeginInit();
+            this.cSDL_KHACHSANDataSet = new QLKS__ADO.Net_CNPM.CSDL_KHACHSANDataSet();
+            this.viewDOANHTHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.viewDOANHTHUTableAdapter = new QLKS__ADO.Net_CNPM.CSDL_KHACHSANDataSetTableAdapters.viewDOANHTHUTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.cSDL_KHACHSANDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDOANHTHUBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.viewDOANHTHU1BindingSource;
+            reportDataSource1.Value = this.viewDOANHTHUBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QLKS__ADO.Net_CNPM.ReportDoanhThurdlc.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(41, 28);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "QLKS__ADO.Net_CNPM.ReportDoanhThu.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1318, 642);
+            this.reportViewer1.Size = new System.Drawing.Size(1450, 731);
             this.reportViewer1.TabIndex = 0;
             // 
-            // doanhThu
+            // cSDL_KHACHSANDataSet
             // 
-            this.doanhThu.DataSetName = "DoanhThu";
-            this.doanhThu.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.cSDL_KHACHSANDataSet.DataSetName = "CSDL_KHACHSANDataSet";
+            this.cSDL_KHACHSANDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // viewDOANHTHU1BindingSource
+            // viewDOANHTHUBindingSource
             // 
-            this.viewDOANHTHU1BindingSource.DataMember = "viewDOANHTHU1";
-            this.viewDOANHTHU1BindingSource.DataSource = this.doanhThu;
+            this.viewDOANHTHUBindingSource.DataMember = "viewDOANHTHU";
+            this.viewDOANHTHUBindingSource.DataSource = this.cSDL_KHACHSANDataSet;
             // 
-            // viewDOANHTHU1TableAdapter
+            // viewDOANHTHUTableAdapter
             // 
-            this.viewDOANHTHU1TableAdapter.ClearBeforeFill = true;
+            this.viewDOANHTHUTableAdapter.ClearBeforeFill = true;
             // 
             // FrmDoanhThu
             // 
@@ -75,8 +76,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Name = "FrmDoanhThu";
             this.Text = "FrmDoanhThu";
             this.Load += new System.EventHandler(this.FrmDoanhThu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.doanhThu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewDOANHTHU1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cSDL_KHACHSANDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewDOANHTHUBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -84,8 +85,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private DoanhThu doanhThu;
-        private System.Windows.Forms.BindingSource viewDOANHTHU1BindingSource;
-        private DoanhThuTableAdapters.viewDOANHTHU1TableAdapter viewDOANHTHU1TableAdapter;
+        private CSDL_KHACHSANDataSet cSDL_KHACHSANDataSet;
+        private System.Windows.Forms.BindingSource viewDOANHTHUBindingSource;
+        private CSDL_KHACHSANDataSetTableAdapters.viewDOANHTHUTableAdapter viewDOANHTHUTableAdapter;
     }
 }

@@ -77,12 +77,12 @@
     <Compile Include="BS_Layer\BLSuDungDV.cs" />
     <Compile Include="BS_Layer\BLThanhToan.cs" />
     <Compile Include="BusinessObject\Phong.cs" />
-    <Compile Include="DB_Layer\DBMain.cs" />
-    <Compile Include="DoanhThu.Designer.cs">
+    <Compile Include="CSDL_KHACHSANDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DoanhThu.xsd</DependentUpon>
+      <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DB_Layer\DBMain.cs" />
     <Compile Include="Forms\FrmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,8 +241,8 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportDoanhThurdlc.rdlc" />
-    <EmbeddedResource Include="ReportDV.rdlc" />
+    <EmbeddedResource Include="ReportDoanhThu.rdlc" />
+    <EmbeddedResource Include="ReportDoanhThuDV.rdlc" />
     <EmbeddedResource Include="Usercontrol\UserDatPhong.resx">
       <DependentUpon>UserDatPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,16 +255,16 @@
     <EmbeddedResource Include="Usercontrol\UserThongTinPhong.resx">
       <DependentUpon>UserThongTinPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DoanhThu.xsc">
-      <DependentUpon>DoanhThu.xsd</DependentUpon>
+    <None Include="CSDL_KHACHSANDataSet.xsc">
+      <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DoanhThu.xsd">
-      <SubType>Designer</SubType>
+    <None Include="CSDL_KHACHSANDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DoanhThu.Designer.cs</LastGenOutput>
+      <LastGenOutput>CSDL_KHACHSANDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
-    <None Include="DoanhThu.xss">
-      <DependentUpon>DoanhThu.xsd</DependentUpon>
+    <None Include="CSDL_KHACHSANDataSet.xss">
+      <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

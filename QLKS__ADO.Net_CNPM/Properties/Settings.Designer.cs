@@ -26,22 +26,11 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UPQ3LBB\\NHAI;Initial Catalog=CSDL_KHACHSAN;Integrated Securit" +
-            "y=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ThanhTu\\SQLEXPRESS;Initial Catalog=CSDL_KHACHSAN;Integrated Security=" +
+            "True")]
         public string CSDL_KHACHSANConnectionString {
             get {
                 return ((string)(this["CSDL_KHACHSANConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UPQ3LBB\\NHAI;Initial Catalog=CSDL_KHACHSAN4;Integrated Securi" +
-            "ty=True")]
-        public string CSDL_KHACHSAN4ConnectionString {
-            get {
-                return ((string)(this["CSDL_KHACHSAN4ConnectionString"]));
             }
         }
     }

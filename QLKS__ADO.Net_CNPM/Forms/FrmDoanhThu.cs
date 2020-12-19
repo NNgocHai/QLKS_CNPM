@@ -19,9 +19,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void FrmDoanhThu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cSDL_KHACHSANDataSet.viewDOANHTHU' table. You can move, or remove it, as needed.
+            this.viewDOANHTHUTableAdapter.Fill(this.cSDL_KHACHSANDataSet.viewDOANHTHU);
+            // TODO: This line of code loads data into the 'cSDL_KHACHSANDataSet.viewDOANHTHU' table. You can move, or remove it, as needed.
+            this.viewDOANHTHUTableAdapter.Fill(this.cSDL_KHACHSANDataSet.viewDOANHTHU);
             // TODO: This line of code loads data into the 'doanhThu.viewDOANHTHU1' table. You can move, or remove it, as needed.
-            this.viewDOANHTHU1TableAdapter.Fill(this.doanhThu.viewDOANHTHU1);
 
+            this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
             this.reportViewer1.RefreshReport();
         }
