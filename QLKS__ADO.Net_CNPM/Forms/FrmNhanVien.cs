@@ -20,7 +20,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         BLNhanVien BLNV = null;
         public string User;
         public string PhanQuyen;
-        public int IsXoaTK;
+        public int IsXoaTK =0;
         public FrmNhanVien(string User,string PhanQuyen)
         {
             InitializeComponent();

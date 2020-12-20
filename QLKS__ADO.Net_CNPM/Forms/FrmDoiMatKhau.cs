@@ -30,10 +30,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
             passwword= BLNV.Laypassword(User).ToString();
             if (passwword == txtMatKhauCu.Text)
             {
-                if (txtMatKhauMoi.Text == txtXacNhanMatKhau.Text)
+                BLNV = new BLNhanVien();
+                if (txtMatKhauMoi.Text == txtXacNhanMatKhau.Text && BLNV.DoiMatKhau(ref err, User, txtMatKhauMoi.Text))
                 {
-                    BLNV = new BLNhanVien();
-                    BLNV.DoiMatKhau(ref err, User, txtMatKhauMoi.Text);
                     MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
                 }    
                 else

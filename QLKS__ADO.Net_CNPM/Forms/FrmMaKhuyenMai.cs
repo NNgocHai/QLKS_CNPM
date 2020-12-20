@@ -54,7 +54,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnContinune_Click(object sender, EventArgs e)
         {
-            btnContinune_Click(null, null);
+            btnCheck_Click(null, null);
             BLTT = new BLThanhToan();
             MaPTP = BLTT.LayMaPTP(MaPhong).ToString();
             BLTT = new BLThanhToan();
