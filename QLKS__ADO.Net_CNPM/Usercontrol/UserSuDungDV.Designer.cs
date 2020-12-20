@@ -32,6 +32,11 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSuDungDV));
             this.txtTenDV = new System.Windows.Forms.TextBox();
             this.dgvDVSD = new System.Windows.Forms.DataGridView();
+            this.MAHDDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MA__dv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.MA_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,11 +45,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.Them = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Giam = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnTimKiemDV = new System.Windows.Forms.Button();
-            this.MAHDDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA__dv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVSD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             // txtTenDV
             // 
             this.txtTenDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDV.Location = new System.Drawing.Point(335, 37);
+            this.txtTenDV.Location = new System.Drawing.Point(331, 49);
             this.txtTenDV.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDV.Name = "txtTenDV";
             this.txtTenDV.Size = new System.Drawing.Size(353, 30);
@@ -78,6 +78,41 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvDVSD.Size = new System.Drawing.Size(1031, 270);
             this.dgvDVSD.TabIndex = 101;
             this.dgvDVSD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDVSD_CellClick);
+            // 
+            // MAHDDV
+            // 
+            this.MAHDDV.DataPropertyName = "MA_HOADONDV";
+            this.MAHDDV.HeaderText = "Mã HDDV";
+            this.MAHDDV.MinimumWidth = 6;
+            this.MAHDDV.Name = "MAHDDV";
+            // 
+            // MAPTP
+            // 
+            this.MAPTP.DataPropertyName = "MA_PTP";
+            this.MAPTP.HeaderText = "Mã PTP";
+            this.MAPTP.MinimumWidth = 6;
+            this.MAPTP.Name = "MAPTP";
+            // 
+            // MA__dv
+            // 
+            this.MA__dv.DataPropertyName = "MA_DV";
+            this.MA__dv.HeaderText = "Mã dịch vụ";
+            this.MA__dv.MinimumWidth = 6;
+            this.MA__dv.Name = "MA__dv";
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            // 
+            // THANHTEN
+            // 
+            this.THANHTEN.DataPropertyName = "THANHTIEN";
+            this.THANHTEN.HeaderText = "Tiền DV";
+            this.THANHTEN.MinimumWidth = 6;
+            this.THANHTEN.Name = "THANHTEN";
             // 
             // label2
             // 
@@ -151,44 +186,10 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.btnTimKiemDV.Location = new System.Drawing.Point(692, 36);
             this.btnTimKiemDV.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiemDV.Name = "btnTimKiemDV";
-            this.btnTimKiemDV.Size = new System.Drawing.Size(41, 31);
+            this.btnTimKiemDV.Size = new System.Drawing.Size(64, 56);
             this.btnTimKiemDV.TabIndex = 100;
             this.btnTimKiemDV.UseVisualStyleBackColor = true;
-            // 
-            // MAHDDV
-            // 
-            this.MAHDDV.DataPropertyName = "MA_HOADONDV";
-            this.MAHDDV.HeaderText = "Mã HDDV";
-            this.MAHDDV.MinimumWidth = 6;
-            this.MAHDDV.Name = "MAHDDV";
-            // 
-            // MAPTP
-            // 
-            this.MAPTP.DataPropertyName = "MA_PTP";
-            this.MAPTP.HeaderText = "Mã PTP";
-            this.MAPTP.MinimumWidth = 6;
-            this.MAPTP.Name = "MAPTP";
-            // 
-            // MA__dv
-            // 
-            this.MA__dv.DataPropertyName = "MA_DV";
-            this.MA__dv.HeaderText = "Mã dịch vụ";
-            this.MA__dv.MinimumWidth = 6;
-            this.MA__dv.Name = "MA__dv";
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            // 
-            // THANHTEN
-            // 
-            this.THANHTEN.DataPropertyName = "THANHTIEN";
-            this.THANHTEN.HeaderText = "Tiền DV";
-            this.THANHTEN.MinimumWidth = 6;
-            this.THANHTEN.Name = "THANHTEN";
+            this.btnTimKiemDV.Click += new System.EventHandler(this.btnTimKiemDV_Click);
             // 
             // UserSuDungDV
             // 

@@ -54,6 +54,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 txtTienDV.Text = Data.Rows[0].ItemArray[9].ToString();
                 txtTienThue.Text = Data.Rows[0].ItemArray[10].ToString();
                 txtTenKH.Text = Data.Rows[0].ItemArray[11].ToString();
+                txtTienCoc.Text = Data.Rows[0].ItemArray[12].ToString();
+                txtKMPhong.Text = Data.Rows[0].ItemArray[13].ToString();
+
 
 
                 // Đưa dữ liệu lên DataGridView
@@ -93,7 +96,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            DialogResult DL = MessageBox.Show("Bạn có muốn xóa mẫu tin này?", "xác nhận", MessageBoxButtons.YesNoCancel);
+            DialogResult DL = MessageBox.Show("Bạn có thanh toán không?", "xác nhận", MessageBoxButtons.YesNoCancel);
             if (DL == DialogResult.Yes)
             {
                 IsThanhToan = 1;

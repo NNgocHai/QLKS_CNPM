@@ -14,13 +14,19 @@ namespace QLKS__ADO.Net_CNPM.Forms
 {
     public partial class FrmNhanVien : Form
     {
+        
         DataTable DTNV = null;
         bool Them;
         string err;
         BLNhanVien BLNV = null;
-        public FrmNhanVien()
+        public string User;
+        public string PhanQuyen;
+        public int IsXoaTK = 0;
+        public FrmNhanVien(string User,string PhanQuyen)
         {
             InitializeComponent();
+            this.User = User;
+            this.PhanQuyen = PhanQuyen;
         }
         public void Default_Button()
         {
@@ -118,11 +124,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 {
                     if (BLNV.CapNhatNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtPhanQuyen.Text, ref err))
                     {
+                        if (this.User == txtTenDangNhap.Text)
+                            this.PhanQuyen = txtPhanQuyen.Text;
                         LoadData();
                         MessageBox.Show("Đã sửa xong!");
                         Default_Button();
                         this.txtTenDangNhap.Enabled = true;
-
                     }
                     else
                     {
@@ -174,8 +181,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
                         int r = dgvNhanVien.CurrentCell.RowIndex;
                         if (BLNV.XoaNhanVien(ref err, this.txtTenDangNhap.Text))
                         {
+                            if (this.User == txtTenDangNhap.Text)
+                                this.IsXoaTK = 1;                         
                             LoadData();
                             MessageBox.Show("Đã xóa xong");
+                            if (this.IsXoaTK == 1)                               
+                                this.Close();
                         }
                         else
                         {

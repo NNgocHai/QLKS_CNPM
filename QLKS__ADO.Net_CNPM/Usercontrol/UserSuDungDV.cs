@@ -125,5 +125,15 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         {
 
         }
+
+        private void btnTimKiemDV_Click(object sender, EventArgs e)
+        {
+            BLDV = new BLDichVu();
+            Data = new DataTable();
+            Data.Clear();
+            DataSet ds = BLDV.TimKiemDichVu(txtTenDV.Text);
+            Data = ds.Tables[0];
+            dgvDichVu.DataSource = Data;
+        }
     }
 }
