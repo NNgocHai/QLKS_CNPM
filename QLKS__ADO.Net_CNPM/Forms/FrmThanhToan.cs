@@ -54,6 +54,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 txtTienDV.Text = Data.Rows[0].ItemArray[9].ToString();
                 txtTienThue.Text = Data.Rows[0].ItemArray[10].ToString();
                 txtTenKH.Text = Data.Rows[0].ItemArray[11].ToString();
+                txtTienCoc.Text = Data.Rows[0].ItemArray[12].ToString();
+                txtPhongKM.Text = Data.Rows[0].ItemArray[13].ToString();
+
 
 
                 // Đưa dữ liệu lên DataGridView

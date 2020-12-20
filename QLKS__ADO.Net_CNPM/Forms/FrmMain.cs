@@ -211,8 +211,16 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnNguoiDung_Click(object sender, EventArgs e)
         {
-            FrmNhanVien frmNhanVien = new FrmNhanVien(User,PhanQuyen);
+            FrmNhanVien frmNhanVien = new FrmNhanVien(User, PhanQuyen);
             frmNhanVien.ShowDialog();
+            if (frmNhanVien.IsXoaTK == 1)
+                LoadDangNhap("User", "0");
+            else
+            {
+                this.User = frmNhanVien.User;
+                this.PhanQuyen = frmNhanVien.PhanQuyen;
+                this.LoadDangNhap(User, PhanQuyen);
+            }
         }
 
         private void buttonPhong_Click(object sender, EventArgs e)
