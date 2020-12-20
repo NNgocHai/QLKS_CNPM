@@ -1325,7 +1325,7 @@
             this.fplPhong.Location = new System.Drawing.Point(5, 157);
             this.fplPhong.Margin = new System.Windows.Forms.Padding(4);
             this.fplPhong.Name = "fplPhong";
-            this.fplPhong.Size = new System.Drawing.Size(1013, 482);
+            this.fplPhong.Size = new System.Drawing.Size(1013, 480);
             this.fplPhong.TabIndex = 8;
             this.fplPhong.Click += new System.EventHandler(this.fplPhong_Click);
             // 
@@ -1339,7 +1339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 644);
+            this.ClientSize = new System.Drawing.Size(1026, 642);
             this.Controls.Add(this.fplPhong);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";

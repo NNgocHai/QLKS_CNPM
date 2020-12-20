@@ -123,6 +123,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 {
                     if (BLNV.CapNhatNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtPhanQuyen.Text, ref err))
                     {
+                        if (this.User == txtTenDangNhap.Text)
+                            this.PhanQuyen = txtPhanQuyen.Text;
                         LoadData();
                         MessageBox.Show("Đã sửa xong!");
                         Default_Button();
