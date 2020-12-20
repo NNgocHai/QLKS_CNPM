@@ -96,7 +96,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            DialogResult DL = MessageBox.Show("Bạn có muốn xóa mẫu tin này?", "xác nhận", MessageBoxButtons.YesNoCancel);
+            DialogResult DL = MessageBox.Show("Bạn có muốn thanh toán không", "xác nhận", MessageBoxButtons.YesNoCancel);
             if (DL == DialogResult.Yes)
             {
                 IsThanhToan = 1;
