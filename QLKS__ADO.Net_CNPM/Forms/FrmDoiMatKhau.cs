@@ -31,12 +31,15 @@ namespace QLKS__ADO.Net_CNPM.Forms
             if (passwword == txtMatKhauCu.Text)
             {
                 BLNV = new BLNhanVien();
-                if (txtMatKhauMoi.Text == txtXacNhanMatKhau.Text && BLNV.DoiMatKhau(ref err, User, txtMatKhauMoi.Text))
+                if (txtMatKhauMoi.Text == txtXacNhanMatKhau.Text )
                 {
+                    if( BLNV.DoiMatKhau(ref err, User, txtMatKhauMoi.Text))
                     MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
+                    else
+                        MessageBox.Show(err, "Thông báo");
                 }    
                 else
-                    MessageBox.Show(err, "Thông báo");
+                    MessageBox.Show("Xác nhận lại mật khẩu", "Thông báo");
             }
             else
                 MessageBox.Show("Sai mật khẩu", "Thông báo");

@@ -91,7 +91,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // txtTienThue
             // 
-            this.txtTienThue.Location = new System.Drawing.Point(743, 532);
+            this.txtTienThue.Location = new System.Drawing.Point(743, 490);
             this.txtTienThue.Name = "txtTienThue";
             this.txtTienThue.Size = new System.Drawing.Size(317, 22);
             this.txtTienThue.TabIndex = 234;
@@ -100,7 +100,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(622, 528);
+            this.label12.Location = new System.Drawing.Point(622, 486);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(92, 20);
             this.label12.TabIndex = 233;
@@ -145,7 +145,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // txtTienDV
             // 
-            this.txtTienDV.Location = new System.Drawing.Point(743, 569);
+            this.txtTienDV.Location = new System.Drawing.Point(743, 532);
             this.txtTienDV.Name = "txtTienDV";
             this.txtTienDV.Size = new System.Drawing.Size(317, 22);
             this.txtTienDV.TabIndex = 228;
@@ -154,7 +154,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(603, 571);
+            this.label11.Location = new System.Drawing.Point(603, 534);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(111, 20);
             this.label11.TabIndex = 227;
@@ -354,7 +354,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // txtTienCoc
             // 
-            this.txtTienCoc.Location = new System.Drawing.Point(743, 451);
+            this.txtTienCoc.Location = new System.Drawing.Point(743, 569);
             this.txtTienCoc.Name = "txtTienCoc";
             this.txtTienCoc.Size = new System.Drawing.Size(317, 22);
             this.txtTienCoc.TabIndex = 240;
@@ -363,7 +363,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(630, 449);
+            this.label3.Location = new System.Drawing.Point(630, 567);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 20);
             this.label3.TabIndex = 239;
@@ -372,7 +372,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // txtPhongKM
             // 
-            this.txtPhongKM.Location = new System.Drawing.Point(743, 488);
+            this.txtPhongKM.Location = new System.Drawing.Point(743, 451);
             this.txtPhongKM.Name = "txtPhongKM";
             this.txtPhongKM.Size = new System.Drawing.Size(317, 22);
             this.txtPhongKM.TabIndex = 238;
@@ -381,7 +381,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.b.AutoSize = true;
             this.b.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.b.Location = new System.Drawing.Point(616, 490);
+            this.b.Location = new System.Drawing.Point(616, 453);
             this.b.Name = "b";
             this.b.Size = new System.Drawing.Size(98, 20);
             this.b.TabIndex = 237;
