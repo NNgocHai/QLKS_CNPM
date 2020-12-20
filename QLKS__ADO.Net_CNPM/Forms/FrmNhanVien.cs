@@ -18,9 +18,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
         bool Them;
         string err;
         BLNhanVien BLNV = null;
-        public FrmNhanVien()
+        public string User;
+        public string PhanQuyen;
+        public int IsXoaTK;
+        public FrmNhanVien(string User,string PhanQuyen)
         {
             InitializeComponent();
+            this.User = User;
+            this.PhanQuyen = PhanQuyen;
         }
         public void Default_Button()
         {
@@ -174,8 +179,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
                         int r = dgvNhanVien.CurrentCell.RowIndex;
                         if (BLNV.XoaNhanVien(ref err, this.txtTenDangNhap.Text))
                         {
+                            if (this.User == txtTenDangNhap.Text)
+                                this.IsXoaTK = 1;
                             LoadData();
                             MessageBox.Show("Đã xóa xong");
+                            if (this.IsXoaTK == 1)
+                                this.Close();
                         }
                         else
                         {
