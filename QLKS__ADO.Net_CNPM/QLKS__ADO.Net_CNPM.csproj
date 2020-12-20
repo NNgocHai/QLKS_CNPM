@@ -429,6 +429,19 @@
     <None Include="Resources\back.PNG" />
     <None Include="Resources\Capture.PNG" />
     <None Include="Resources\pay.PNG" />
+    <None Include="Resources\sign-in.png" />
+    <None Include="Resources\back-up.png" />
+    <None Include="Resources\change-password.png" />
+    <None Include="Resources\restore.png" />
+    <None Include="Resources\sign-out.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\room.png" />
+    <None Include="Resources\services.png" />
+    <None Include="Resources\user-list.png" />
+    <None Include="Resources\revenue.png" />
+    <None Include="Resources\revenue-services.png" />
+    <None Include="Resources\contact.png" />
+    <None Include="Resources\rules.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
