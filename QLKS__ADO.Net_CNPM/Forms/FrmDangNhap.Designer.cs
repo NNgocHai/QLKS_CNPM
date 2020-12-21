@@ -141,7 +141,8 @@
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.btnThoat);
             this.Name = "FrmDangNhap";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đăng nhập";
             this.Load += new System.EventHandler(this.FrmDangNhap_Load);
             this.grbTTDN.ResumeLayout(false);
             this.grbTTDN.PerformLayout();

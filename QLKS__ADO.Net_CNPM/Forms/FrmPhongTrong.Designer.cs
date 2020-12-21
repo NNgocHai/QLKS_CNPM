@@ -201,7 +201,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlForm);
             this.Name = "FrmPhongTrong";
-            this.Text = "FrmPhongTrong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Phòng trống";
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);

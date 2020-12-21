@@ -427,7 +427,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvDVSD);
             this.Name = "FrmThanhToan";
-            this.Text = "FrmThanhToan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thanh toán";
             this.Load += new System.EventHandler(this.FrmThanhToan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVSD)).EndInit();
             this.ResumeLayout(false);

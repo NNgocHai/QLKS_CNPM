@@ -355,7 +355,8 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Name = "FrmDichVu";
-            this.Text = "FrmDichVu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Dịch vụ";
             this.Load += new System.EventHandler(this.FrmDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.ResumeLayout(false);

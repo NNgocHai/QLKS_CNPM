@@ -194,7 +194,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.btnHuyBo);
             this.Controls.Add(this.btnDongY);
             this.Name = "FrmDoiMatKhau";
-            this.Text = "FrmDoiMatKhau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Đổi mật khẩu";
             this.ResumeLayout(false);
 
         }

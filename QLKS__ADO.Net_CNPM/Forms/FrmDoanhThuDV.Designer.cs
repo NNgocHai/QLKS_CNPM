@@ -31,13 +31,23 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.cSDL_KHACHSANDataSet = new QLKS__ADO.Net_CNPM.CSDL_KHACHSANDataSet();
             this.viewDOANHTHUDVBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cSDL_KHACHSANDataSet = new QLKS__ADO.Net_CNPM.CSDL_KHACHSANDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.viewDOANHTHUDVTableAdapter = new QLKS__ADO.Net_CNPM.CSDL_KHACHSANDataSetTableAdapters.viewDOANHTHUDVTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.cSDL_KHACHSANDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDOANHTHUDVBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cSDL_KHACHSANDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // viewDOANHTHUDVBindingSource
+            // 
+            this.viewDOANHTHUDVBindingSource.DataMember = "viewDOANHTHUDV";
+            this.viewDOANHTHUDVBindingSource.DataSource = this.cSDL_KHACHSANDataSet;
+            // 
+            // cSDL_KHACHSANDataSet
+            // 
+            this.cSDL_KHACHSANDataSet.DataSetName = "CSDL_KHACHSANDataSet";
+            this.cSDL_KHACHSANDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,16 +62,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.reportViewer1.Size = new System.Drawing.Size(1410, 744);
             this.reportViewer1.TabIndex = 0;
             // 
-            // cSDL_KHACHSANDataSet
-            // 
-            this.cSDL_KHACHSANDataSet.DataSetName = "CSDL_KHACHSANDataSet";
-            this.cSDL_KHACHSANDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // viewDOANHTHUDVBindingSource
-            // 
-            this.viewDOANHTHUDVBindingSource.DataMember = "viewDOANHTHUDV";
-            this.viewDOANHTHUDVBindingSource.DataSource = this.cSDL_KHACHSANDataSet;
-            // 
             // viewDOANHTHUDVTableAdapter
             // 
             this.viewDOANHTHUDVTableAdapter.ClearBeforeFill = true;
@@ -74,10 +74,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.ClientSize = new System.Drawing.Size(1410, 744);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmDoanhThuDV";
-            this.Text = "FrmDoanhThuDV";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Doanh thu Dịch vụ";
             this.Load += new System.EventHandler(this.FrmDoanhThuDV_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.cSDL_KHACHSANDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDOANHTHUDVBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cSDL_KHACHSANDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

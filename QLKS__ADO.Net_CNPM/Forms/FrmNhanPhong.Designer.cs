@@ -446,7 +446,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.label15);
             this.Name = "FrmNhanPhong";
-            this.Text = "FromNhanPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Nhận phòng";
             this.Load += new System.EventHandler(this.FrmNhanPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTP)).EndInit();
             this.ResumeLayout(false);

@@ -99,7 +99,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.txtMaKM);
             this.Controls.Add(this.textNhanPhong);
             this.Name = "FrmMaKhuyenMai";
-            this.Text = "FrmMaKhuyenMai :";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Mã khuyến mãi";
             this.ResumeLayout(false);
             this.PerformLayout();
 

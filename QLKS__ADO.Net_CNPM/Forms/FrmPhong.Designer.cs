@@ -531,7 +531,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvPhong);
             this.Name = "FrmPhong";
-            this.Text = "FrmPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Phòng";
             this.Load += new System.EventHandler(this.FrmPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             this.panel1.ResumeLayout(false);

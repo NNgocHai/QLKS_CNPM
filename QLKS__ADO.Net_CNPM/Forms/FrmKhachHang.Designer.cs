@@ -575,7 +575,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvKhachHang);
             this.Name = "FrmKhachHang";
-            this.Text = "FrmKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.FrmKhachHang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
