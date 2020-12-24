@@ -43,8 +43,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                     txtGioiTinh.Text = DTKH.Rows[0].ItemArray[5].ToString();
                     txtTinhTrang.Text = DTKH.Rows[0].ItemArray[6].ToString();
                 }
-               /* else
-                    MessageBox.Show("Phòng không có người");*/
+               
 
             }
             catch (SqlException)

@@ -36,8 +36,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             try
             {
-                //HD.MA_HOADON,HD.MA_KH,HD.MA_PTP,HD.NGAYLAP,HD.TENDANGNHAP,HD.TONGTIEN,
-                // CTHD.GIAMGIA_KH,CTHD.MA_PHONG,CTHD.SONGAYTHUE,CTHD.TIENDV,CTHD.TIENTHUE,KH.HOTEN_KH
+                
                 BLTT = new BLThanhToan();
                 Data = new DataTable();
                 Data.Clear();
@@ -56,18 +55,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 txtTenKH.Text = Data.Rows[0].ItemArray[11].ToString();
                 txtTienCoc.Text = Data.Rows[0].ItemArray[12].ToString();
                 txtPhongKM.Text = Data.Rows[0].ItemArray[13].ToString();
-
-
-
-                // Đưa dữ liệu lên DataGridView
-                /*txtMaPhong.Text = (string)DTP.Rows[0].ItemArray[0];
-                txtTen.Text = (string)DTP.Rows[0].ItemArray[1];
-                txtGia.Text = DTP.Rows[0].ItemArray[2].ToString();
-                txtTinhTrang.Text = (string)DTP.Rows[0].ItemArray[3];
-                txtSoNguoiToiDa.Text = DTP.Rows[0].ItemArray[4].ToString();
-                txtKhuyenMai.Text = (string)DTP.Rows[0].ItemArray[5];
-                txtMota.Text = (string)DTP.Rows[0].ItemArray[6];*/
-
 
             }
             catch (SqlException)
