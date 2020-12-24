@@ -32,7 +32,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
         public bool XoaDichVu(ref string err, string MaDichVu)
         {
             cmd.Parameters.Add("@madv", SqlDbType.VarChar).Value = MaDichVu;
-            return db.ExecuteProcNonQuery(cmd, "DICHVU_ThemDichVu", ref err);
+            return db.ExecuteProcNonQuery(cmd, "DICHVU_XoaDichVu", ref err);
         }
 
         public bool CapNhatDichVu(string MaDichVu, string TenDV, string Gia, ref string err)
