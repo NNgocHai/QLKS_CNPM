@@ -202,7 +202,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private void dgv_DatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             BLPDP = new BLPhieuDatPhong();
-            try
+            try     
             {
                 int r = dgv_DatPhong.CurrentCell.RowIndex;
                 this.txtMaPDP.Text = dgv_DatPhong.Rows[r].Cells[0].Value.ToString().Trim();
