@@ -21,7 +21,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         string MaKM;
         string MaPhong;
         string MaPTP;
-
         object KT;
         public FrmMaKhuyenMai(string MaPhong,string User)
         {
@@ -54,7 +53,13 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnContinune_Click(object sender, EventArgs e)
         {
-            btnCheck_Click(null, null);
+            BLTT = new BLThanhToan();
+            KT = BLTT.KT_MaKM(this.txtMaKM.Text);
+            if (KT.Equals(1))
+                MaKM = this.txtMaKM.Text;
+            else
+                MaKM = "-1";
+
             BLTT = new BLThanhToan();
             MaPTP = BLTT.LayMaPTP(MaPhong).ToString();
             BLTT = new BLThanhToan();

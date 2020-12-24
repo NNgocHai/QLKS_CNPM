@@ -16,15 +16,16 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
     public partial class FrmMain : DevComponents.DotNetBar.Office2007RibbonForm
     {
+        public string User;
+        public string PhanQuyen;
+        public string MaPhong;
+        public string TinhTrangPhong;
+
         string err;
         DataTable DTP = null;
         BLMain BLM = null;
-        public string User;
         int IsDangNhap;
-        string PhanQuyen;
-
-        public string MaPhong;
-        public string TinhTrangPhong;
+        
 
         public FrmMain(string User,string PhanQuyen)
         {
@@ -258,7 +259,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void buttonDichVu_Click(object sender, EventArgs e)
         {
-            FrmDichVu frmDichVu = new FrmDichVu();
+            FrmDichVu frmDichVu = new FrmDichVu(PhanQuyen);
             frmDichVu.ShowDialog();
         }
 

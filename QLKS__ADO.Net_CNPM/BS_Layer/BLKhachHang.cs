@@ -87,7 +87,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
 
         public DataSet TimKiemKhachHang_TheoGTTT(string TinhTrang, string GioiTinh, ref string err)
         {
-            cmd.Parameters.Add("@tinhtrang", SqlDbType.VarChar).Value = TinhTrang;
+            cmd.Parameters.Add("@tinhtrang", SqlDbType.NVarChar).Value = TinhTrang;
             cmd.Parameters.Add("@gtkh", SqlDbType.NVarChar).Value = GioiTinh;
             return db.ExecuteQueryDataSet(cmd, "KHACHHANG_TimKiemKhachHang_TheoGT_TT");
         }

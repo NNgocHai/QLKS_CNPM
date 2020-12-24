@@ -19,18 +19,31 @@ namespace QLKS__ADO.Net_CNPM.Forms
         string err;
         BLPhong BLP = null;
         FrmMain frmMain;
+        string PhanQuyen;
         public FrmPhong(FrmMain frmMain)
         {
             InitializeComponent();
             this.frmMain = frmMain;
+            this.PhanQuyen = frmMain.PhanQuyen;
         }
         public void Default_Button()
         {
-            this.btnThem.Enabled = true;
-            this.btnSua.Enabled = true;
-            this.btnXoa.Enabled = true;
-            this.btnLuu.Enabled = false;
-            this.btnHuyBo.Enabled = false;
+            if (PhanQuyen == "2")
+            {
+                this.btnThem.Enabled = true;
+                this.btnSua.Enabled = true;
+                this.btnXoa.Enabled = true;
+                this.btnLuu.Enabled = false;
+                this.btnHuyBo.Enabled = false;
+            }
+            else
+            {
+                this.btnThem.Enabled = false;
+                this.btnSua.Enabled = false;
+                this.btnXoa.Enabled = false;
+                this.btnLuu.Enabled = false;
+                this.btnHuyBo.Enabled = false;
+            }
         }
         public void Default_txt()
         {
