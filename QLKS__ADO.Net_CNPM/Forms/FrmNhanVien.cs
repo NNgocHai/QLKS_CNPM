@@ -127,6 +127,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
                             this.PhanQuyen = txtPhanQuyen.Text;
                         LoadData();
                         MessageBox.Show("Đã sửa xong!");
+                        if (this.PhanQuyen == "1")
+                            this.Close();
                         Default_Button();
                         this.txtTenDangNhap.Enabled = true;
 
