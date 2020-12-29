@@ -1,4 +1,5 @@
 ﻿using QLKS__ADO.Net_CNPM.BS_Layer;
+using QLKS__ADO.Net_CNPM.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         {
             InitializeComponent();
             this.MaPhong = MaPhong;
+            
         }
         public void Default_Button()
         {
@@ -36,12 +38,26 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         }
         public void Default_txt()
         {
-            this.txtMaKH.ResetText();
+            this.cbbMaKH.ResetText();
             this.txtSoNguoi.ResetText();
             this.txtTienCoc.ResetText();
         }
+        private void LoadMAKH()
+        {
+            BLKhachHang BLKH = new BLKhachHang();
+            List<string> dsMaKH = new List<string>();
+            dsMaKH.Clear();
+            dsMaKH = BLKH.LayMAKH();
+            cbbMaKH.Items.Clear();
+
+            foreach (string MaKH in dsMaKH)
+            {
+                cbbMaKH.Items.Add(MaKH);
+            }
+        }
         private void LoadData()
         {
+            LoadMAKH();
             try
             {
                 BLPDP = new BLPhieuDatPhong();
@@ -84,7 +100,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
 
                 try
                 {
-                    if (BLPDP.ThemPhieuDatPhong(this.txtMaKH.Text, this.txtSoNguoi.Text, this.MaPhong, this.dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
+                    if (BLPDP.ThemPhieuDatPhong(this.cbbMaKH.Text, this.txtSoNguoi.Text, this.MaPhong, this.dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
                     {
                         LoadData();
                         MessageBox.Show("Đã thêm xong!");
@@ -93,6 +109,9 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                     else
                     {
                         MessageBox.Show(err, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        BLPDP = new BLPhieuDatPhong();
+                        BLPDP.XoaPhieuKhongCoCTPDP(ref err);
+                       
                     }
                 }
                 catch (SqlException)
@@ -107,7 +126,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                 try
                 {
 
-                    if (BLPDP.CapNhatPhieuDatPhong(this.txtMaPDP.Text, this.txtMaKH.Text, this.txtSoNguoi.Text, dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
+                    if (BLPDP.CapNhatPhieuDatPhong(this.txtMaPDP.Text, this.cbbMaKH.Text, this.txtSoNguoi.Text, dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
                     {
                         LoadData();
                         MessageBox.Show("Đã sửa xong!");
@@ -130,6 +149,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private void btnReLoad_Click(object sender, EventArgs e)
         {
             LoadData();
+           
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -146,7 +166,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
 
-            this.txtMaKH.Focus();
+            this.cbbMaKH.Focus();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -196,7 +216,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
 
-            this.txtMaKH.Focus();
+            this.cbbMaKH.Focus();
         }
 
         private void dgv_DatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -206,7 +226,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             {
                 int r = dgv_DatPhong.CurrentCell.RowIndex;
                 this.txtMaPDP.Text = dgv_DatPhong.Rows[r].Cells[0].Value.ToString().Trim();
-                this.txtMaKH.Text = dgv_DatPhong.Rows[r].Cells[1].Value.ToString().Trim();
+                this.cbbMaKH.Text = dgv_DatPhong.Rows[r].Cells[1].Value.ToString().Trim();
                 this.txtMaPhong.Text = dgv_DatPhong.Rows[r].Cells[2].Value.ToString().Trim();
                 this.txtSoNguoi.Text = dgv_DatPhong.Rows[r].Cells[3].Value.ToString().Trim();
                 this.dtNgayNhanPhong.Value = (DateTime)dgv_DatPhong.Rows[r].Cells[5].Value;
@@ -215,12 +235,23 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             }
             catch
             {
-                this.txtMaKH.Text = "";
+                this.cbbMaKH.Text = "";
                 this.txtSoNguoi.Text = "";
                 this.txtTienCoc.Text = "";
                 this.txtMaPhong.Text = "";
                 this.txtMaPDP.Text = "";
 
+            }
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            using (FrmKhachHang frmkh = new FrmKhachHang())
+            {
+                this.Hide();
+                frmkh.ShowDialog();
+                this.Show();
+                cbbMaKH.Text = frmkh.MaKH_focused;
             }
         }
     }

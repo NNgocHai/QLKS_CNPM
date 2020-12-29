@@ -44,10 +44,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnReLoad = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtCMND = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtMa = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -75,6 +73,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.cbbTimKiem = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.txtGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtSDT = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
@@ -243,13 +243,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Location = new System.Drawing.Point(697, 108);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(206, 22);
-            this.txtGioiTinh.TabIndex = 125;
-            // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(207, 104);
@@ -263,13 +256,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(206, 22);
             this.txtCMND.TabIndex = 123;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(697, 25);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(206, 22);
-            this.txtSDT.TabIndex = 122;
             // 
             // txtTen
             // 
@@ -537,12 +523,33 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.comboItem2.Text = "Tình trạng và giới tính";
             // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.FormattingEnabled = true;
+            this.txtGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nũ"});
+            this.txtGioiTinh.Location = new System.Drawing.Point(697, 109);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(206, 24);
+            this.txtGioiTinh.TabIndex = 131;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(697, 24);
+            this.txtSDT.Mask = "0000 000 000";
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(206, 22);
+            this.txtSDT.TabIndex = 132;
+            // 
             // FrmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1460, 608);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.cbbTimKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.panel1);
@@ -555,10 +562,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtCMND);
-            this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtMa);
             this.Controls.Add(this.label12);
@@ -574,10 +579,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvKhachHang);
+            this.KeyPreview = true;
             this.Name = "FrmKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.FrmKhachHang_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmKhachHang_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
@@ -601,10 +608,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.Button btnReLoad;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtCMND;
-        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.TextBox txtMa;
         private System.Windows.Forms.Label label12;
@@ -634,5 +639,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbbTimKiem;
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;
+        private System.Windows.Forms.ComboBox txtGioiTinh;
+        private System.Windows.Forms.MaskedTextBox txtSDT;
     }
 }

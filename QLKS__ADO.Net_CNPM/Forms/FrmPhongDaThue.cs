@@ -14,6 +14,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 {
     public partial class FrmPhongDaThue : Form
     {
+
         string MaPhong;
         string User;
         FrmMain frmMain = null;
@@ -54,7 +55,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             UserSuDungDV userControl = new UserSuDungDV(MaPhong);
 
-
             if (!pnlForm.Controls.Contains(userControl))
             {
                 pnlForm.Controls.Add(userControl);
@@ -63,6 +63,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
                 userControl.BringToFront();
+
         }
 
         private void btnTTKH_Click(object sender, EventArgs e)
@@ -83,11 +84,17 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             FrmMaKhuyenMai frm = new FrmMaKhuyenMai(MaPhong, User);
+            this.Hide();
             frm.ShowDialog();
             if (frm.IsThanhToan == 1)
             {
-                frmMain.LoadData();
+                frmMain.LoadData(frmMain.LoadAll());
                 this.Close();
+            }
+            else
+            {
+                this.Show();
+                this.btnThongTinPhong_Click(null, null);
             }
         }
 
@@ -109,11 +116,17 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
             FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
+            this.Hide();
             frm.ShowDialog();
             if (frm.IsXoaPTP == 1)
             {
-                frmMain.LoadData();
+                frmMain.LoadData(frmMain.LoadAll());
                 this.Close();
+            }
+            else
+            {
+                this.Show();
+                this.btnThongTinPhong_Click(null, null);
             }
         }
     }

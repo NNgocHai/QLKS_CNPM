@@ -11,13 +11,14 @@ namespace QLKS__ADO.Net_CNPM.DB_Layer
     class DBMain
     {
         string ConnStr = "Data Source=DESKTOP-UPQ3LBB\\NHAI;" + "Initial Catalog=CSDL_KHACHSAN;" + "Integrated Security=True";
+        //string ConnStr = "data source = ADMIN\\MSSQLSERVERCSDL; initial catalog = CSDL_KHACHSAN ; uid=uhieubmt;pwd=123";
         //string ConnStr = "Data Source=ThanhTu\\SQLEXPRESS;" + "Initial Catalog=CSDL_KHACHSAN;" + "Integrated Security=True";
         //string ConnStr = "Data Source=HIEU\\SQLEXPRESS;" + "Initial Catalog=CSDL_KHACHSAN;" + "Integrated Security=True";
         SqlConnection conn = null;
         SqlCommand comm = null;
         SqlDataAdapter da = null;
         public DBMain()
-        {
+        {     
             conn = new SqlConnection(ConnStr);
             comm = conn.CreateCommand();
         }

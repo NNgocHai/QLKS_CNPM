@@ -58,5 +58,9 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
             return db.MyExecuteScalar(cmd, "Select dbo.PHIEUTHUEPHONG_TonTaiDuyNhatMotPTP(@MaPhong)");
         }
+        public bool XoaPhieuKhongCoCTPTP(ref string err)
+        {
+            return db.ExecuteProcNonQuery(cmd, "PHIEUTHUEPHONG_XoaPTP_KO_CO_CTPTP", ref err);
+        }
     }
 }

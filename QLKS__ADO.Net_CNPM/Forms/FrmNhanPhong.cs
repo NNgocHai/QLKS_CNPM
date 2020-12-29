@@ -21,6 +21,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         bool Them;
         string err;
         BLPhieuNhanPhong BLPTP = null;
+
         string MaPhong;
        
         public FrmNhanPhong(string MaPhong)
@@ -38,20 +39,22 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtPTP.Enabled = false;
             this.txtMaPhong.Enabled = false;
             this.txtTenKH.Enabled = false;
+            this.cbbPDP.Enabled = false;
         }
         public void Default_txt()
         {
+            
             this.txtPTP.ResetText();
-            this.txtPDP.ResetText();
-            this.txtMaKH.ResetText();
+            this.cbbPDP.ResetText();
+            this.cbbMaKH.ResetText();
             this.txtTenKH.ResetText();
             this.txtMaPhong.ResetText();
-            this.dtNgayNhanPhong.Value = DateTime.Now;
             this.dtNgayTraDK.Value = DateTime.Now;
 
         }
         private void LoadData()
         {
+            LoadMAKH();
             try
             {
                 BLPTP = new BLPhieuNhanPhong();
@@ -71,6 +74,19 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
             }
         }
+        private void LoadMAKH()
+        {
+            BLKhachHang BLKH = new BLKhachHang();
+            List<string> dsMaKH = new List<string>();
+            dsMaKH.Clear();
+            dsMaKH = BLKH.LayMAKH();
+            cbbMaKH.Items.Clear();
+
+            foreach (string MaKH in dsMaKH)
+            {
+                cbbMaKH.Items.Add(MaKH);
+            }
+        }
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
             Default_txt();
@@ -84,13 +100,13 @@ namespace QLKS__ADO.Net_CNPM.Forms
             BLPTP = new BLPhieuNhanPhong();
             if (Them)
             {
-                var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, txtMaKH.Text);
+                var TTHopLe = BLPTP.KiemTraThemPTP(cbbPDP.Text, cbbMaKH.Text);
                 if (TTHopLe.Equals(true))
                 {
                     try
                     {
                         BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.ThemPTP(this.txtPDP.Text, this.txtMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, ref err))
+                        if (BLPTP.ThemPTP(this.cbbPDP.Text, this.cbbMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã thêm xong!");
@@ -101,6 +117,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
                         else
                         {
                             MessageBox.Show(err, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            BLPTP = new BLPhieuNhanPhong();
+                            BLPTP.XoaPhieuKhongCoCTPTP(ref err);
+                           
                         }
                     }
                     catch (SqlException)
@@ -114,15 +133,15 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
             {
-                var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, txtMaKH.Text);
-                if (TTHopLe.Equals(true) || (this.txtPDP.Text == DTPTP.Rows[0].ItemArray[1].ToString()
-                    && this.txtMaKH.Text == DTPTP.Rows[0].ItemArray[2].ToString()))
+                var TTHopLe = BLPTP.KiemTraThemPTP(cbbPDP.Text, cbbMaKH.Text);
+                if (TTHopLe.Equals(true) || (this.cbbPDP.Text == DTPTP.Rows[0].ItemArray[1].ToString()
+                    && this.cbbMaKH.Text == DTPTP.Rows[0].ItemArray[2].ToString()))
                 {
 
                     try
                     {
                         BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.txtPDP.Text, this.txtMaKH.Text, dtNgayTraDK.Value, ref err))
+                        if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.cbbPDP.Text, this.cbbMaKH.Text, dtNgayTraDK.Value, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã sửa xong!");
@@ -163,7 +182,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnSua.Enabled = false;
             this.btnXoa.Enabled = false;
 
-            this.txtMaKH.Focus();
+            this.cbbMaKH.Focus();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -209,7 +228,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.btnThem.Enabled = false;
                 this.btnSua.Enabled = false;
                 this.btnXoa.Enabled = false;
-                this.txtMaKH.Focus();
+                this.cbbMaKH.Focus();
             }
             else
                 MessageBox.Show("Phong Da co Nguoi Thue", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -227,23 +246,39 @@ namespace QLKS__ADO.Net_CNPM.Forms
             try
             {
                 int r = dgvPTP.CurrentCell.RowIndex;
-                this.txtPDP.Text = dgvPTP.Rows[r].Cells[1].Value.ToString().Trim();
+                this.cbbPDP.Text = dgvPTP.Rows[r].Cells[1].Value.ToString().Trim();
                 this.txtPTP.Text = dgvPTP.Rows[r].Cells[0].Value.ToString().Trim();
-                this.txtMaKH.Text = dgvPTP.Rows[r].Cells[2].Value.ToString().Trim();
+                this.cbbMaKH.Text = dgvPTP.Rows[r].Cells[2].Value.ToString().Trim();
                 this.txtTenKH.Text = dgvPTP.Rows[r].Cells[3].Value.ToString().Trim();
                 this.txtMaPhong.Text = dgvPTP.Rows[r].Cells[4].Value.ToString().Trim();
-                this.dtNgayNhanPhong.Value = (DateTime)dgvPTP.Rows[r].Cells[5].Value;
                 this.dtNgayTraDK.Value = (DateTime)dgvPTP.Rows[r].Cells[6].Value;
             }
             catch
             {
                 this.txtPTP.Text = "";
-                this.txtPDP.Text = "";
-                this.txtMaKH.Text = "";
+                this.cbbPDP.Text = "";
+                this.cbbMaKH.Text = "";
                 this.txtTenKH.Text = "";
                 this.txtMaPhong.Text = "";
 
             }
+        }
+
+        private void btnPDP_Click(object sender, EventArgs e)
+        {
+            using (FrmPhieuDatPhong frmpdp = new FrmPhieuDatPhong())
+            {
+                this.Hide();
+                frmpdp.ShowDialog();
+                this.Show();
+                this.cbbPDP.Text = frmpdp.MaPDP_focused;
+                this.cbbMaKH.Text = frmpdp.MaKH_focused;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

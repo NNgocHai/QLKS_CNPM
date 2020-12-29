@@ -84,6 +84,19 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             reader.Dispose();
             return dsGioiTinh;
         }
+        public List<string> LayMAKH()
+        {
+            List<string> dsMaKH = new List<string>();
+            dsMaKH.Clear();
+            SqlDataReader reader = db.MyExcuteProcReader(cmd, "KHACHHANG_LayMAKH");
+            while (reader.Read())
+            {
+                dsMaKH.Add(reader.GetString(0));
+            }
+            db.myDispose();
+            reader.Dispose();
+            return dsMaKH;
+        }
 
         public DataSet TimKiemKhachHang_TheoGTTT(string TinhTrang, string GioiTinh, ref string err)
         {

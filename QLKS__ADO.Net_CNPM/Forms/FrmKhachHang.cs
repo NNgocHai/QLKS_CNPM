@@ -14,10 +14,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
 {
     public partial class FrmKhachHang : Form
     {
+        public string MaKH_focused;
+
         DataTable DTKH = null;
         bool Them;
         string err;
         BLKhachHang BLKH = null;
+        
+        
         public FrmKhachHang()
         {
             InitializeComponent();
@@ -289,7 +293,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.txtCMND.Text = dgvKhachHang.Rows[r].Cells[4].Value.ToString().Trim();
                 this.txtGioiTinh.Text = dgvKhachHang.Rows[r].Cells[5].Value.ToString().Trim();
                 this.txtTinhTrang.Text = dgvKhachHang.Rows[r].Cells[6].Value.ToString().Trim();
-
+                
+                MaKH_focused= dgvKhachHang.Rows[r].Cells[0].Value.ToString().Trim(); //Tự động điền vào cbb đặt phòng
             }
             catch
             {
@@ -320,6 +325,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.cbbTinhTrang.Enabled = true;
                 this.txtTimKiemTen.Enabled = false;
                 //ds = BLKH.TimKiemKhachHangTheoTen(txtTimKiemTen.Text);
+            }
+        }
+
+        private void FrmKhachHang_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }

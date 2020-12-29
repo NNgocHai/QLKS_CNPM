@@ -32,11 +32,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSuDungDV));
             this.txtTenDV = new System.Windows.Forms.TextBox();
             this.dgvDVSD = new System.Windows.Forms.DataGridView();
-            this.MAHDDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MA__dv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.MA_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +40,11 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.Them = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Giam = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnTimKiemDV = new System.Windows.Forms.Button();
+            this.Ma__DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ten_DV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia_dv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVSD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
@@ -66,9 +66,9 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvDVSD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDVSD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDVSD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MAHDDV,
-            this.MAPTP,
-            this.MA__dv,
+            this.Ma__DV,
+            this.Ten_DV,
+            this.Gia_dv,
             this.SOLUONG,
             this.THANHTEN});
             this.dgvDVSD.Location = new System.Drawing.Point(67, 420);
@@ -78,41 +78,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvDVSD.Size = new System.Drawing.Size(1031, 270);
             this.dgvDVSD.TabIndex = 101;
             this.dgvDVSD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDVSD_CellClick);
-            // 
-            // MAHDDV
-            // 
-            this.MAHDDV.DataPropertyName = "MA_HOADONDV";
-            this.MAHDDV.HeaderText = "Mã HDDV";
-            this.MAHDDV.MinimumWidth = 6;
-            this.MAHDDV.Name = "MAHDDV";
-            // 
-            // MAPTP
-            // 
-            this.MAPTP.DataPropertyName = "MA_PTP";
-            this.MAPTP.HeaderText = "Mã PTP";
-            this.MAPTP.MinimumWidth = 6;
-            this.MAPTP.Name = "MAPTP";
-            // 
-            // MA__dv
-            // 
-            this.MA__dv.DataPropertyName = "MA_DV";
-            this.MA__dv.HeaderText = "Mã dịch vụ";
-            this.MA__dv.MinimumWidth = 6;
-            this.MA__dv.Name = "MA__dv";
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            // 
-            // THANHTEN
-            // 
-            this.THANHTEN.DataPropertyName = "THANHTIEN";
-            this.THANHTEN.HeaderText = "Tiền DV";
-            this.THANHTEN.MinimumWidth = 6;
-            this.THANHTEN.Name = "THANHTEN";
             // 
             // label2
             // 
@@ -191,6 +156,41 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.btnTimKiemDV.UseVisualStyleBackColor = true;
             this.btnTimKiemDV.Click += new System.EventHandler(this.btnTimKiemDV_Click);
             // 
+            // Ma__DV
+            // 
+            this.Ma__DV.DataPropertyName = "MA_DV";
+            this.Ma__DV.HeaderText = "Mã dịch vụ";
+            this.Ma__DV.MinimumWidth = 6;
+            this.Ma__DV.Name = "Ma__DV";
+            // 
+            // Ten_DV
+            // 
+            this.Ten_DV.DataPropertyName = "TEN";
+            this.Ten_DV.HeaderText = "Tên dịch vụ";
+            this.Ten_DV.MinimumWidth = 6;
+            this.Ten_DV.Name = "Ten_DV";
+            // 
+            // Gia_dv
+            // 
+            this.Gia_dv.DataPropertyName = "GIA";
+            this.Gia_dv.HeaderText = "Giá";
+            this.Gia_dv.MinimumWidth = 6;
+            this.Gia_dv.Name = "Gia_dv";
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            // 
+            // THANHTEN
+            // 
+            this.THANHTEN.DataPropertyName = "THANHTIEN";
+            this.THANHTEN.HeaderText = "Tiền DV";
+            this.THANHTEN.MinimumWidth = 6;
+            this.THANHTEN.Name = "THANHTEN";
+            // 
             // UserSuDungDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -222,9 +222,9 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.DataGridViewTextBoxColumn GIADV;
         private System.Windows.Forms.DataGridViewButtonColumn Them;
         private System.Windows.Forms.DataGridViewButtonColumn Giam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAHDDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAPTP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MA__dv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ma__DV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten_DV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia_dv;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn THANHTEN;
     }

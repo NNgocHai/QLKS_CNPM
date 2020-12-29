@@ -58,14 +58,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtPhanQuyen = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoVaTen = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.txtPhanQuyen = new System.Windows.Forms.ComboBox();
+            this.txtSDT = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -368,26 +368,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtDiaChi.Size = new System.Drawing.Size(196, 22);
             this.txtDiaChi.TabIndex = 64;
             // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(570, 66);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(196, 22);
-            this.txtSDT.TabIndex = 64;
-            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(570, 107);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(196, 22);
             this.txtEmail.TabIndex = 64;
-            // 
-            // txtPhanQuyen
-            // 
-            this.txtPhanQuyen.Location = new System.Drawing.Point(939, 32);
-            this.txtPhanQuyen.Name = "txtPhanQuyen";
-            this.txtPhanQuyen.Size = new System.Drawing.Size(100, 22);
-            this.txtPhanQuyen.TabIndex = 64;
             // 
             // label2
             // 
@@ -437,18 +423,37 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtTimKiem.Size = new System.Drawing.Size(209, 30);
             this.txtTimKiem.TabIndex = 66;
             // 
+            // txtPhanQuyen
+            // 
+            this.txtPhanQuyen.FormattingEnabled = true;
+            this.txtPhanQuyen.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.txtPhanQuyen.Location = new System.Drawing.Point(939, 23);
+            this.txtPhanQuyen.Name = "txtPhanQuyen";
+            this.txtPhanQuyen.Size = new System.Drawing.Size(121, 24);
+            this.txtPhanQuyen.TabIndex = 69;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(570, 65);
+            this.txtSDT.Mask = "0000 000 000";
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(197, 22);
+            this.txtSDT.TabIndex = 70;
+            // 
             // FrmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtPhanQuyen);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtPhanQuyen);
-            this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtHoVaTen);
             this.Controls.Add(this.txtMatKhau);
@@ -509,9 +514,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.TextBox txtMatKhau;
        // private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtPhanQuyen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoVaTen;
         private System.Windows.Forms.Button btnTimKiem;
@@ -524,5 +527,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn PHANQUYEN;
+        private System.Windows.Forms.ComboBox txtPhanQuyen;
+        private System.Windows.Forms.MaskedTextBox txtSDT;
     }
 }

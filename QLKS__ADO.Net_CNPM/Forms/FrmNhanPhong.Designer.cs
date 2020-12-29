@@ -31,9 +31,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             this.dtNgayTraDK = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtPTP = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtPDP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvPTP = new System.Windows.Forms.DataGridView();
             this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,26 +47,27 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.tctMatKhau = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPTP = new System.Windows.Forms.TextBox();
+            this.cbbPDP = new System.Windows.Forms.ComboBox();
+            this.cbbMaKH = new System.Windows.Forms.ComboBox();
+            this.btnPDP = new System.Windows.Forms.Button();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnReLoad = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dtNgayNhanPhong = new System.Windows.Forms.DateTimePicker();
             this.txtMaPhong = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTenKH = new System.Windows.Forms.TextBox();
-            this.tctMatKhau = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTP)).BeginInit();
             this.SuspendLayout();
             // 
             // dtNgayTraDK
             // 
-            this.dtNgayTraDK.Location = new System.Drawing.Point(800, 101);
+            this.dtNgayTraDK.Location = new System.Drawing.Point(858, 106);
             this.dtNgayTraDK.Name = "dtNgayTraDK";
             this.dtNgayTraDK.Size = new System.Drawing.Size(200, 22);
             this.dtNgayTraDK.TabIndex = 216;
@@ -77,19 +76,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(619, 101);
+            this.label13.Location = new System.Drawing.Point(677, 106);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(146, 20);
             this.label13.TabIndex = 215;
             this.label13.Text = "Ngày trả dự kiến";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txtPTP
-            // 
-            this.txtPTP.Location = new System.Drawing.Point(224, 3);
-            this.txtPTP.Name = "txtPTP";
-            this.txtPTP.Size = new System.Drawing.Size(317, 22);
-            this.txtPTP.TabIndex = 214;
             // 
             // label7
             // 
@@ -102,18 +94,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label7.Text = "Mã phiếu thuê";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // txtPDP
-            // 
-            this.txtPDP.Location = new System.Drawing.Point(224, 114);
-            this.txtPDP.Name = "txtPDP";
-            this.txtPDP.Size = new System.Drawing.Size(317, 22);
-            this.txtPDP.TabIndex = 212;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(92, 116);
+            this.label6.Location = new System.Drawing.Point(92, 31);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 20);
             this.label6.TabIndex = 211;
@@ -261,6 +246,80 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label5.TabIndex = 204;
             this.label5.Text = "ReLoad";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(117, 68);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.TabIndex = 195;
+            this.label2.Text = "Mã Phòng";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // txtTenKH
+            // 
+            this.txtTenKH.Location = new System.Drawing.Point(224, 130);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(317, 22);
+            this.txtTenKH.TabIndex = 194;
+            // 
+            // tctMatKhau
+            // 
+            this.tctMatKhau.AutoSize = true;
+            this.tctMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tctMatKhau.Location = new System.Drawing.Point(137, 132);
+            this.tctMatKhau.Name = "tctMatKhau";
+            this.tctMatKhau.Size = new System.Drawing.Size(72, 20);
+            this.tctMatKhau.TabIndex = 191;
+            this.tctMatKhau.Text = "Tên KH";
+            this.tctMatKhau.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(143, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.TabIndex = 190;
+            this.label1.Text = "Mã KH";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtPTP
+            // 
+            this.txtPTP.Location = new System.Drawing.Point(224, 1);
+            this.txtPTP.Name = "txtPTP";
+            this.txtPTP.Size = new System.Drawing.Size(317, 22);
+            this.txtPTP.TabIndex = 219;
+            // 
+            // cbbPDP
+            // 
+            this.cbbPDP.FormattingEnabled = true;
+            this.cbbPDP.Location = new System.Drawing.Point(224, 29);
+            this.cbbPDP.Name = "cbbPDP";
+            this.cbbPDP.Size = new System.Drawing.Size(317, 24);
+            this.cbbPDP.TabIndex = 220;
+            // 
+            // cbbMaKH
+            // 
+            this.cbbMaKH.FormattingEnabled = true;
+            this.cbbMaKH.Location = new System.Drawing.Point(224, 99);
+            this.cbbMaKH.Name = "cbbMaKH";
+            this.cbbMaKH.Size = new System.Drawing.Size(317, 24);
+            this.cbbMaKH.TabIndex = 222;
+            // 
+            // btnPDP
+            // 
+            this.btnPDP.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.booking;
+            this.btnPDP.Location = new System.Drawing.Point(567, 28);
+            this.btnPDP.Name = "btnPDP";
+            this.btnPDP.Size = new System.Drawing.Size(52, 54);
+            this.btnPDP.TabIndex = 218;
+            this.btnPDP.UseVisualStyleBackColor = true;
+            this.btnPDP.Click += new System.EventHandler(this.btnPDP_Click);
+            // 
             // btnHuyBo
             // 
             this.btnHuyBo.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -340,77 +399,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // dtNgayNhanPhong
-            // 
-            this.dtNgayNhanPhong.Location = new System.Drawing.Point(800, 53);
-            this.dtNgayNhanPhong.Name = "dtNgayNhanPhong";
-            this.dtNgayNhanPhong.Size = new System.Drawing.Size(200, 22);
-            this.dtNgayNhanPhong.TabIndex = 197;
-            // 
             // txtMaPhong
             // 
-            this.txtMaPhong.Location = new System.Drawing.Point(224, 38);
+            this.txtMaPhong.Location = new System.Drawing.Point(224, 68);
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.Size = new System.Drawing.Size(317, 22);
-            this.txtMaPhong.TabIndex = 196;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(117, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
-            this.label2.TabIndex = 195;
-            this.label2.Text = "Mã Phòng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txtTenKH
-            // 
-            this.txtTenKH.Location = new System.Drawing.Point(224, 75);
-            this.txtTenKH.Name = "txtTenKH";
-            this.txtTenKH.Size = new System.Drawing.Size(317, 22);
-            this.txtTenKH.TabIndex = 194;
-            // 
-            // tctMatKhau
-            // 
-            this.tctMatKhau.AutoSize = true;
-            this.tctMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tctMatKhau.Location = new System.Drawing.Point(137, 77);
-            this.tctMatKhau.Name = "tctMatKhau";
-            this.tctMatKhau.Size = new System.Drawing.Size(72, 20);
-            this.tctMatKhau.TabIndex = 191;
-            this.tctMatKhau.Text = "Tên KH";
-            this.tctMatKhau.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(143, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
-            this.label1.TabIndex = 190;
-            this.label1.Text = "Mã KH";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.Location = new System.Drawing.Point(224, 147);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(317, 22);
-            this.txtMaKH.TabIndex = 193;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(619, 53);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(153, 20);
-            this.label15.TabIndex = 192;
-            this.label15.Text = "Ngày nhận phòng";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.txtMaPhong.TabIndex = 223;
             // 
             // FrmNhanPhong
             // 
@@ -418,11 +412,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1156, 684);
+            this.Controls.Add(this.txtMaPhong);
+            this.Controls.Add(this.cbbMaKH);
+            this.Controls.Add(this.cbbPDP);
+            this.Controls.Add(this.txtPTP);
+            this.Controls.Add(this.btnPDP);
             this.Controls.Add(this.dtNgayTraDK);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtPTP);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtPDP);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvPTP);
             this.Controls.Add(this.label10);
@@ -437,14 +434,10 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.dtNgayNhanPhong);
-            this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.tctMatKhau);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMaKH);
-            this.Controls.Add(this.label15);
             this.Name = "FrmNhanPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhận phòng";
@@ -459,9 +452,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private System.Windows.Forms.DateTimePicker dtNgayTraDK;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtPTP;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtPDP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvPTP;
         private System.Windows.Forms.DataGridViewTextBoxColumn MAPTP;
@@ -483,13 +474,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DateTimePicker dtNgayNhanPhong;
-        private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label tctMatKhau;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaKH;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnPDP;
+        private System.Windows.Forms.TextBox txtPTP;
+        private System.Windows.Forms.ComboBox cbbPDP;
+        private System.Windows.Forms.ComboBox cbbMaKH;
+        private System.Windows.Forms.TextBox txtMaPhong;
     }
 }

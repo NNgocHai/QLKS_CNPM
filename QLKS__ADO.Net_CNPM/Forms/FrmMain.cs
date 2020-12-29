@@ -34,6 +34,15 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.PhanQuyen = PhanQuyen;
             LoadDangNhap(User, PhanQuyen);
         }
+        private void defaultcbbTimKiem()
+        {
+            cbbMoTa.ResetText();
+            cbbKhuyenMai.ResetText();
+            cbbGia.ResetText();
+            cbbSoNguoi.ResetText();
+            cbbSoNguoi.ResetText();
+            cbbTinhTrang.ResetText();
+        }
         private void Admin()
         {
             btnDangNhap.Enabled = false;
@@ -46,6 +55,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             btnKhachHang.Enabled = true;
             btnDichVu.Enabled = true;
             btnPhong.Enabled = true;
+            btnDatPhong.Enabled = true;
+            btnHoaDon.Enabled = true;
 
             btnDoanhThu.Enabled = true;
             btnDoanhThuDV.Enabled = true;
@@ -62,9 +73,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             btnKhachHang.Enabled = true;
             btnDichVu.Enabled = true;
             btnPhong.Enabled = true;
+            btnDatPhong.Enabled = true;
+            btnHoaDon.Enabled = false;
 
             btnDoanhThu.Enabled = false;
             btnDoanhThuDV.Enabled = false;
+
         }
         private void Default()
         {
@@ -89,24 +103,24 @@ namespace QLKS__ADO.Net_CNPM.Forms
             btnDangXuat.Enabled = false;
             btnDangXuat.Enabled = false;
         }
-        public void LoadData()
+        public void LoadData(DataTable DTP)
         {
+            LoadTinhTrang();
+            LoadGia();
+            LoadSoNguoi();
+            LoadMoTa();
+            LoadKhuyenMai();
             try
             {
-                DTP = new DataTable();
-                BLM = new BLMain();
-                this.fplPhong.Controls.Clear();
-                DTP.Clear();
-                DataSet ds = BLM.LayPhong();
-                DTP = ds.Tables[0];
+                
                 Button oldbtn = new Button() { Width = 0, Location = new Point(0, 0) };
                 foreach (DataRow dr in DTP.Rows)
                 {
                     Button btn = new Button()
                     {
-                        Width = 100,
-                        Height = 100,
-                        Location = new Point(oldbtn.Location.X + 100, oldbtn.Location.Y)
+                        Width = 110,
+                        Height = 110,
+                        Location = new Point(oldbtn.Location.X + 110, oldbtn.Location.Y)
 
                     };
                     oldbtn = btn;
@@ -145,6 +159,102 @@ namespace QLKS__ADO.Net_CNPM.Forms
             catch (SqlException)
             {
                 MessageBox.Show("Không lấy được nội dung trong bảng PHONG. Lỗi rồi!!!");
+            }
+        }
+
+        public DataTable LoadAll()
+        {
+            DTP = new DataTable();
+            BLM = new BLMain();
+            this.fplPhong.Controls.Clear();
+            DTP.Clear();
+            DataSet ds = BLM.LayPhong();
+            DTP = ds.Tables[0];
+            return DTP;
+        }
+        public DataTable LoadTimKiemNhanh()
+        {
+            DTP = new DataTable();
+            BLM = new BLMain();
+            this.fplPhong.Controls.Clear();
+            DTP.Clear();
+            DataSet ds = BLM.TimKiemNhanh(txtTimKiem.Text);
+            DTP = ds.Tables[0];
+            return DTP;
+        }
+        public DataTable LoadTimKiem()
+        {
+            DTP = new DataTable();
+            BLM = new BLMain();
+            this.fplPhong.Controls.Clear();
+            DTP.Clear();
+            DataSet ds = BLM.TimKiem(cbbGia.Text,cbbTinhTrang.Text,cbbSoNguoi.Text,cbbKhuyenMai.Text,cbbMoTa.Text);
+            DTP = ds.Tables[0];
+            return DTP;
+        }
+        private void LoadTinhTrang()
+        {
+             BLM = new BLMain();
+            List<string> dsTrangThai = new List<string>();
+            dsTrangThai.Clear();
+            dsTrangThai = BLM.LayTinhTrang();
+            cbbTinhTrang.Items.Clear();
+
+            foreach (string TrangThai in dsTrangThai)
+            {
+                cbbTinhTrang.Items.Add(TrangThai);
+            }
+        }
+        private void LoadGia()
+        {
+            BLM = new BLMain();
+            List<string> dsGia = new List<string>();
+            dsGia.Clear();
+            dsGia = BLM.LayGia();
+            cbbGia.Items.Clear();
+
+            foreach (string Gia in dsGia)
+            {
+                cbbGia.Items.Add(Gia);
+            }
+        }
+        private void LoadSoNguoi()
+        {
+            BLM = new BLMain();
+            List<string> dsSoNguoi = new List<string>();
+            dsSoNguoi.Clear();
+            dsSoNguoi = BLM.LaySoNguoi();
+            cbbSoNguoi.Items.Clear();
+
+            foreach (string SoNguoi in dsSoNguoi)
+            {
+                cbbSoNguoi.Items.Add(SoNguoi);
+            }
+        }
+        private void LoadKhuyenMai()
+        {
+            BLM = new BLMain();
+            List<string> dsKhuyenMai = new List<string>();
+            dsKhuyenMai.Clear();
+            dsKhuyenMai = BLM.LayKhuyenMai();
+            cbbKhuyenMai.Items.Clear();
+
+            foreach (string KhuyenMai in dsKhuyenMai)
+            {
+                cbbKhuyenMai.Items.Add(KhuyenMai);
+            }
+        }
+        private void LoadMoTa()
+        {
+            BLM = new BLMain();
+            List<string> dsMoTa = new List<string>();
+            dsMoTa.Clear();
+            dsMoTa = BLM.LayMoTa();
+            cbbMoTa.Items.Clear();
+
+            foreach (string MoTa in dsMoTa)
+            {
+                cbbMoTa.Items.Add(MoTa);
             }
         }
         private void btn_Click(object sender, EventArgs e)
@@ -189,7 +299,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            LoadData();                       
+            LoadData(LoadAll());                       
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -207,6 +317,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                     this.LoadDangNhap(User, PhanQuyen);
                 }    
             }
+            rbbTrangChu_Click(null,null);
  
         }
 
@@ -271,12 +382,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void fplPhong_Paint(object sender, PaintEventArgs e)
         {
-            LoadData();
+            LoadData(LoadAll());
         }
 
         private void fplPhong_Click(object sender, EventArgs e)
         {
-            LoadData();
+            LoadData(LoadAll());
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
@@ -311,6 +422,69 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void buttonQuiDinh_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ribbonControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadData(LoadTimKiem());
+            txtTimKiem.ResetText();
+        }
+
+        private void btnTimKiemNhanh_Click(object sender, EventArgs e)
+        {
+            LoadData(LoadTimKiemNhanh());
+            defaultcbbTimKiem();
+        }
+
+        private void rbbTrangChu_Click(object sender, EventArgs e)
+        {
+             
+
+            if (!pnlMain.Controls.Contains(fplPhong))
+            {
+                pnlMain.Controls.Add(fplPhong);
+                fplPhong.Dock = DockStyle.Fill;
+                fplPhong.BringToFront();
+            }
+            else
+                fplPhong.BringToFront();
+        }
+
+        private void ribbonPanel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
+            LoadData(LoadAll());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            using (FrmPhieuDatPhong frmPhieuDatPhong = new FrmPhieuDatPhong())
+            {
+                frmPhieuDatPhong.ShowDialog();
+            }
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            using (FrmHoaDon frmHoaDon = new FrmHoaDon())
+            {
+                frmHoaDon.ShowDialog();
+                LoadData(LoadAll());
+            }
         }
     } 
 }

@@ -86,6 +86,20 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             reader.Dispose();
             return dsTen;
         }
+        public List<string> LayMaPhong()
+        {
+            List<string> dsMaPhong = new List<string>();
+            dsMaPhong.Clear();
+            SqlDataReader reader = db.MyExcuteProcReader(cmd, "PHONG_LayMaPhong");
+            while (reader.Read())
+            {
+                dsMaPhong.Add(reader.GetString(0));
+            }
+            db.myDispose();
+            reader.Dispose();
+            return dsMaPhong;
+        }
+
         public DataSet TimKiemPhong(string TinhTrang, string Ten, ref string err)
         {
             cmd.Parameters.Add("@tinhtrang", SqlDbType.VarChar).Value = TinhTrang;

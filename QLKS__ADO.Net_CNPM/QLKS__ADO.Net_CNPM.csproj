@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="BS_Layer\BLDangNhap.cs" />
     <Compile Include="BS_Layer\BLDichVu.cs" />
+    <Compile Include="BS_Layer\BLHoaDon.cs" />
     <Compile Include="BS_Layer\BLKhachHang.cs" />
     <Compile Include="BS_Layer\BLMain.cs" />
     <Compile Include="BS_Layer\BLNhanVien.cs" />
@@ -113,6 +114,12 @@
     <Compile Include="Forms\FrmDoanhThuDV.Designer.cs">
       <DependentUpon>FrmDoanhThuDV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHoaDon.Designer.cs">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +143,12 @@
     </Compile>
     <Compile Include="Forms\FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPhieuDatPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPhieuDatPhong.Designer.cs">
+      <DependentUpon>FrmPhieuDatPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmPhong.cs">
       <SubType>Form</SubType>
@@ -209,6 +222,9 @@
     <EmbeddedResource Include="Forms\FrmDoanhThuDV.resx">
       <DependentUpon>FrmDoanhThuDV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmHoaDon.resx">
+      <DependentUpon>FrmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKhachHang.resx">
       <DependentUpon>FrmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmNhanVien.resx">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPhieuDatPhong.resx">
+      <DependentUpon>FrmPhieuDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPhong.resx">
       <DependentUpon>FrmPhong.cs</DependentUpon>
@@ -442,6 +461,8 @@
     <None Include="Resources\revenue-services.png" />
     <None Include="Resources\contact.png" />
     <None Include="Resources\rules.png" />
+    <None Include="Resources\ThemKH.PNG" />
+    <None Include="Resources\booking.PNG" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

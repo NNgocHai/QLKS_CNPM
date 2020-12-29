@@ -74,7 +74,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 dgvPhong_CellClick(null, null);
                 LoadTen();
                 LoadTinhTrang();
-                frmMain.LoadData();
+                frmMain.LoadData(frmMain.LoadAll());
             }
             catch (SqlException)
             {

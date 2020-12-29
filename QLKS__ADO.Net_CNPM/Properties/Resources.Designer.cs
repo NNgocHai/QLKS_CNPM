@@ -113,6 +113,16 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap booking {
+            get {
+                object obj = ResourceManager.GetObject("booking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap booking1 {
             get {
                 object obj = ResourceManager.GetObject("booking1", resourceCulture);
@@ -646,6 +656,16 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         internal static System.Drawing.Bitmap sign_out {
             get {
                 object obj = ResourceManager.GetObject("sign_out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ThemKH {
+            get {
+                object obj = ResourceManager.GetObject("ThemKH", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

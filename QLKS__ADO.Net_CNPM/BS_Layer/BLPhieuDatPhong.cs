@@ -24,6 +24,15 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@MaPhong", SqlDbType.VarChar).Value = MaPhong;
             return db.ExecuteQueryDataSet(cmd, "PHIEUDATPHONG_LayThongTin");
         }
+        public DataSet layPDP()
+        {
+            return db.ExecuteQueryDataSet(cmd, "PHIEUDATPHONG_LayPDP");
+        }
+        public DataSet TimKiemNhanh(string TuKhoa)
+        {
+            cmd.Parameters.Add("@TuKhoa", SqlDbType.VarChar).Value = TuKhoa;
+            return db.ExecuteQueryDataSet(cmd, "TIMKIEMNHANH_PDP");
+        }
         public bool ThemPhieuDatPhong(string MaKH, string SoNguoi, string MaPhong, DateTime NgayNhan, string TienCoc, ref string err)
         {
             cmd.Parameters.Add("@MaKH", SqlDbType.VarChar).Value = MaKH;
@@ -47,6 +56,10 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@NgayNhan", SqlDbType.DateTime).Value = NgayNhan;
             cmd.Parameters.Add("@TienCoc", SqlDbType.NVarChar).Value = TienCoc;
             return db.ExecuteProcNonQuery(cmd, "PHIEUDATPHONG_CapNhatPDP", ref err);
+        }
+        public bool XoaPhieuKhongCoCTPDP(ref string err)
+        {
+            return db.ExecuteProcNonQuery(cmd, "PHIEUDATPHONG_XoaPDP_KO_CO_CTPDP", ref err);
         }
 
 
