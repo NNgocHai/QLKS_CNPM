@@ -463,6 +463,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void btnReLoad_Click(object sender, EventArgs e)
         {
             LoadData(LoadAll());
+            defaultcbbTimKiem();
+            txtTimKiem.ResetText();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
