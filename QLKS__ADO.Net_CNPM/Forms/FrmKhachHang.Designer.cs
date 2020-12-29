@@ -30,13 +30,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void InitializeComponent()
         {
             this.btnXoa = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
-            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtTimKiemTen = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.txtTinhTrang = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnHuyBo = new System.Windows.Forms.Button();
@@ -70,12 +64,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.TINHTRANG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.cbbTimKiem = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.txtGioiTinh = new System.Windows.Forms.ComboBox();
             this.txtSDT = new System.Windows.Forms.MaskedTextBox();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,73 +82,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // panel1
+            // txtTimKiem
             // 
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.cbbTinhTrang);
-            this.panel1.Controls.Add(this.cbbGioiTinh);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.txtTimKiemTen);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(965, 180);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 93);
-            this.panel1.TabIndex = 128;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(69, 8);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 20);
-            this.label16.TabIndex = 122;
-            this.label16.Text = "Tên";
-            // 
-            // cbbTinhTrang
-            // 
-            this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(107, 66);
-            this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(130, 24);
-            this.cbbTinhTrang.TabIndex = 30;
-            this.cbbTinhTrang.Text = "ALL";
-            // 
-            // cbbGioiTinh
-            // 
-            this.cbbGioiTinh.FormattingEnabled = true;
-            this.cbbGioiTinh.Location = new System.Drawing.Point(328, 66);
-            this.cbbGioiTinh.Name = "cbbGioiTinh";
-            this.cbbGioiTinh.Size = new System.Drawing.Size(121, 24);
-            this.cbbGioiTinh.TabIndex = 29;
-            this.cbbGioiTinh.Text = "ALL";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(242, 66);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 20);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Giới tính";
-            // 
-            // txtTimKiemTen
-            // 
-            this.txtTimKiemTen.Location = new System.Drawing.Point(133, 6);
-            this.txtTimKiemTen.Name = "txtTimKiemTen";
-            this.txtTimKiemTen.Size = new System.Drawing.Size(236, 22);
-            this.txtTimKiemTen.TabIndex = 121;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(2, 68);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 20);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Tình trạng";
+            this.txtTimKiem.Location = new System.Drawing.Point(948, 227);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(236, 22);
+            this.txtTimKiem.TabIndex = 121;
             // 
             // txtTinhTrang
             // 
@@ -499,36 +428,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // cbbTimKiem
-            // 
-            this.cbbTimKiem.DisplayMember = "Text";
-            this.cbbTimKiem.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbbTimKiem.FormattingEnabled = true;
-            this.cbbTimKiem.ItemHeight = 16;
-            this.cbbTimKiem.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2});
-            this.cbbTimKiem.Location = new System.Drawing.Point(820, 244);
-            this.cbbTimKiem.Name = "cbbTimKiem";
-            this.cbbTimKiem.Size = new System.Drawing.Size(121, 22);
-            this.cbbTimKiem.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbbTimKiem.TabIndex = 130;
-            this.cbbTimKiem.SelectedIndexChanged += new System.EventHandler(this.cbbTimKiem_SelectedIndexChanged);
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Tên";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Tình trạng và giới tính";
-            // 
             // txtGioiTinh
             // 
             this.txtGioiTinh.FormattingEnabled = true;
             this.txtGioiTinh.Items.AddRange(new object[] {
             "Nam",
-            "Nũ"});
+            "Nữ"});
             this.txtGioiTinh.Location = new System.Drawing.Point(697, 109);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.Size = new System.Drawing.Size(206, 24);
@@ -549,10 +454,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1460, 608);
             this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtGioiTinh);
-            this.Controls.Add(this.cbbTimKiem);
             this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTinhTrang);
             this.Controls.Add(this.label15);
@@ -585,8 +489,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.FrmKhachHang_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmKhachHang_KeyDown);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -596,11 +498,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         #endregion
 
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbbTinhTrang;
-        private System.Windows.Forms.ComboBox cbbGioiTinh;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnHuyBo;
@@ -632,13 +529,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND_KH;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIOITINH_KH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TINHTRANG;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtTimKiemTen;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTimKiem;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbbTimKiem;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
         private System.Windows.Forms.ComboBox txtGioiTinh;
         private System.Windows.Forms.MaskedTextBox txtSDT;
     }

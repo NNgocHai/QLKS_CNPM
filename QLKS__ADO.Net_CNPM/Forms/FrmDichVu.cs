@@ -27,7 +27,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         public void Default_Button()
         {
-            if (PhanQuyen == "2")
+            if (PhanQuyen == "Admin")
             {
                 this.btnThem.Enabled = true;
                 this.btnSua.Enabled = true;

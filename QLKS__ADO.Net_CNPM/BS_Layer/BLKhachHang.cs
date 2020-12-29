@@ -57,33 +57,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@makh", SqlDbType.VarChar).Value = MaKH;
             return db.ExecuteProcNonQuery(cmd, "KHACHHANG_XoaKhachHang", ref err);
         }
-
-        public List<string> LayTinhTrang()
-        {
-            List<string> dsTinhTrang = new List<string>();
-            dsTinhTrang.Clear();
-            SqlDataReader reader = db.MyExcuteProcReader(cmd, "KHACHHANG_LayTinhTrang");
-            while (reader.Read())
-            {
-                dsTinhTrang.Add(reader.GetString(0));
-            }
-            db.myDispose();
-            reader.Dispose();
-            return dsTinhTrang;
-        }
-        public List<string> LayGioiTinh()
-        {
-            List<string> dsGioiTinh = new List<string>();
-            dsGioiTinh.Clear();
-            SqlDataReader reader = db.MyExcuteProcReader(cmd, "KHACHHANG_LayGioiTinh");
-            while (reader.Read())
-            {
-                dsGioiTinh.Add(reader.GetString(0));
-            }
-            db.myDispose();
-            reader.Dispose();
-            return dsGioiTinh;
-        }
+       
         public List<string> LayMAKH()
         {
             List<string> dsMaKH = new List<string>();
@@ -98,18 +72,12 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             return dsMaKH;
         }
 
-        public DataSet TimKiemKhachHang_TheoGTTT(string TinhTrang, string GioiTinh, ref string err)
+        public DataSet TimKiemNhanh(string TuKhoa)
         {
-            cmd.Parameters.Add("@tinhtrang", SqlDbType.NVarChar).Value = TinhTrang;
-            cmd.Parameters.Add("@gtkh", SqlDbType.NVarChar).Value = GioiTinh;
-            return db.ExecuteQueryDataSet(cmd, "KHACHHANG_TimKiemKhachHang_TheoGT_TT");
+            cmd.Parameters.Add("@TuKhoa", SqlDbType.NVarChar).Value = TuKhoa;
+            return db.ExecuteQueryDataSet(cmd, "TIMKIEMNHANH_KHACHHANG");
         }
 
-        public DataSet TimKiemKhachHangTheoTen(string TenKhachHang, ref string err)
-        {
-            cmd.Parameters.Add("@tenkh", SqlDbType.NVarChar).Value = TenKhachHang;
-            return db.ExecuteQueryDataSet(cmd, "KHACHHANG_TimKiemKhachHang_TheoTen");
-        }
 
     }
 }

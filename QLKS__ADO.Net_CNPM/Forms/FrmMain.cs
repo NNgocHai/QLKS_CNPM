@@ -92,6 +92,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             btnKhachHang.Enabled = false;
             btnDichVu.Enabled = false;
             btnPhong.Enabled = false;
+            btnDatPhong.Enabled = false;
+            btnHoaDon.Enabled = false;
 
             btnDoanhThu.Enabled = false;
             btnDoanhThuDV.Enabled = false;
@@ -259,7 +261,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void btn_Click(object sender, EventArgs e)
         {
-            if (PhanQuyen == "1" || PhanQuyen == "2")
+            if (PhanQuyen == "Admin" || PhanQuyen == "NhanVien")
             {
                 try
                 {
@@ -284,9 +286,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             this.User = User;
             this.PhanQuyen = PhanQuyen;
-            if (PhanQuyen == "1")
+            if (PhanQuyen == "NhanVien")
                 NhanVien();
-            else if (PhanQuyen == "2")
+            else if (PhanQuyen == "Admin")
                 Admin();
             else
                 Default();
@@ -467,10 +469,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             txtTimKiem.ResetText();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {

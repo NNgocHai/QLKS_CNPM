@@ -43,13 +43,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtDiaChi.ResetText();
             this.txtSDT.ResetText();
             this.txtTinhTrang.ResetText();
-            this.txtTimKiemTen.ResetText();
-            this.cbbGioiTinh.Text = "ALL";
-            this.cbbTinhTrang.Text = "ALL";
-            this.cbbTimKiem.Text = "Tên";
-            this.cbbTinhTrang.Enabled = false;
-            this.cbbGioiTinh.Enabled = false;
-            this.txtTimKiemTen.ResetText();
+            this.txtTimKiem.ResetText();
+            this.txtTimKiem.ResetText();
 
         }
         private void LoadData()
@@ -66,43 +61,15 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 Default_txt();
                 Default_Button();
                 dgvKhachHang_CellClick(null, null);
-                LoadGioiTinh();
-                LoadTinhTrang();
             }
             catch (SqlException)
             {
                 MessageBox.Show("Không lấy được nội dung trong bảng KHACHHANG. Lỗi rồi!!!");
             }
         }
-        private void LoadTinhTrang()
-        {
-            BLKhachHang BLKH = new BLKhachHang();
-            List<string> dsTrangThai = new List<string>();
-            dsTrangThai.Clear();
-            dsTrangThai = BLKH.LayTinhTrang();
-            cbbTinhTrang.Items.Clear();
-            cbbTinhTrang.Items.Add("ALL");
 
-            foreach (string TrangThai in dsTrangThai)
-            {
-                cbbTinhTrang.Items.Add(TrangThai);
-            }
-        }
 
-        private void LoadGioiTinh()
-        {
-            BLKhachHang BLKH = new BLKhachHang();
-            List<string> dsGioiTinh = new List<string>();
-            dsGioiTinh.Clear();
-            dsGioiTinh = BLKH.LayGioiTinh();
-            cbbGioiTinh.Items.Clear();
-            cbbGioiTinh.Items.Add("ALL");
 
-            foreach (string Ten in dsGioiTinh)
-            {
-                cbbGioiTinh.Items.Add(Ten);
-            }
-        }
 
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -144,22 +111,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             DTKH = new DataTable();
             DTKH.Clear();
             DataSet ds = new DataSet();
-            if (cbbTimKiem.Text == "Tên")
-            {
-                ds = BLKH.TimKiemKhachHangTheoTen(txtTimKiemTen.Text, ref err);
-                this.cbbGioiTinh.Enabled = false;
-                this.cbbTinhTrang.Enabled = false;
-                this.txtTimKiemTen.Enabled = true;
-
-            }
-            else
-            {
-                ds = BLKH.TimKiemKhachHang_TheoGTTT(cbbTinhTrang.Text, cbbGioiTinh.Text, ref err);
-                this.cbbGioiTinh.Enabled = true;
-                this.cbbTinhTrang.Enabled = true;
-                this.txtTimKiemTen.Enabled = false;
-                
-            }
+            ds = BLKH.TimKiemNhanh(txtTimKiem.Text);
             DTKH = ds.Tables[0];
             dgvKhachHang.DataSource = DTKH;//11
         }
@@ -309,24 +261,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         }
 
-        private void cbbTimKiem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbbTimKiem.Text == "Tên")
-            {
-                //ds = BLKH.TimKiemKhachHang_TheoGTTT(cbbTinhTrang.Text, cbbGioiTinh.Text, ref err);
-                this.cbbGioiTinh.Enabled = false;
-                this.cbbTinhTrang.Enabled = false;
-                this.txtTimKiemTen.Enabled = true;
-
-            }
-            else
-            {
-                this.cbbGioiTinh.Enabled = true;
-                this.cbbTinhTrang.Enabled = true;
-                this.txtTimKiemTen.Enabled = false;
-                //ds = BLKH.TimKiemKhachHangTheoTen(txtTimKiemTen.Text);
-            }
-        }
 
         private void FrmKhachHang_KeyDown(object sender, KeyEventArgs e)
         {

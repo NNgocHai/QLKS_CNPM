@@ -427,8 +427,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.txtPhanQuyen.FormattingEnabled = true;
             this.txtPhanQuyen.Items.AddRange(new object[] {
-            "1",
-            "2"});
+            "NhanVien",
+            "Admin"});
             this.txtPhanQuyen.Location = new System.Drawing.Point(939, 23);
             this.txtPhanQuyen.Name = "txtPhanQuyen";
             this.txtPhanQuyen.Size = new System.Drawing.Size(121, 24);
