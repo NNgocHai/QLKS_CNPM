@@ -65,22 +65,25 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 MaKM = "-1";
             }
+
             XoaHoaDon();
             LoadData();
-            LoadDataThanhToan();
+
 
 
         }
-        private void LoadData()
+        public void LoadData()
         {
             BLTT = new BLThanhToan();
             MaPTP = BLTT.LayMaPTP(MaPhong).ToString();
+            LoadDataDVSD();
             BLTT = new BLThanhToan();
             BLTT.UpDateNgayTra(MaPhong);
             BLTT = new BLThanhToan();
             BLTT.ThemHD(MaPhong, User, MaKM);
-        }
-        private void LoadDataThanhToan()
+            LoadDataThanhToan();
+        } 
+        public void LoadDataThanhToan()
         {
             try
             {
@@ -110,7 +113,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
 
             }
         }
-        private void LoadDataDVSD()
+        public void LoadDataDVSD()
         {
             try
             {
@@ -155,23 +158,16 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             BLTT.UpDateNgayTra_ChuaThanhToan(MaPhong);
             IsThanhToan = 0;
         }
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            XoaHoaDon();
-        }
 
         private void UserThanhToan_Leave(object sender, EventArgs e)
-        {
-            MessageBox.Show("leave");
-            XoaHoaDon();
+        { 
+            /*XoaHoaDon();*/
         }
 
         private void UserThanhToan_Load(object sender, EventArgs e)
         {
-            txtMaKM.Focus();
-            LoadData();
-            LoadDataDVSD();
-            LoadDataThanhToan();
+/*            txtMaKM.Focus();
+            LoadData();*/
         }
     }
 }

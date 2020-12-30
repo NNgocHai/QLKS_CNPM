@@ -220,6 +220,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phòng đã thuê";
             this.Load += new System.EventHandler(this.FrmPhongDaThue_Load);
+            this.Leave += new System.EventHandler(this.FrmPhongDaThue_Leave);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);

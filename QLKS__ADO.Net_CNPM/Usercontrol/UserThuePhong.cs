@@ -70,13 +70,13 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.txtPTP.Enabled = false;
             this.txtMaPhong.Enabled = false;
             this.txtTenKH.Enabled = false;
-            this.cbbPDP.Enabled = false;
+            this.txtPDP.Enabled = true;
         }
         public void Default_txt()
         {
 
             this.txtPTP.ResetText();
-            this.cbbPDP.ResetText();
+            this.txtPDP.ResetText();
             this.cbbMaKH.ResetText();
             this.txtTenKH.ResetText();
             this.txtMaPhong.ResetText();
@@ -131,13 +131,13 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             BLPTP = new BLPhieuNhanPhong();
             if (Them)
             {
-                var TTHopLe = BLPTP.KiemTraThemPTP(cbbPDP.Text, cbbMaKH.Text);
+                var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
                 if (TTHopLe.Equals(true))
                 {
                     try
                     {
                         BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.ThemPTP(this.cbbPDP.Text, this.cbbMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, ref err))
+                        if (BLPTP.ThemPTP(this.txtPDP.Text, this.cbbMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã thêm xong!");
@@ -164,15 +164,15 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             }
             else
             {
-                var TTHopLe = BLPTP.KiemTraThemPTP(cbbPDP.Text, cbbMaKH.Text);
-                if (TTHopLe.Equals(true) || (this.cbbPDP.Text == DTPTP.Rows[0].ItemArray[1].ToString()
+                var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
+                if (TTHopLe.Equals(true) || (this.txtPDP.Text == DTPTP.Rows[0].ItemArray[1].ToString()
                     && this.cbbMaKH.Text == DTPTP.Rows[0].ItemArray[2].ToString()))
                 {
 
                     try
                     {
                         BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.cbbPDP.Text, this.cbbMaKH.Text, dtNgayTraDK.Value, ref err))
+                        if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.txtPDP.Text, this.cbbMaKH.Text, dtNgayTraDK.Value, ref err))
                         {
                             LoadData();
                             MessageBox.Show("Đã sửa xong!");
@@ -273,7 +273,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             try
             {
                 int r = dgvPTP.CurrentCell.RowIndex;
-                this.cbbPDP.Text = dgvPTP.Rows[r].Cells[1].Value.ToString().Trim();
+                this.txtPDP.Text = dgvPTP.Rows[r].Cells[1].Value.ToString().Trim();
                 this.txtPTP.Text = dgvPTP.Rows[r].Cells[0].Value.ToString().Trim();
                 this.cbbMaKH.Text = dgvPTP.Rows[r].Cells[2].Value.ToString().Trim();
                 this.txtTenKH.Text = dgvPTP.Rows[r].Cells[3].Value.ToString().Trim();
@@ -283,7 +283,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             catch
             {
                 this.txtPTP.Text = "";
-                this.cbbPDP.Text = "";
+                this.txtPDP.Text = "";
                 this.cbbMaKH.Text = "";
                 this.txtTenKH.Text = "";
                 this.txtMaPhong.Text = "";
@@ -296,7 +296,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             using (FrmPhieuDatPhong frmpdp = new FrmPhieuDatPhong())
             {
                 frmpdp.ShowDialog();
-                this.cbbPDP.Text = frmpdp.MaPDP_focused;
+                this.txtPDP.Text = frmpdp.MaPDP_focused;
                 this.cbbMaKH.Text = frmpdp.MaKH_focused;
             }
         }

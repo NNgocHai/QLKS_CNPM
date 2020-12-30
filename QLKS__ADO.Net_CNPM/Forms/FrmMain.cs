@@ -270,13 +270,15 @@ namespace QLKS__ADO.Net_CNPM.Forms
                     if (TinhTrangPhong.Length == 2)
                     {
 
-                        FrmPhongTrong frmPhongDaDat = new FrmPhongTrong(this);
-                        frmPhongDaDat.ShowDialog();
+                        FrmPhongTrong frmPhongTrong = new FrmPhongTrong(this);
+                        frmPhongTrong.ShowDialog();
                     }
                     else
                     {
-                        FrmPhongDaThue frmPhongTrong = new FrmPhongDaThue(this);
-                        frmPhongTrong.ShowDialog();
+                        FrmPhongDaThue frmPhongDaThue = new FrmPhongDaThue(this);
+                        frmPhongDaThue.ShowDialog();
+                        if (frmPhongDaThue.ClickbtnThanhToan == 1)
+                            frmPhongDaThue.userThanhToan.XoaHoaDon();
                     }
                 }
                 catch { }

@@ -31,7 +31,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             pnlForm.Controls.Add(userThongTin);
             userThongTin.Dock = DockStyle.Fill;
             userThongTin.BringToFront();
-            userThuePhong = new UserThuePhong(MaPhong);
 
         }
 
@@ -53,7 +52,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-
+            userThuePhong = new UserThuePhong(MaPhong);
+            userThuePhong.PropertyChanged += Cntr_PropertyChanged;
             if (!pnlForm.Controls.Contains(userThuePhong))
             {
                 pnlForm.Controls.Add(userThuePhong);
@@ -62,19 +62,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
                 userThuePhong.BringToFront();
-            /*FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
-            this.Hide();
-            frm.ShowDialog();
-            if (frm.IsThuePhong == 1)
-            {
-                frmMain.LoadData(frmMain.LoadAll());
-                this.Close();
-            }
-            else
-            {
-                this.Show();
-                this.btnThongTinPhong_Click(null, null);
-            }*/
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)
@@ -113,7 +100,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void FrmPhongTrong_Load(object sender, EventArgs e)
         {
 
-            userThuePhong.PropertyChanged += Cntr_PropertyChanged;
+            
             // press tab + tab after += and it will generate the following method automatically.
         }
     }

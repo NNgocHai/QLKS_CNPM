@@ -31,7 +31,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         {
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.cbbMaKH = new System.Windows.Forms.ComboBox();
-            this.cbbPDP = new System.Windows.Forms.ComboBox();
             this.txtPTP = new System.Windows.Forms.TextBox();
             this.btnPDP = new System.Windows.Forms.Button();
             this.dtNgayTraDK = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +38,13 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvPTP = new System.Windows.Forms.DataGridView();
+            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAPDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MOPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NGAYTRARDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,13 +61,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.tctMatKhau = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.MAPTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAPDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MOPHONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYNHAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NGAYTRARDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPDP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,14 +79,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.cbbMaKH.Name = "cbbMaKH";
             this.cbbMaKH.Size = new System.Drawing.Size(317, 24);
             this.cbbMaKH.TabIndex = 248;
-            // 
-            // cbbPDP
-            // 
-            this.cbbPDP.FormattingEnabled = true;
-            this.cbbPDP.Location = new System.Drawing.Point(233, 69);
-            this.cbbPDP.Name = "cbbPDP";
-            this.cbbPDP.Size = new System.Drawing.Size(317, 24);
-            this.cbbPDP.TabIndex = 247;
             // 
             // txtPTP
             // 
@@ -164,6 +156,55 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvPTP.Size = new System.Drawing.Size(1052, 365);
             this.dgvPTP.TabIndex = 240;
             this.dgvPTP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPTP_CellClick);
+            // 
+            // MAPTP
+            // 
+            this.MAPTP.DataPropertyName = "MA_PTP";
+            this.MAPTP.HeaderText = "Mã PTP";
+            this.MAPTP.MinimumWidth = 6;
+            this.MAPTP.Name = "MAPTP";
+            // 
+            // MAPDP
+            // 
+            this.MAPDP.DataPropertyName = "MA_PDP";
+            this.MAPDP.HeaderText = "Mã PDP";
+            this.MAPDP.MinimumWidth = 6;
+            this.MAPDP.Name = "MAPDP";
+            // 
+            // MAKH
+            // 
+            this.MAKH.DataPropertyName = "MA_KH";
+            this.MAKH.HeaderText = "MÃ KH";
+            this.MAKH.MinimumWidth = 6;
+            this.MAKH.Name = "MAKH";
+            // 
+            // HOTEN
+            // 
+            this.HOTEN.DataPropertyName = "HOTEN_KH";
+            this.HOTEN.HeaderText = "Tên KH";
+            this.HOTEN.MinimumWidth = 6;
+            this.HOTEN.Name = "HOTEN";
+            // 
+            // MOPHONG
+            // 
+            this.MOPHONG.DataPropertyName = "MA_PHONG";
+            this.MOPHONG.HeaderText = "Mã phòng";
+            this.MOPHONG.MinimumWidth = 6;
+            this.MOPHONG.Name = "MOPHONG";
+            // 
+            // NGAYNHAN
+            // 
+            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
+            this.NGAYNHAN.HeaderText = "Ngày nhận phòng";
+            this.NGAYNHAN.MinimumWidth = 6;
+            this.NGAYNHAN.Name = "NGAYNHAN";
+            // 
+            // NGAYTRARDK
+            // 
+            this.NGAYTRARDK.DataPropertyName = "NGAYTRA_DK";
+            this.NGAYTRARDK.HeaderText = "Ngày trả dự kiến";
+            this.NGAYTRARDK.MinimumWidth = 6;
+            this.NGAYTRARDK.Name = "NGAYTRARDK";
             // 
             // label10
             // 
@@ -356,63 +397,21 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.label1.Text = "Mã KH";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // MAPTP
+            // txtPDP
             // 
-            this.MAPTP.DataPropertyName = "MA_PTP";
-            this.MAPTP.HeaderText = "Mã PTP";
-            this.MAPTP.MinimumWidth = 6;
-            this.MAPTP.Name = "MAPTP";
-            // 
-            // MAPDP
-            // 
-            this.MAPDP.DataPropertyName = "MA_PDP";
-            this.MAPDP.HeaderText = "Mã PDP";
-            this.MAPDP.MinimumWidth = 6;
-            this.MAPDP.Name = "MAPDP";
-            // 
-            // MAKH
-            // 
-            this.MAKH.DataPropertyName = "MA_KH";
-            this.MAKH.HeaderText = "MÃ KH";
-            this.MAKH.MinimumWidth = 6;
-            this.MAKH.Name = "MAKH";
-            // 
-            // HOTEN
-            // 
-            this.HOTEN.DataPropertyName = "HOTEN_KH";
-            this.HOTEN.HeaderText = "Tên KH";
-            this.HOTEN.MinimumWidth = 6;
-            this.HOTEN.Name = "HOTEN";
-            // 
-            // MOPHONG
-            // 
-            this.MOPHONG.DataPropertyName = "MA_PHONG";
-            this.MOPHONG.HeaderText = "Mã phòng";
-            this.MOPHONG.MinimumWidth = 6;
-            this.MOPHONG.Name = "MOPHONG";
-            // 
-            // NGAYNHAN
-            // 
-            this.NGAYNHAN.DataPropertyName = "NGAYNHAN";
-            this.NGAYNHAN.HeaderText = "Ngày nhận phòng";
-            this.NGAYNHAN.MinimumWidth = 6;
-            this.NGAYNHAN.Name = "NGAYNHAN";
-            // 
-            // NGAYTRARDK
-            // 
-            this.NGAYTRARDK.DataPropertyName = "NGAYTRA_DK";
-            this.NGAYTRARDK.HeaderText = "Ngày trả dự kiến";
-            this.NGAYTRARDK.MinimumWidth = 6;
-            this.NGAYTRARDK.Name = "NGAYTRARDK";
+            this.txtPDP.Location = new System.Drawing.Point(233, 71);
+            this.txtPDP.Name = "txtPDP";
+            this.txtPDP.Size = new System.Drawing.Size(317, 22);
+            this.txtPDP.TabIndex = 250;
             // 
             // UserThuePhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
+            this.Controls.Add(this.txtPDP);
             this.Controls.Add(this.txtMaPhong);
             this.Controls.Add(this.cbbMaKH);
-            this.Controls.Add(this.cbbPDP);
             this.Controls.Add(this.txtPTP);
             this.Controls.Add(this.btnPDP);
             this.Controls.Add(this.dtNgayTraDK);
@@ -449,7 +448,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
 
         private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.ComboBox cbbMaKH;
-        private System.Windows.Forms.ComboBox cbbPDP;
         private System.Windows.Forms.TextBox txtPTP;
         private System.Windows.Forms.Button btnPDP;
         private System.Windows.Forms.DateTimePicker dtNgayTraDK;
@@ -480,5 +478,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label tctMatKhau;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPDP;
     }
 }

@@ -41,7 +41,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.MADV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBack = new System.Windows.Forms.Button();
             this.txtTienThue = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -138,7 +137,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             // 
             this.btnThanhToan.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnThanhToan.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.pay;
-            this.btnThanhToan.Location = new System.Drawing.Point(921, 650);
+            this.btnThanhToan.Location = new System.Drawing.Point(482, 645);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(178, 72);
             this.btnThanhToan.TabIndex = 265;
@@ -172,17 +171,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.THANHTEN.HeaderText = "Tiền DV";
             this.THANHTEN.MinimumWidth = 6;
             this.THANHTEN.Name = "THANHTEN";
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBack.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.back;
-            this.btnBack.Location = new System.Drawing.Point(48, 639);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(152, 71);
-            this.btnBack.TabIndex = 266;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtTienThue
             // 
@@ -422,7 +410,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.Controls.Add(this.txtPhongKM);
             this.Controls.Add(this.b);
             this.Controls.Add(this.btnThanhToan);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtTienThue);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
@@ -473,7 +460,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.DataGridViewTextBoxColumn MADV;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
         private System.Windows.Forms.DataGridViewTextBoxColumn THANHTEN;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtTienThue;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
