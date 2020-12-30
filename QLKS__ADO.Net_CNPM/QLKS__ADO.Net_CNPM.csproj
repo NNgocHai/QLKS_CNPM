@@ -132,12 +132,6 @@
     <Compile Include="Forms\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmMaKhuyenMai.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmMaKhuyenMai.Designer.cs">
-      <DependentUpon>FrmMaKhuyenMai.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,12 +162,6 @@
     <Compile Include="Forms\FrmPhongDaThue.Designer.cs">
       <DependentUpon>FrmPhongDaThue.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmThanhToan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmThanhToan.Designer.cs">
-      <DependentUpon>FrmThanhToan.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmNhanPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +176,12 @@
     </Compile>
     <Compile Include="Usercontrol\UserDatPhong.Designer.cs">
       <DependentUpon>UserDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\UserThanhToan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\UserThanhToan.Designer.cs">
+      <DependentUpon>UserThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="Usercontrol\UserSuDungDV.cs">
       <SubType>UserControl</SubType>
@@ -206,6 +200,12 @@
     </Compile>
     <Compile Include="Usercontrol\UserThongTinPhong.Designer.cs">
       <DependentUpon>UserThongTinPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usercontrol\UserThuePhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usercontrol\UserThuePhong.Designer.cs">
+      <DependentUpon>UserThuePhong.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
@@ -231,9 +231,6 @@
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmMaKhuyenMai.resx">
-      <DependentUpon>FrmMaKhuyenMai.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmNhanPhong.resx">
       <DependentUpon>FrmNhanPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,9 +249,6 @@
     <EmbeddedResource Include="Forms\FrmPhongDaThue.resx">
       <DependentUpon>FrmPhongDaThue.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmThanhToan.resx">
-      <DependentUpon>FrmThanhToan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -265,6 +259,9 @@
     <EmbeddedResource Include="Usercontrol\UserDatPhong.resx">
       <DependentUpon>UserDatPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\UserThanhToan.resx">
+      <DependentUpon>UserThanhToan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Usercontrol\UserSuDungDV.resx">
       <DependentUpon>UserSuDungDV.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Usercontrol\UserThongTinPhong.resx">
       <DependentUpon>UserThongTinPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usercontrol\UserThuePhong.resx">
+      <DependentUpon>UserThuePhong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CSDL_KHACHSANDataSet.xsc">
       <DependentUpon>CSDL_KHACHSANDataSet.xsd</DependentUpon>

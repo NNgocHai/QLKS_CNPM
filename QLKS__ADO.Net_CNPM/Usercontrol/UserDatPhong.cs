@@ -15,6 +15,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
 {
     public partial class UserDatPhong : UserControl
     {
+
         DataTable DTPDP = null;
         bool Them;
         string err;
@@ -26,6 +27,8 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.MaPhong = MaPhong;
             
         }
+
+       
         public void Default_Button()
         {
             this.btnThem.Enabled = true;
@@ -55,8 +58,9 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                 cbbMaKH.Items.Add(MaKH);
             }
         }
-        private void LoadData()
+        public void LoadData()
         {
+            
             LoadMAKH();
             try
             {
@@ -87,7 +91,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         {
             Default_txt();
             Default_Button();
-
             dgv_DatPhong_CellClick(null, null);
         }
 

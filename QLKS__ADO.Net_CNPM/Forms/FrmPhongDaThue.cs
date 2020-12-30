@@ -18,7 +18,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         string MaPhong;
         string User;
         FrmMain frmMain = null;
-        
+        UserThuePhong userThuePhong = null;
+        UserThanhToan userThanhToan = null;
+        int IsXoaPTP = 0;
+        int IsThanhToan = 0;
+
         public FrmPhongDaThue(FrmMain frm)
         {
             InitializeComponent();
@@ -29,6 +33,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             pnlForm.Controls.Add(userThongTin);
             userThongTin.Dock = DockStyle.Fill;
             userThongTin.BringToFront();
+            userThuePhong = new UserThuePhong(MaPhong);
+            userThanhToan = new UserThanhToan(MaPhong, User);
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -83,7 +89,15 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            FrmMaKhuyenMai frm = new FrmMaKhuyenMai(MaPhong, User);
+            if (!pnlForm.Controls.Contains(userThanhToan))
+            {
+                pnlForm.Controls.Add(userThanhToan);
+                userThanhToan.Dock = DockStyle.Fill;
+                userThanhToan.BringToFront();
+            }
+            else
+                userThanhToan.BringToFront();
+            /*FrmMaKhuyenMai frm = new FrmMaKhuyenMai(MaPhong, User);
             this.Hide();
             frm.ShowDialog();
             if (frm.IsThanhToan == 1)
@@ -95,7 +109,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             {
                 this.Show();
                 this.btnThongTinPhong_Click(null, null);
-            }
+            }*/
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)
@@ -115,19 +129,42 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-            FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
-            this.Hide();
-            frm.ShowDialog();
-            if (frm.IsXoaPTP == 1)
+            if (!pnlForm.Controls.Contains(userThuePhong))
+            {
+                pnlForm.Controls.Add(userThuePhong);
+                userThuePhong.Dock = DockStyle.Fill;
+                userThuePhong.BringToFront();
+            }
+            else
+                userThuePhong.BringToFront();
+        }
+        private void Cntr_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+
+            IsXoaPTP = userThuePhong.IsXoaPTP; //cntr is the instance of UserControl1
+            if (IsXoaPTP == 1)
+            {
+                frmMain.LoadData(frmMain.LoadAll());
+                this.Close();
+            }
+            else { }
+            IsThanhToan = userThanhToan.IsThanhToan;
+            if (IsThanhToan == 1)
             {
                 frmMain.LoadData(frmMain.LoadAll());
                 this.Close();
             }
             else
             {
-                this.Show();
-                this.btnThongTinPhong_Click(null, null);
-            }
+                userThanhToan.XoaHoaDon();
+            }                
+        }
+
+
+        private void FrmPhongDaThue_Load(object sender, EventArgs e)
+        {
+            userThuePhong.PropertyChanged += Cntr_PropertyChanged;
+            userThanhToan.PropertyChanged += Cntr_PropertyChanged;
         }
     }
 }

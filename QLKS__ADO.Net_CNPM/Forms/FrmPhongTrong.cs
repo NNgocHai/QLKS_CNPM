@@ -16,6 +16,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
         public string MaPhong;
         FrmMain frmMain;
         public int IsNhanPhong = 0;
+        UserThuePhong userThuePhong = null;
+
+        int IsThuePhong = 0;
+
+
         public FrmPhongTrong(FrmMain frm)
         {
 
@@ -26,13 +31,13 @@ namespace QLKS__ADO.Net_CNPM.Forms
             pnlForm.Controls.Add(userThongTin);
             userThongTin.Dock = DockStyle.Fill;
             userThongTin.BringToFront();
+            userThuePhong = new UserThuePhong(MaPhong);
+
         }
 
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
             UserDatPhong userControl = new UserDatPhong(MaPhong);
-
-
             if (!pnlForm.Controls.Contains(userControl))
             {
                 pnlForm.Controls.Add(userControl);
@@ -41,41 +46,23 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
                 userControl.BringToFront();
+
         }
 
-        private void btnDVSuDung_Click(object sender, EventArgs e)
-        {
-            UserSuDungDV userControl = new UserSuDungDV(MaPhong);
-
-
-            if (!pnlForm.Controls.Contains(userControl))
-            {
-                pnlForm.Controls.Add(userControl);
-                userControl.Dock = DockStyle.Fill;
-                userControl.BringToFront();
-            }
-            else
-                userControl.BringToFront();
-        }
-
-        private void btnTTKH_Click(object sender, EventArgs e)
-        {
-            UserThongTinKH userControl = new UserThongTinKH(MaPhong);
-
-
-            if (!pnlForm.Controls.Contains(userControl))
-            {
-                pnlForm.Controls.Add(userControl);
-                userControl.Dock = DockStyle.Fill;
-                userControl.BringToFront();
-            }
-            else
-                userControl.BringToFront();
-        }
+       
 
         private void btnNhanPhong_Click(object sender, EventArgs e)
         {
-            FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
+
+            if (!pnlForm.Controls.Contains(userThuePhong))
+            {
+                pnlForm.Controls.Add(userThuePhong);
+                userThuePhong.Dock = DockStyle.Fill;
+                userThuePhong.BringToFront();
+            }
+            else
+                userThuePhong.BringToFront();
+            /*FrmNhanPhong frm = new FrmNhanPhong(MaPhong);
             this.Hide();
             frm.ShowDialog();
             if (frm.IsThuePhong == 1)
@@ -87,7 +74,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             {
                 this.Show();
                 this.btnThongTinPhong_Click(null, null);
-            }
+            }*/
         }
 
         private void btnThongTinPhong_Click(object sender, EventArgs e)
@@ -111,6 +98,23 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private void textNhanPhong_Click(object sender, EventArgs e)
         {
 
+        }
+        private void Cntr_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+
+            IsThuePhong = userThuePhong.IsThuePhong; //cntr is the instance of UserControl1
+            if (IsThuePhong == 1)
+            {
+                frmMain.LoadData(frmMain.LoadAll());
+                this.Close();
+            }
+
+        }
+        private void FrmPhongTrong_Load(object sender, EventArgs e)
+        {
+
+            userThuePhong.PropertyChanged += Cntr_PropertyChanged;
+            // press tab + tab after += and it will generate the following method automatically.
         }
     }
 }

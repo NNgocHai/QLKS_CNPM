@@ -31,13 +31,13 @@ namespace QLKS__ADO.Net_CNPM.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnDatPhong = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textNhanPhong = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnDatPhong = new System.Windows.Forms.Button();
             this.btnNhanPhong = new System.Windows.Forms.Button();
             this.btnThongTinPhong = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlMenu.SuspendLayout();
             this.SuspendLayout();
@@ -56,17 +56,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(297, 731);
             this.pnlMenu.TabIndex = 12;
-            // 
-            // btnDatPhong
-            // 
-            this.btnDatPhong.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDatPhong.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.booking1;
-            this.btnDatPhong.Location = new System.Drawing.Point(16, 112);
-            this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(110, 69);
-            this.btnDatPhong.TabIndex = 17;
-            this.btnDatPhong.UseVisualStyleBackColor = false;
-            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
             // 
             // label3
             // 
@@ -102,6 +91,23 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label1.TabIndex = 15;
             this.label1.Text = "Thông tin";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // btnDatPhong
+            // 
+            this.btnDatPhong.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDatPhong.Image = global::QLKS__ADO.Net_CNPM.Properties.Resources.booking1;
+            this.btnDatPhong.Location = new System.Drawing.Point(16, 112);
+            this.btnDatPhong.Name = "btnDatPhong";
+            this.btnDatPhong.Size = new System.Drawing.Size(110, 69);
+            this.btnDatPhong.TabIndex = 17;
+            this.btnDatPhong.UseVisualStyleBackColor = false;
+            this.btnDatPhong.Click += new System.EventHandler(this.btnDatPhong_Click);
+            // 
             // btnNhanPhong
             // 
             this.btnNhanPhong.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -124,12 +130,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnThongTinPhong.UseVisualStyleBackColor = false;
             this.btnThongTinPhong.Click += new System.EventHandler(this.btnThongTinPhong_Click);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // pnlForm
             // 
             this.pnlForm.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.infok_vn_27fkhach_san_marguerite;
@@ -151,6 +151,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Name = "FrmPhongTrong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phòng trống";
+            this.Load += new System.EventHandler(this.FrmPhongTrong_Load);
             this.pnlMenu.ResumeLayout(false);
             this.pnlMenu.PerformLayout();
             this.ResumeLayout(false);
