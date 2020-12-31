@@ -23,7 +23,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         public int ClickbtnThanhToan = -1;
         int IsXoaPTP = 0;
-        int IsThanhToan = 0;
+        public int IsThanhToan = 0;
 
         public FrmPhongDaThue(FrmMain frm)
         {
@@ -160,24 +160,31 @@ namespace QLKS__ADO.Net_CNPM.Forms
         }
         private void Cntr_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-
-            IsXoaPTP = userThuePhong.IsXoaPTP; //cntr is the instance of UserControl1
-            if (IsXoaPTP == 1)
+            try
             {
-                frmMain.LoadData(frmMain.LoadAll());
-                this.Close();
+                IsXoaPTP = userThuePhong.IsXoaPTP; //cntr is the instance of UserControl1
+                if (IsXoaPTP == 1)
+                {
+                    frmMain.LoadData(frmMain.LoadAll());
+                    this.Close();
+                }
+                else { }
             }
-            else { }
-            IsThanhToan = userThanhToan.IsThanhToan;
-            if (IsThanhToan == 1)
+            catch { }
+            try
             {
-                frmMain.LoadData(frmMain.LoadAll());
-                this.Close();
+                IsThanhToan = userThanhToan.IsThanhToan;
+                if (IsThanhToan == 1)
+                {
+                    frmMain.LoadData(frmMain.LoadAll());
+                    this.Close();
+                }
+                else
+                {
+                    userThanhToan.XoaHoaDon();
+                }
             }
-            else
-            {
-                userThanhToan.XoaHoaDon();
-            }                
+            catch { }
         }
 
 

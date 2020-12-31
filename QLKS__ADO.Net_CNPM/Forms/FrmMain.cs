@@ -277,7 +277,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                     {
                         FrmPhongDaThue frmPhongDaThue = new FrmPhongDaThue(this);
                         frmPhongDaThue.ShowDialog();
-                        if (frmPhongDaThue.ClickbtnThanhToan == 1)
+                        if (frmPhongDaThue.ClickbtnThanhToan == 1 && frmPhongDaThue.IsThanhToan == 0)
                             frmPhongDaThue.userThanhToan.XoaHoaDon();
                     }
                 }

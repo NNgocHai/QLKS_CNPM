@@ -47,6 +47,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.User = User;
             this.MaPhong = MaPhong;
 
+
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
