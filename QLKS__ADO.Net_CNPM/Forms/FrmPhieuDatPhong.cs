@@ -305,5 +305,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             if (Program.doubleclickdgv == 1 || Program.doubleclickdgv_ThuePhong == 1)
                 this.Close();
         }
+
+
     }
 }
