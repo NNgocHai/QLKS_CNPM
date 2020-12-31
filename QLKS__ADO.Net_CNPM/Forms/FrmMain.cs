@@ -57,9 +57,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
             btnPhong.Enabled = true;
             btnDatPhong.Enabled = true;
             btnHoaDon.Enabled = true;
-
+            btnKhuyenmai.Enabled = true;
+            
             btnDoanhThu.Enabled = true;
             btnDoanhThuDV.Enabled = true;
+            
         }
         private void NhanVien()
         {
@@ -75,6 +77,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             btnPhong.Enabled = true;
             btnDatPhong.Enabled = true;
             btnHoaDon.Enabled = false;
+            btnKhuyenmai.Enabled = false;
 
             btnDoanhThu.Enabled = false;
             btnDoanhThuDV.Enabled = false;
@@ -94,6 +97,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             btnPhong.Enabled = false;
             btnDatPhong.Enabled = false;
             btnHoaDon.Enabled = false;
+            btnKhuyenmai.Enabled = false;
 
             btnDoanhThu.Enabled = false;
             btnDoanhThuDV.Enabled = false;
@@ -487,6 +491,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
             {
                 frmHoaDon.ShowDialog();
                 LoadData(LoadAll());
+            }
+        }
+
+        private void btnKhuyenmai_Click(object sender, EventArgs e)
+        {
+            using (FrmKhuyenMai frmKhuyenMai  = new FrmKhuyenMai())
+            {
+                frmKhuyenMai.ShowDialog();
             }
         }
     } 

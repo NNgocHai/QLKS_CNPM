@@ -303,6 +303,16 @@ namespace QLKS__ADO.Net_CNPM.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_KM {
+            get {
+                object obj = ResourceManager.GetObject("icon_KM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap infok_vn_27fkhach_san_marguerite {
             get {
                 object obj = ResourceManager.GetObject("infok_vn_27fkhach_san_marguerite", resourceCulture);

@@ -190,6 +190,9 @@
   <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_KM" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-KM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="infok_vn_27fkhach_san_marguerite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\infok.vn-27fkhach-san-marguerite.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

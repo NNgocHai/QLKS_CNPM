@@ -70,6 +70,7 @@
     <Compile Include="BS_Layer\BLDichVu.cs" />
     <Compile Include="BS_Layer\BLHoaDon.cs" />
     <Compile Include="BS_Layer\BLKhachHang.cs" />
+    <Compile Include="BS_Layer\BLKhuyenMai.cs" />
     <Compile Include="BS_Layer\BLMain.cs" />
     <Compile Include="BS_Layer\BLNhanVien.cs" />
     <Compile Include="BS_Layer\BLPhieuDatPhong.cs" />
@@ -125,6 +126,12 @@
     </Compile>
     <Compile Include="Forms\FrmKhachHang.Designer.cs">
       <DependentUpon>FrmKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmKhuyenMai.Designer.cs">
+      <DependentUpon>FrmKhuyenMai.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmMain.cs">
       <SubType>Form</SubType>
@@ -227,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmKhachHang.resx">
       <DependentUpon>FrmKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmKhuyenMai.resx">
+      <DependentUpon>FrmKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
@@ -463,6 +473,7 @@
     <None Include="Resources\rules.png" />
     <None Include="Resources\ThemKH.PNG" />
     <None Include="Resources\booking.PNG" />
+    <None Include="Resources\icon-KM.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
