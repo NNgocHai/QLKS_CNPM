@@ -9,6 +9,9 @@ namespace QLKS__ADO.Net_CNPM
 {
     static class Program
     {
+        public static int doubleclickdgv = 0;
+        public static int doubleclickdgv_ThuePhong = 0;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

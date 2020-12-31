@@ -269,5 +269,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.Close();
             }
         }
+
+        private void dgvKhachHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(Program.doubleclickdgv == 1 )
+                this.Close();
+        }
     }
 }

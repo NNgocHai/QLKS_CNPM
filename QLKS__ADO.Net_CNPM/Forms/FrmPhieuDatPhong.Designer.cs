@@ -145,6 +145,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgv_DatPhong.Size = new System.Drawing.Size(1052, 399);
             this.dgv_DatPhong.TabIndex = 181;
             this.dgv_DatPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DatPhong_CellClick);
+            this.dgv_DatPhong.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DatPhong_CellDoubleClick);
             // 
             // Ma_PDP
             // 

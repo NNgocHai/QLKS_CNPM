@@ -249,6 +249,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
+            Program.doubleclickdgv = 1;
             using (FrmKhachHang frmkh = new FrmKhachHang())
             {
                 this.Hide();
@@ -256,6 +257,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                 this.Show();
                 cbbMaKH.Text = frmkh.MaKH_focused;
             }
+            Program.doubleclickdgv = 0;
         }
     }
 }

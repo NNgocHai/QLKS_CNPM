@@ -1607,7 +1607,7 @@
             this.pnlMain.Controls.Add(this.fplPhong);
             this.pnlMain.Location = new System.Drawing.Point(5, 157);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1382, 530);
+            this.pnlMain.Size = new System.Drawing.Size(1382, 528);
             this.pnlMain.TabIndex = 8;
             // 
             // panel1
@@ -1685,14 +1685,14 @@
             this.fplPhong.Location = new System.Drawing.Point(0, 117);
             this.fplPhong.Margin = new System.Windows.Forms.Padding(4);
             this.fplPhong.Name = "fplPhong";
-            this.fplPhong.Size = new System.Drawing.Size(1382, 413);
+            this.fplPhong.Size = new System.Drawing.Size(1382, 411);
             this.fplPhong.TabIndex = 9;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1392, 692);
+            this.ClientSize = new System.Drawing.Size(1392, 690);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.ribbonControl2);
             this.Name = "FrmMain";

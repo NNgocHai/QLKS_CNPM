@@ -17,6 +17,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         public string MaPDP_focused;
         public string MaKH_focused;
 
+
         DataTable DTPDP = null;
         bool Them;
         string err;
@@ -265,6 +266,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
+            Program.doubleclickdgv = 1;
             using (FrmKhachHang frmkh = new FrmKhachHang())
             {
                 this.Hide();
@@ -272,6 +274,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 this.Show();
                 cbbMaKH.Text = frmkh.MaKH_focused;
             }
+            Program.doubleclickdgv = 0;
+
+
         }
 
         private void FrmPhieuDatPhong_Load(object sender, EventArgs e)
@@ -293,6 +298,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
             ds = BLPDP.TimKiemNhanh(txtTimKiem.Text);
             DTPDP = ds.Tables[0];
             dgv_DatPhong.DataSource = DTPDP;
+        }
+
+        private void dgv_DatPhong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Program.doubleclickdgv == 1 || Program.doubleclickdgv_ThuePhong == 1)
+                this.Close();
         }
     }
 }

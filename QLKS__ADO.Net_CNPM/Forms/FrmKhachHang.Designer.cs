@@ -354,6 +354,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvKhachHang.Size = new System.Drawing.Size(1447, 306);
             this.dgvKhachHang.TabIndex = 99;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
+            this.dgvKhachHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellDoubleClick);
             // 
             // MA_KH
             // 

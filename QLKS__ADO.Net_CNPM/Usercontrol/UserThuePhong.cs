@@ -293,12 +293,16 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
 
         private void btnPDP_Click(object sender, EventArgs e)
         {
+            Program.doubleclickdgv = 1;
+            Program.doubleclickdgv_ThuePhong = 1;
             using (FrmPhieuDatPhong frmpdp = new FrmPhieuDatPhong())
             {
                 frmpdp.ShowDialog();
                 this.txtPDP.Text = frmpdp.MaPDP_focused;
                 this.cbbMaKH.Text = frmpdp.MaKH_focused;
             }
+            Program.doubleclickdgv = 0;
+            Program.doubleclickdgv_ThuePhong = 0;
         }
 
         private void UserThuePhong_Load(object sender, EventArgs e)
