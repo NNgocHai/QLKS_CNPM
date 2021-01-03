@@ -54,8 +54,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtTen.ResetText();
             this.cbboxTrinhTrang.Text = "No";
             this.txtMota.ResetText();
-            this.cbbTen.Text ="ALL";
-            this.cbbTinhTrang.Text = "ALL";
 
         }
         private void LoadData()
@@ -72,42 +70,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 Default_txt();
                 Default_Button();
                 dgvPhong_CellClick(null, null);
-                LoadTen();
-                LoadTinhTrang();
                 frmMain.LoadData(frmMain.LoadAll());
             }
             catch (SqlException)
             {
                 MessageBox.Show("Không lấy được nội dung trong bảng PHONG. Lỗi rồi!!!");
-            }
-        }
-        private void LoadTinhTrang()
-        {
-            BLPhong BLP = new BLPhong();
-            List<string> dsTrangThai = new List<string>();
-            dsTrangThai.Clear();
-            dsTrangThai = BLP.LayTinhTrang();
-            cbbTinhTrang.Items.Clear();
-            cbbTinhTrang.Items.Add("ALL");
-
-            foreach (string TrangThai in dsTrangThai)
-            {
-                cbbTinhTrang.Items.Add(TrangThai);
-            }
-        }
-
-        private void LoadTen()
-        {
-            BLPhong BLP = new BLPhong();
-            List<string> dsTen = new List<string>();
-            dsTen.Clear();
-            dsTen = BLP.LayTen();
-            cbbTen.Items.Clear();
-            cbbTen.Items.Add("ALL");
-
-            foreach (string Ten in dsTen)
-            {
-                cbbTen.Items.Add(Ten);
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -116,7 +83,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
                 DTP = new DataTable();
                 DTP.Clear();
                 DataSet ds = new DataSet();
-                ds = BLP.TimKiemPhong(cbbTinhTrang.Text, cbbTen.Text, ref err);
+                ds = BLP.TimKiemPhong(txtTimKiemPhong.Text);
                 DTP = ds.Tables[0];
                 dgvPhong.DataSource = DTP;    
         }
@@ -134,9 +101,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
             BLP = new BLPhong();
             if (Them)
             {
-                if (this.txtMaPhong.Text == "")
+                if (this.txtMaPhong.Text == "" || txtTen.Text==""|| txtGia.Text==""|| cbboxTrinhTrang.Text==""|| txtSoNguoiToiDa.Text==""|| txtKhuyenMai.Text==""|| txtMota.Text=="")
                 {
-                    MessageBox.Show("Bạn chưa nhập ID!", "Thông báo",
+                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.txtMaPhong.Focus();
                 }
@@ -163,26 +130,35 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
             {
-
-                try
+                if (txtTen.Text == "" || txtGia.Text == "" || cbboxTrinhTrang.Text == "" || txtSoNguoiToiDa.Text == "" || txtKhuyenMai.Text == "" || txtMota.Text == "")
                 {
-                    if (BLP.CapNhatPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.cbboxTrinhTrang.Text, this.txtSoNguoiToiDa.Text,  this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
+                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtMaPhong.Focus();
+                }
+                else
+                {
+                    try
                     {
-                        LoadData();
-                        MessageBox.Show("Đã sửa xong!");
-                        Default_Button();
-                        this.txtMaPhong.Enabled = true;
+                        if (BLP.CapNhatPhong(this.txtMaPhong.Text, this.txtTen.Text, this.txtGia.Text, this.cbboxTrinhTrang.Text, this.txtSoNguoiToiDa.Text, this.txtKhuyenMai.Text, this.txtMota.Text, ref err))
+                        {
+                            LoadData();
+                            MessageBox.Show("Đã sửa xong!");
+                            Default_Button();
+                            this.txtMaPhong.Enabled = true;
 
+                        }
+                        else
+                        {
+                            MessageBox.Show(this.err);
+                        }
                     }
-                    else
+                    catch (SqlException)
                     {
-                        MessageBox.Show(this.err);
+                        MessageBox.Show("Không sửa được. Lỗi rồi!");
                     }
                 }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không sửa được. Lỗi rồi!");
-                }
+                
 
             }
         }

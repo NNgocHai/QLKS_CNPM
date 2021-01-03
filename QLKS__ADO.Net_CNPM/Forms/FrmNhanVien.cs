@@ -89,9 +89,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
             BLNV = new BLNhanVien();
             if (Them)
             {
-                if (this.txtTenDangNhap.Text == "")
+                if (this.txtTenDangNhap.Text == ""|| txtTenDangNhap.Text==""|| txtMatKhau.Text==""|| txtHoVaTen.Text=="" ||txtDiaChi.Text==""||txtSDT.Text==""|| this.txtEmail.Text==""|| this.txtPhanQuyen.Text=="")
                 {
-                    MessageBox.Show("Bạn chưa nhập ID!", "Thông báo",
+                    MessageBox.Show("Vui lòng nhập đầy đủ các thông tin!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.txtTenDangNhap.Focus();
                 }
@@ -118,30 +118,39 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
             {
-
-                try
+                if (txtTenDangNhap.Text == "" || txtMatKhau.Text == "" || txtHoVaTen.Text == "" || txtDiaChi.Text == "" || txtSDT.Text == "" || this.txtEmail.Text == "" || this.txtPhanQuyen.Text == "")
                 {
-                    if (BLNV.CapNhatNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtPhanQuyen.Text, ref err))
-                    {
-                        if (this.User == txtTenDangNhap.Text)
-                            this.PhanQuyen = txtPhanQuyen.Text;
-                        LoadData();
-                        MessageBox.Show("Đã sửa xong!");
-                        if (this.PhanQuyen == "NhanVien")
-                            this.Close();
-                        Default_Button();
-                        this.txtTenDangNhap.Enabled = true;
-
-                    }
-                    else
-                    {
-                        MessageBox.Show(this.err);
-                    }
+                    MessageBox.Show("Vui lòng nhập đầy đủ các thông tin!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtTenDangNhap.Focus();
                 }
-                catch (SqlException)
+                else
                 {
-                    MessageBox.Show("Không sửa được. Lỗi rồi!");
-                }
+                    try
+                    {
+                        if (BLNV.CapNhatNhanVien(this.txtTenDangNhap.Text, this.txtMatKhau.Text, this.txtHoVaTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtEmail.Text, this.txtPhanQuyen.Text, ref err))
+                        {
+                            if (this.User == txtTenDangNhap.Text)
+                                this.PhanQuyen = txtPhanQuyen.Text;
+                            LoadData();
+                            MessageBox.Show("Đã sửa xong!");
+                            if (this.PhanQuyen == "NhanVien")
+                                this.Close();
+                            Default_Button();
+                            this.txtTenDangNhap.Enabled = true;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show(this.err);
+                        }
+                    }
+                    catch (SqlException)
+                    {
+                        MessageBox.Show("Không sửa được. Lỗi rồi!");
+                    }
+                }    
+               
 
             }
 
@@ -263,7 +272,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             BLNV = new BLNhanVien();
             DTNV = new DataTable();
             DTNV.Clear();
-            DataSet ds = BLNV.TimNhanVienTheoTDN(txtTimKiem.Text);
+            DataSet ds = BLNV.TimNhanVienTheoTuKhoa(txtTimKiem.Text);
             DTNV = ds.Tables[0];
             dgvNhanVien.DataSource = DTNV;
         }

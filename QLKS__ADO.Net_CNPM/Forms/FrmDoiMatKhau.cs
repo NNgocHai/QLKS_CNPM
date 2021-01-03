@@ -26,23 +26,33 @@ namespace QLKS__ADO.Net_CNPM.Forms
         
         private void btnDongY_Click(object sender, EventArgs e)
         {
-            BLNV = new BLNhanVien();
-            passwword= BLNV.Laypassword(User).ToString();
-            if (passwword == txtMatKhauCu.Text)
+            if(txtMatKhauCu.Text==""|| txtMatKhauMoi.Text==""||txtXacNhanMatKhau.Text=="")
             {
-                BLNV = new BLNhanVien();
-                if (txtMatKhauMoi.Text == txtXacNhanMatKhau.Text )
-                {
-                    if( BLNV.DoiMatKhau(ref err, User, txtMatKhauMoi.Text))
-                    MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
-                    else
-                        MessageBox.Show(err, "Thông báo");
-                }    
-                else
-                    MessageBox.Show("Xác nhận lại mật khẩu", "Thông báo");
+                MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thống báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
-                MessageBox.Show("Sai mật khẩu", "Thông báo");
+            {
+                BLNV = new BLNhanVien();
+                passwword = BLNV.Laypassword(User).ToString();
+                if (passwword == txtMatKhauCu.Text)
+                {
+                    BLNV = new BLNhanVien();
+                    if (txtMatKhauMoi.Text == txtXacNhanMatKhau.Text)
+                    {
+                        if (BLNV.DoiMatKhau(ref err, User, txtMatKhauMoi.Text))
+                        {
+                            MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK);
+                            this.Close();
+                        }
+                        else
+                            MessageBox.Show(err, "Thông báo");
+                    }
+                    else
+                        MessageBox.Show("Xác nhận lại mật khẩu", "Thông báo");
+                }
+                else
+                    MessageBox.Show("Sai mật khẩu", "Thông báo");
+            }
         }
 
         private void btnHuyBo_Click(object sender, EventArgs e)

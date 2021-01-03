@@ -99,52 +99,62 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             BLPDP = new BLPhieuDatPhong();
             if (Them)
             {
-
-
-                try
+                if(this.cbbMaKH.Text=="" || this.txtSoNguoi.Text=="")
                 {
-                    if (BLPDP.ThemPhieuDatPhong(this.cbbMaKH.Text, this.txtSoNguoi.Text, this.MaPhong, this.dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
+                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }    
+                else
+                {
+                    try
                     {
-                        LoadData();
-                        MessageBox.Show("Đã thêm xong!");
-                        Default_Button();
+                        if (BLPDP.ThemPhieuDatPhong(this.cbbMaKH.Text, this.txtSoNguoi.Text, this.MaPhong, this.dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
+                        {
+                            LoadData();
+                            MessageBox.Show("Đã thêm xong!");
+                            Default_Button();
+                        }
+                        else
+                        {
+                            MessageBox.Show(err, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            BLPDP = new BLPhieuDatPhong();
+                            BLPDP.XoaPhieuKhongCoCTPDP(ref err);
+
+                        }
                     }
-                    else
+                    catch (SqlException)
                     {
-                        MessageBox.Show(err, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        BLPDP = new BLPhieuDatPhong();
-                        BLPDP.XoaPhieuKhongCoCTPDP(ref err);
-                       
+                        MessageBox.Show("Không thêm được. Lỗi rồi!");
                     }
                 }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không thêm được. Lỗi rồi!");
-                }
-
             }
             else
             {
-
-                try
+                if (this.cbbMaKH.Text == "" || this.txtSoNguoi.Text == "")
                 {
-
-                    if (BLPDP.CapNhatPhieuDatPhong(this.txtMaPDP.Text, this.cbbMaKH.Text, this.txtSoNguoi.Text, dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
+                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    try
                     {
-                        LoadData();
-                        MessageBox.Show("Đã sửa xong!");
-                        Default_Button();
+                        if (BLPDP.CapNhatPhieuDatPhong(this.txtMaPDP.Text, this.cbbMaKH.Text, this.txtSoNguoi.Text, dtNgayNhanPhong.Value, this.txtTienCoc.Text, ref err))
+                        {
+                            LoadData();
+                            MessageBox.Show("Đã sửa xong!");
+                            Default_Button();
 
+                        }
+                        else
+                        {
+                            MessageBox.Show(this.err);
+                        }
                     }
-                    else
+                    catch (SqlException)
                     {
-                        MessageBox.Show(this.err);
+                        MessageBox.Show("Không sửa được. Lỗi rồi!");
                     }
                 }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không sửa được. Lỗi rồi!");
-                }
+                
 
             }
         }

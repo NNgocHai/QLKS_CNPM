@@ -100,10 +100,9 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             return dsMaPhong;
         }
 
-        public DataSet TimKiemPhong(string TinhTrang, string Ten, ref string err)
+        public DataSet TimKiemPhong(string TuKhoa)
         {
-            cmd.Parameters.Add("@tinhtrang", SqlDbType.VarChar).Value = TinhTrang;
-            cmd.Parameters.Add("@ten", SqlDbType.NVarChar).Value = Ten;
+            cmd.Parameters.Add("@TuKhoa", SqlDbType.VarChar).Value = TuKhoa;
             return db.ExecuteQueryDataSet(cmd, "PHONG_TimKiemPhong");
         }
 

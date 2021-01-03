@@ -405,10 +405,12 @@ namespace QLKS__ADO.Net_CNPM.Forms
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            using (FrmDoiMatKhau frmDoiMatKhau = new FrmDoiMatKhau(User))
-            {
-                frmDoiMatKhau.ShowDialog();
-            }
+            //using (FrmDoiMatKhau frmDoiMatKhau = new FrmDoiMatKhau(User))
+            //{
+            //    frmDoiMatKhau.ShowDialog();
+            //}
+            FrmDoiMatKhau frmDoiMatKhau = new FrmDoiMatKhau(User);
+            frmDoiMatKhau.Show(this);
         }
 
         private void btnDoanhThu_Click(object sender, EventArgs e)

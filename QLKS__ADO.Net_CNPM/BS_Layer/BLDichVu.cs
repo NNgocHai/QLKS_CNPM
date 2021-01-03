@@ -42,9 +42,9 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             cmd.Parameters.Add("@gia", SqlDbType.NVarChar).Value = Gia;
             return db.ExecuteProcNonQuery(cmd, "DICHVU_CapNhatDichVu", ref err);
         }
-        public DataSet TimKiemDichVu(string TenDV)
+        public DataSet TimKiemDichVu(string TuKhoa)
         {
-            cmd.Parameters.Add("@tendv", SqlDbType.NVarChar).Value = TenDV;
+            cmd.Parameters.Add("@TuKhoa", SqlDbType.NVarChar).Value = TuKhoa;
             return db.ExecuteQueryDataSet(cmd, "DICHVU_TimKiemDichVu");
         }
     }

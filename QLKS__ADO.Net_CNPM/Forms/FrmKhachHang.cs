@@ -129,9 +129,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
             BLKH = new BLKhachHang();
             if (Them)
             {
-                if (this.txtMa.Text == "")
+                if (this.txtMa.Text == ""||txtTen.Text==""||txtDiaChi.Text=="" || txtSDT.Text==""|| txtCMND.Text==""|| txtGioiTinh.Text==""|| txtTinhTrang.Text=="")
                 {
-                    MessageBox.Show("Bạn chưa nhập ID!", "Thông báo",
+                    MessageBox.Show("Vui lòng nhập đầy đủ các thông tin!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     this.txtMa.Focus();
                 }
@@ -158,26 +158,35 @@ namespace QLKS__ADO.Net_CNPM.Forms
             }
             else
             {
-
-                try
+                if (txtTen.Text == "" || txtDiaChi.Text == "" || txtSDT.Text == "" || txtCMND.Text == "" || txtGioiTinh.Text == "" || txtTinhTrang.Text == "")
                 {
-                    if (BLKH.CapNhatKhachHang(this.txtMa.Text, this.txtTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtCMND.Text, this.txtGioiTinh.Text, this.txtTinhTrang.Text, ref err))
+                    MessageBox.Show("Vui lòng nhập đầy đủ các thông tin!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtMa.Focus();
+                }
+                else
+                {
+                    try
                     {
-                        LoadData();
-                        MessageBox.Show("Đã sửa xong!");
-                        Default_Button();
-                        this.txtMa.Enabled = true;
+                        if (BLKH.CapNhatKhachHang(this.txtMa.Text, this.txtTen.Text, this.txtDiaChi.Text, this.txtSDT.Text, this.txtCMND.Text, this.txtGioiTinh.Text, this.txtTinhTrang.Text, ref err))
+                        {
+                            LoadData();
+                            MessageBox.Show("Đã sửa xong!");
+                            Default_Button();
+                            this.txtMa.Enabled = true;
 
+                        }
+                        else
+                        {
+                            MessageBox.Show(this.err);
+                        }
                     }
-                    else
+                    catch (SqlException)
                     {
-                        MessageBox.Show(this.err);
+                        MessageBox.Show("Không sửa được. Lỗi rồi!");
                     }
                 }
-                catch (SqlException)
-                {
-                    MessageBox.Show("Không sửa được. Lỗi rồi!");
-                }
+                
 
             }
         }

@@ -131,66 +131,80 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             BLPTP = new BLPhieuNhanPhong();
             if (Them)
             {
-                var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
-                if (TTHopLe.Equals(true))
+                if(txtPDP.Text==""||cbbMaKH.Text=="")
                 {
-                    try
-                    {
-                        BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.ThemPTP(this.txtPDP.Text, this.cbbMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, ref err))
-                        {
-                            LoadData();
-                            MessageBox.Show("Đã thêm xong!");
-                            Default_Button();
-                            IsThuePhong = 1;
-                            IsXoaPTP = 0;
-                        }
-                        else
-                        {
-                            MessageBox.Show(err, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            BLPTP = new BLPhieuNhanPhong();
-                            BLPTP.XoaPhieuKhongCoCTPTP(ref err);
-
-                        }
-                    }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Không thêm được. Lỗi rồi!");
-                    }
-                }
+                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }    
                 else
-                    MessageBox.Show("Mã PDP và Mã KH chưa trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
+                    if (TTHopLe.Equals(true))
+                    {
+                        try
+                        {
+                            BLPTP = new BLPhieuNhanPhong();
+                            if (BLPTP.ThemPTP(this.txtPDP.Text, this.cbbMaKH.Text, this.MaPhong, this.dtNgayTraDK.Value, ref err))
+                            {
+                                LoadData();
+                                MessageBox.Show("Đã thêm xong!");
+                                Default_Button();
+                                IsThuePhong = 1;
+                                IsXoaPTP = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show(err, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                BLPTP = new BLPhieuNhanPhong();
+                                BLPTP.XoaPhieuKhongCoCTPTP(ref err);
 
+                            }
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Không thêm được. Lỗi rồi!");
+                        }
+                    }
+                    else
+                        MessageBox.Show("Mã PDP và Mã KH chưa trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
-                if (TTHopLe.Equals(true) || (this.txtPDP.Text == DTPTP.Rows[0].ItemArray[1].ToString()
-                    && this.cbbMaKH.Text == DTPTP.Rows[0].ItemArray[2].ToString()))
+                if (txtPDP.Text == "" || cbbMaKH.Text == "")
                 {
-
-                    try
-                    {
-                        BLPTP = new BLPhieuNhanPhong();
-                        if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.txtPDP.Text, this.cbbMaKH.Text, dtNgayTraDK.Value, ref err))
-                        {
-                            LoadData();
-                            MessageBox.Show("Đã sửa xong!");
-                            Default_Button();
-                        }
-                        else
-                        {
-                            MessageBox.Show(this.err);
-                        }
-                    }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Không sửa được. Lỗi rồi!");
-                    }
+                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
-                    MessageBox.Show("Mã PDP và Mã KH chưa trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
+                    if (TTHopLe.Equals(true) || (this.txtPDP.Text == DTPTP.Rows[0].ItemArray[1].ToString()
+                        && this.cbbMaKH.Text == DTPTP.Rows[0].ItemArray[2].ToString()))
+                    {
 
+                        try
+                        {
+                            BLPTP = new BLPhieuNhanPhong();
+                            if (BLPTP.CapNhatPhieuThuePhong(this.txtPTP.Text, this.txtPDP.Text, this.cbbMaKH.Text, dtNgayTraDK.Value, ref err))
+                            {
+                                LoadData();
+                                MessageBox.Show("Đã sửa xong!");
+                                Default_Button();
+                            }
+                            else
+                            {
+                                MessageBox.Show(this.err);
+                            }
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Không sửa được. Lỗi rồi!");
+                        }
+                    }
+                    else
+                        MessageBox.Show("Mã PDP và Mã KH chưa trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }    
             }
         }
 

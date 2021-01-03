@@ -62,16 +62,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.SONGUOITOIDA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PHONG_KM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MOTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
-            this.cbbTen = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtMota = new System.Windows.Forms.TextBox();
             this.cbboxTrinhTrang = new System.Windows.Forms.ComboBox();
+            this.txtTimKiemPhong = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnTimKiem
@@ -416,55 +411,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.MOTA.MinimumWidth = 6;
             this.MOTA.Name = "MOTA";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.cbbTinhTrang);
-            this.panel1.Controls.Add(this.cbbTen);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(934, 190);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 61);
-            this.panel1.TabIndex = 98;
-            // 
-            // cbbTinhTrang
-            // 
-            this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(117, 17);
-            this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(130, 24);
-            this.cbbTinhTrang.TabIndex = 30;
-            this.cbbTinhTrang.Text = "ALL";
-            // 
-            // cbbTen
-            // 
-            this.cbbTen.FormattingEnabled = true;
-            this.cbbTen.Location = new System.Drawing.Point(315, 19);
-            this.cbbTen.Name = "cbbTen";
-            this.cbbTen.Size = new System.Drawing.Size(121, 24);
-            this.cbbTen.TabIndex = 29;
-            this.cbbTen.Text = "ALL";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(253, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(40, 20);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Tên";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 20);
-            this.label14.TabIndex = 25;
-            this.label14.Text = "Tình trạng";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -494,14 +440,22 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.cbboxTrinhTrang.TabIndex = 99;
             this.cbboxTrinhTrang.Text = "No";
             // 
+            // txtTimKiemPhong
+            // 
+            this.txtTimKiemPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiemPhong.Location = new System.Drawing.Point(981, 204);
+            this.txtTimKiemPhong.Name = "txtTimKiemPhong";
+            this.txtTimKiemPhong.Size = new System.Drawing.Size(265, 30);
+            this.txtTimKiemPhong.TabIndex = 100;
+            // 
             // FrmPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(1409, 665);
+            this.Controls.Add(this.txtTimKiemPhong);
             this.Controls.Add(this.cbboxTrinhTrang);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtKhuyenMai);
@@ -535,8 +489,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Text = "Phòng";
             this.Load += new System.EventHandler(this.FrmPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,11 +522,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvPhong;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbbTinhTrang;
-        private System.Windows.Forms.ComboBox cbbTen;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtMota;
         private System.Windows.Forms.DataGridViewTextBoxColumn MA_PHONG;
@@ -585,5 +532,6 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn PHONG_KM;
         private System.Windows.Forms.DataGridViewTextBoxColumn MOTA;
         private System.Windows.Forms.ComboBox cbboxTrinhTrang;
+        private System.Windows.Forms.TextBox txtTimKiemPhong;
     }
 }

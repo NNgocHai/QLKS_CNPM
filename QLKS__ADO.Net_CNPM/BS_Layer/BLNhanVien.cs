@@ -25,10 +25,10 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
             return db.ExecuteQueryDataSet(cmd, "NHANVIEN_LayNhanVien");
         }
 
-        public DataSet TimNhanVienTheoTDN(string TenDangNhap)
+        public DataSet TimNhanVienTheoTuKhoa(string TuKhoa)
         {
-            cmd.Parameters.Add("@tendn", SqlDbType.VarChar).Value = TenDangNhap;
-            return db.ExecuteQueryDataSet(cmd, "NHANVIEN_TimKiemNhanVien");
+            cmd.Parameters.Add("@TuKhoa", SqlDbType.VarChar).Value = TuKhoa;
+            return db.ExecuteQueryDataSet(cmd, "TIMKIEMNHANH_NHANVIEN");
         }
 
         public bool ThemNhanVien(string TenDangNhap, string MatKhau, string HoTen, string DiaChi, string SDT, string EMail, string PhanQuyen, ref string err)
