@@ -102,7 +102,7 @@ namespace QLKS__ADO.Net_CNPM.BS_Layer
 
         public DataSet TimKiemPhong(string TuKhoa)
         {
-            cmd.Parameters.Add("@TuKhoa", SqlDbType.VarChar).Value = TuKhoa;
+            cmd.Parameters.Add("@TuKhoa", SqlDbType.NVarChar).Value = TuKhoa;
             return db.ExecuteQueryDataSet(cmd, "PHONG_TimKiemPhong");
         }
 
