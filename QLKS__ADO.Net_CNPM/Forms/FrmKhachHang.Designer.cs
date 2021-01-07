@@ -351,7 +351,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.RowTemplate.Height = 24;
-            this.dgvKhachHang.Size = new System.Drawing.Size(1447, 306);
+            this.dgvKhachHang.Size = new System.Drawing.Size(1430, 362);
             this.dgvKhachHang.TabIndex = 99;
             this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
             this.dgvKhachHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellDoubleClick);
@@ -453,7 +453,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1460, 608);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.txtGioiTinh);

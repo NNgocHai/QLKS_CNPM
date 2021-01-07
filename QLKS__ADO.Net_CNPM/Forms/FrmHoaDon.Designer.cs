@@ -49,6 +49,8 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnReLoad = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,11 +74,11 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.TIENCOC,
             this.GIAMGIA_KH,
             this.TONGTIEN});
-            this.dgvHoaDon.Location = new System.Drawing.Point(69, 134);
+            this.dgvHoaDon.Location = new System.Drawing.Point(12, 114);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
-            this.dgvHoaDon.Size = new System.Drawing.Size(1385, 593);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1419, 548);
             this.dgvHoaDon.TabIndex = 69;
             this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
             // 
@@ -170,7 +172,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnTimKiem.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.FineIcon;
             this.btnTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(605, 46);
+            this.btnTimKiem.Location = new System.Drawing.Point(695, 33);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(96, 63);
             this.btnTimKiem.TabIndex = 111;
@@ -182,7 +184,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(606, 16);
+            this.label6.Location = new System.Drawing.Point(696, 3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 25);
             this.label6.TabIndex = 110;
@@ -193,7 +195,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(475, 16);
+            this.label4.Location = new System.Drawing.Point(565, 3);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 25);
@@ -206,7 +208,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.btnXoa.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.EraseIcon;
             this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(451, 45);
+            this.btnXoa.Location = new System.Drawing.Point(541, 32);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(96, 63);
             this.btnXoa.TabIndex = 99;
@@ -215,14 +217,14 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(718, 46);
+            this.txtTimKiem.Location = new System.Drawing.Point(808, 33);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(225, 22);
             this.txtTimKiem.TabIndex = 112;
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(718, 87);
+            this.txtDate.Location = new System.Drawing.Point(808, 74);
             this.txtDate.Mask = "0000-00-00";
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(108, 22);
@@ -232,18 +234,46 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.DarkOrange;
-            this.label1.Location = new System.Drawing.Point(851, 91);
+            this.label1.Location = new System.Drawing.Point(937, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 114;
             this.label1.Text = "YYYY-MM-DD";
+            // 
+            // btnReLoad
+            // 
+            this.btnReLoad.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnReLoad.BackgroundImage = global::QLKS__ADO.Net_CNPM.Properties.Resources.ReloadIcon;
+            this.btnReLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReLoad.Location = new System.Drawing.Point(383, 33);
+            this.btnReLoad.Name = "btnReLoad";
+            this.btnReLoad.Size = new System.Drawing.Size(96, 63);
+            this.btnReLoad.TabIndex = 115;
+            this.btnReLoad.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReLoad.UseVisualStyleBackColor = false;
+            this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label5.Location = new System.Drawing.Point(393, 3);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 25);
+            this.label5.TabIndex = 116;
+            this.label5.Text = "ReLoad";
             // 
             // FrmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1498, 757);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
+            this.Controls.Add(this.btnReLoad);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtTimKiem);
@@ -253,6 +283,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvHoaDon);
             this.Name = "FrmHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmHoaDon";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             this.ResumeLayout(false);
@@ -282,5 +313,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn TIENCOC;
         private System.Windows.Forms.DataGridViewTextBoxColumn GIAMGIA_KH;
         private System.Windows.Forms.DataGridViewTextBoxColumn TONGTIEN;
+        private System.Windows.Forms.Button btnReLoad;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -85,7 +85,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(963, 220);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(209, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(234, 30);
             this.txtTimKiem.TabIndex = 95;
             // 
             // txtGia
@@ -298,11 +298,11 @@
             this.MA_DV,
             this.TEN,
             this.GIA});
-            this.dgvDichVu.Location = new System.Drawing.Point(1, 277);
+            this.dgvDichVu.Location = new System.Drawing.Point(41, 280);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.RowTemplate.Height = 24;
-            this.dgvDichVu.Size = new System.Drawing.Size(1169, 351);
+            this.dgvDichVu.Size = new System.Drawing.Size(1366, 359);
             this.dgvDichVu.TabIndex = 97;
             this.dgvDichVu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellClick);
             // 
@@ -332,7 +332,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
             this.Controls.Add(this.dgvDichVu);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.label6);

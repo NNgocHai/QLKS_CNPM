@@ -555,7 +555,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Top>0.625in</Top>
-            <Left>1.59583in</Left>
+            <Left>0.82083in</Left>
             <Height>0.5in</Height>
             <Width>9.0528in</Width>
             <Style>
@@ -893,7 +893,7 @@
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
             <Top>1.29666in</Top>
-            <Left>1.59583in</Left>
+            <Left>0.82083in</Left>
             <Height>5.145in</Height>
             <Width>9.0528in</Width>
             <ZIndex>1</ZIndex>
@@ -910,7 +910,7 @@
         <Height>6.60833in</Height>
         <Style />
       </Body>
-      <Width>11.55in</Width>
+      <Width>10.70833in</Width>
       <Page>
         <PageHeader>
           <Height>1in</Height>
@@ -940,7 +940,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.29584in</Top>
-              <Left>3.9875in</Left>
+              <Left>3.43751in</Left>
               <Height>0.40833in</Height>
               <Width>3.575in</Width>
               <Style>

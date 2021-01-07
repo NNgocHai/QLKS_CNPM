@@ -358,7 +358,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.RowTemplate.Height = 24;
-            this.dgvPhong.Size = new System.Drawing.Size(1315, 363);
+            this.dgvPhong.Size = new System.Drawing.Size(1349, 362);
             this.dgvPhong.TabIndex = 68;
             this.dgvPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhong_CellClick);
             // 
@@ -453,7 +453,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1409, 665);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
             this.Controls.Add(this.txtTimKiemPhong);
             this.Controls.Add(this.cbboxTrinhTrang);
             this.Controls.Add(this.btnTimKiem);

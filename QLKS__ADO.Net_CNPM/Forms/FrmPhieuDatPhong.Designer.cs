@@ -128,6 +128,9 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // dgv_DatPhong
             // 
+            this.dgv_DatPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_DatPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_DatPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_DatPhong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -142,11 +145,10 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgv_DatPhong.Name = "dgv_DatPhong";
             this.dgv_DatPhong.RowHeadersWidth = 51;
             this.dgv_DatPhong.RowTemplate.Height = 24;
-            this.dgv_DatPhong.Size = new System.Drawing.Size(1052, 399);
+            this.dgv_DatPhong.Size = new System.Drawing.Size(1052, 374);
             this.dgv_DatPhong.TabIndex = 181;
             this.dgv_DatPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DatPhong_CellClick);
             this.dgv_DatPhong.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DatPhong_CellDoubleClick);
-//            this.dgv_DatPhong.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_DatPhong_RowsAdded);
             // 
             // Ma_PDP
             // 
@@ -448,7 +450,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1207, 695);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
             this.Controls.Add(this.cbbMaPhong);
             this.Controls.Add(this.btnTimKiemNhanh);
             this.Controls.Add(this.label11);
@@ -479,6 +481,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSoNguoi);
             this.Name = "FrmPhieuDatPhong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPhieuDatPhong";
             this.Load += new System.EventHandler(this.FrmPhieuDatPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DatPhong)).EndInit();

@@ -88,7 +88,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1169, 351);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1419, 362);
             this.dgvNhanVien.TabIndex = 2;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
             this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
@@ -447,7 +447,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.txtPhanQuyen);
             this.Controls.Add(this.btnTimKiem);

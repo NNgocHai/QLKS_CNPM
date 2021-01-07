@@ -81,7 +81,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgvKM.Name = "dgvKM";
             this.dgvKM.RowHeadersWidth = 51;
             this.dgvKM.RowTemplate.Height = 24;
-            this.dgvKM.Size = new System.Drawing.Size(1169, 351);
+            this.dgvKM.Size = new System.Drawing.Size(1423, 361);
             this.dgvKM.TabIndex = 119;
             this.dgvKM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKM_CellClick);
             this.dgvKM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKM_CellContentClick);
@@ -399,7 +399,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1189, 679);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
@@ -428,6 +428,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Name = "FrmKhuyenMai";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khuyến mãi";
             this.Load += new System.EventHandler(this.FrmKhuyenMai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKM)).EndInit();

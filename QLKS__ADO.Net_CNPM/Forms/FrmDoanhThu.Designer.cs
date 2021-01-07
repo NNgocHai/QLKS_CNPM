@@ -51,6 +51,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             // 
             // reportViewer1
             // 
+            this.reportViewer1.BackColor = System.Drawing.Color.LemonChiffon;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.viewDOANHTHUBindingSource;
@@ -59,7 +60,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1450, 731);
+            this.reportViewer1.Size = new System.Drawing.Size(1443, 664);
             this.reportViewer1.TabIndex = 0;
             // 
             // viewDOANHTHUTableAdapter
@@ -71,7 +72,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(1450, 731);
+            this.ClientSize = new System.Drawing.Size(1443, 664);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmDoanhThu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

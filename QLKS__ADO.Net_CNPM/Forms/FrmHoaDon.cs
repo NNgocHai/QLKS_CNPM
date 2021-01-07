@@ -98,5 +98,10 @@ namespace QLKS__ADO.Net_CNPM.Forms
             //Chuyển thông tin lên panel
             MaHD = dgvHoaDon.Rows[r].Cells[0].Value.ToString().Trim();
         }
+
+        private void btnReLoad_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
     }
 }
