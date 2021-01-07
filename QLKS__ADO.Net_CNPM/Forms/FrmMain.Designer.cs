@@ -216,7 +216,6 @@
             // 
             this.ribbonPanel2.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel2.TabIndex = 3;
-            this.ribbonPanel2.Visible = false;
             // 
             // ribbonBar1
             // 
@@ -562,6 +561,7 @@
             // 
             this.ribbonPanel1.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             // 
             // Restore
             // 
@@ -819,13 +819,13 @@
             // 
             // ribbonTabItem11
             // 
+            this.ribbonTabItem11.Checked = true;
             this.ribbonTabItem11.Name = "ribbonTabItem11";
             this.ribbonTabItem11.Panel = this.ribbonPanel2;
             this.ribbonTabItem11.Text = "Quản lý";
             // 
             // rbbtHeThong
             // 
-            this.rbbtHeThong.Checked = true;
             this.rbbtHeThong.Name = "rbbtHeThong";
             this.rbbtHeThong.Panel = this.ribbonPanel1;
             this.rbbtHeThong.Text = "Hệ thống";
@@ -1019,9 +1019,9 @@
             // 
             this.ribbonControl2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.ribbonControl2.CaptionVisible = true;
-            this.ribbonControl2.Controls.Add(this.ribbonPanel1);
             this.ribbonControl2.Controls.Add(this.ribbonPanel2);
             this.ribbonControl2.Controls.Add(this.ribbonPanel3);
+            this.ribbonControl2.Controls.Add(this.ribbonPanel1);
             this.ribbonControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.rbbtHeThong,

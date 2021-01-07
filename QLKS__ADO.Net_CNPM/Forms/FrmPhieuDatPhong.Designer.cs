@@ -145,7 +145,7 @@ namespace QLKS__ADO.Net_CNPM.Forms
             this.dgv_DatPhong.Name = "dgv_DatPhong";
             this.dgv_DatPhong.RowHeadersWidth = 51;
             this.dgv_DatPhong.RowTemplate.Height = 24;
-            this.dgv_DatPhong.Size = new System.Drawing.Size(1052, 374);
+            this.dgv_DatPhong.Size = new System.Drawing.Size(1351, 374);
             this.dgv_DatPhong.TabIndex = 181;
             this.dgv_DatPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DatPhong_CellClick);
             this.dgv_DatPhong.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DatPhong_CellDoubleClick);
