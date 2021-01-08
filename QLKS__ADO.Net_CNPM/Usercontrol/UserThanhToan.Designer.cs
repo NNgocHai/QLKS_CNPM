@@ -37,10 +37,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.txtPhongKM = new System.Windows.Forms.TextBox();
             this.b = new System.Windows.Forms.Label();
             this.btnThanhToan = new System.Windows.Forms.Button();
-            this.MAHDDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MADV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTienThue = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -65,6 +61,11 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.txtMaPTP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDVSD = new System.Windows.Forms.DataGridView();
+            this.MAHDDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MADV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOLUONG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THANHTEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVSD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,34 +144,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.btnThanhToan.TabIndex = 265;
             this.btnThanhToan.UseVisualStyleBackColor = false;
             this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // MAHDDV
-            // 
-            this.MAHDDV.DataPropertyName = "MA_HOADONDV";
-            this.MAHDDV.HeaderText = "Mã HDDV";
-            this.MAHDDV.MinimumWidth = 6;
-            this.MAHDDV.Name = "MAHDDV";
-            // 
-            // MADV
-            // 
-            this.MADV.DataPropertyName = "MA_DV";
-            this.MADV.HeaderText = "Mã DV";
-            this.MADV.MinimumWidth = 6;
-            this.MADV.Name = "MADV";
-            // 
-            // SOLUONG
-            // 
-            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
-            this.SOLUONG.HeaderText = "Số lượng";
-            this.SOLUONG.MinimumWidth = 6;
-            this.SOLUONG.Name = "SOLUONG";
-            // 
-            // THANHTEN
-            // 
-            this.THANHTEN.DataPropertyName = "THANHTIEN";
-            this.THANHTEN.HeaderText = "Tiền DV";
-            this.THANHTEN.MinimumWidth = 6;
-            this.THANHTEN.Name = "THANHTEN";
             // 
             // txtTienThue
             // 
@@ -390,6 +363,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvDVSD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MAHDDV,
             this.MADV,
+            this.TEN,
             this.SOLUONG,
             this.THANHTEN});
             this.dgvDVSD.Location = new System.Drawing.Point(24, 9);
@@ -399,6 +373,41 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             this.dgvDVSD.Size = new System.Drawing.Size(1031, 270);
             this.dgvDVSD.TabIndex = 241;
             this.dgvDVSD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDVSD_CellContentClick);
+            // 
+            // MAHDDV
+            // 
+            this.MAHDDV.DataPropertyName = "MA_HOADONDV";
+            this.MAHDDV.HeaderText = "Mã HDDV";
+            this.MAHDDV.MinimumWidth = 6;
+            this.MAHDDV.Name = "MAHDDV";
+            // 
+            // MADV
+            // 
+            this.MADV.DataPropertyName = "MA_DV";
+            this.MADV.HeaderText = "Mã DV";
+            this.MADV.MinimumWidth = 6;
+            this.MADV.Name = "MADV";
+            // 
+            // TEN
+            // 
+            this.TEN.DataPropertyName = "TEN";
+            this.TEN.HeaderText = "Tên dịch vụ";
+            this.TEN.MinimumWidth = 6;
+            this.TEN.Name = "TEN";
+            // 
+            // SOLUONG
+            // 
+            this.SOLUONG.DataPropertyName = "SOLUONGSUDUNG";
+            this.SOLUONG.HeaderText = "Số lượng";
+            this.SOLUONG.MinimumWidth = 6;
+            this.SOLUONG.Name = "SOLUONG";
+            // 
+            // THANHTEN
+            // 
+            this.THANHTEN.DataPropertyName = "THANHTIEN";
+            this.THANHTEN.HeaderText = "Tiền DV";
+            this.THANHTEN.MinimumWidth = 6;
+            this.THANHTEN.Name = "THANHTEN";
             // 
             // UserThanhToan
             // 
@@ -456,10 +465,6 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.TextBox txtPhongKM;
         private System.Windows.Forms.Label b;
         private System.Windows.Forms.Button btnThanhToan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MAHDDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MADV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn THANHTEN;
         private System.Windows.Forms.TextBox txtTienThue;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
@@ -484,5 +489,10 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
         private System.Windows.Forms.TextBox txtMaPTP;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvDVSD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAHDDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MADV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TEN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOLUONG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THANHTEN;
     }
 }

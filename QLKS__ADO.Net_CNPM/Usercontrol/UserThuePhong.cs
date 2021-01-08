@@ -131,13 +131,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
             BLPTP = new BLPhieuNhanPhong();
             if (Them)
             {
-                if(txtPDP.Text==""||cbbMaKH.Text=="")
-                {
-                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }    
-                else
-                {
+
                     var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
                     if (TTHopLe.Equals(true))
                     {
@@ -167,17 +161,10 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                     }
                     else
                         MessageBox.Show("Mã PDP và Mã KH chưa trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
             else
             {
-                if (txtPDP.Text == "" || cbbMaKH.Text == "")
-                {
-                    MessageBox.Show("Vui lòng điền đầy đủ các thông tin", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
                     var TTHopLe = BLPTP.KiemTraThemPTP(txtPDP.Text, cbbMaKH.Text);
                     if (TTHopLe.Equals(true) || (this.txtPDP.Text == DTPTP.Rows[0].ItemArray[1].ToString()
                         && this.cbbMaKH.Text == DTPTP.Rows[0].ItemArray[2].ToString()))
@@ -205,7 +192,7 @@ namespace QLKS__ADO.Net_CNPM.Usercontrol
                     else
                         MessageBox.Show("Mã PDP và Mã KH chưa trùng khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }    
-            }
+            
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
